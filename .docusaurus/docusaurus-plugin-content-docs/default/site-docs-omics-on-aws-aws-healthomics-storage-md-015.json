@@ -1,0 +1,28 @@
+{
+  "id": "omics-on-aws/aws-healthomics-storage",
+  "title": "AWS HealthOmics - Storage",
+  "description": "오믹스의 스토리지 컴포넌트는 2개가 있습니다.",
+  "source": "@site/docs/omics-on-aws/aws-healthomics-storage.md",
+  "sourceDirName": "omics-on-aws",
+  "slug": "/omics-on-aws/aws-healthomics-storage",
+  "permalink": "/docusaurus/omics-on-aws/aws-healthomics-storage",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/omics-on-aws/aws-healthomics-storage.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "title": "AWS HealthOmics - Storage",
+    "sidebar_position": 6
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "AWS HealthOmics로 유전체 분석 (Fastq to VCF, Annotation) 자동화하기",
+    "permalink": "/docusaurus/omics-on-aws/aws-healthomics-fastq-to-vcf-annotation"
+  },
+  "next": {
+    "title": "AWS HealthOmics에서 Annotation 작업 수행하기",
+    "permalink": "/docusaurus/omics-on-aws/aws-healthomics-annotation"
+  }
+}

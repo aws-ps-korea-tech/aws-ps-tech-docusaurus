@@ -1,0 +1,28 @@
+{
+  "id": "omics-on-aws/store-multimodal-data-with-purpose-built-health-ai-services",
+  "title": "Store multimodal data with purpose-built Health AI services",
+  "description": "이번 세션에서는 특수 목적의 헬스 AI 서비스(AWS HealthOmics, AWS HealthLake, AWS HealthImaging)로 멀티모달 데이터를 저장할 수 있습니다.\\",
+  "source": "@site/omics-on-aws/store-multimodal-data-with-purpose-built-health-ai-services.md",
+  "sourceDirName": "omics-on-aws",
+  "slug": "/omics-on-aws/store-multimodal-data-with-purpose-built-health-ai-services",
+  "permalink": "/docusaurus/omics-on-aws/store-multimodal-data-with-purpose-built-health-ai-services",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/omics-on-aws/store-multimodal-data-with-purpose-built-health-ai-services.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Store multimodal data with purpose-built Health AI services",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "몇 가지 기능과 알아둘 것들",
+    "permalink": "/docusaurus/omics-on-aws/a597e"
+  },
+  "next": {
+    "title": "Amazon Genomics CLI - 핸즈온 가이드",
+    "permalink": "/docusaurus/omics-on-aws/amazon-genomics-cli-vDj"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "omics-on-aws/amazon-emr-on-ec2",
+  "title": "Amazon EMR on EC2",
+  "description": "\\",
+  "source": "@site/docs/omics-on-aws/amazon-emr-on-ec2.md",
+  "sourceDirName": "omics-on-aws",
+  "slug": "/omics-on-aws/amazon-emr-on-ec2",
+  "permalink": "/docusaurus/omics-on-aws/amazon-emr-on-ec2",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/omics-on-aws/amazon-emr-on-ec2.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 0,
+  "frontMatter": {
+    "title": "Amazon EMR on EC2",
+    "sidebar_position": 0
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "AWS HealthOmics Run Analyzer 분석 리포트 (Run: 1910249)",
+    "permalink": "/docusaurus/omics-on-aws/aws-healthomics-run-analyzer-run-1910249"
+  },
+  "next": {
+    "title": "AWS Glue",
+    "permalink": "/docusaurus/omics-on-aws/aws-glue"
+  }
+}

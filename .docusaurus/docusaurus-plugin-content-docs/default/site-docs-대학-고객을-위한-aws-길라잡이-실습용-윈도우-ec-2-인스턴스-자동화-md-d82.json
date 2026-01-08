@@ -1,0 +1,28 @@
+{
+  "id": "대학-고객을-위한-aws-길라잡이/실습용-윈도우-ec2-인스턴스-자동화",
+  "title": "실습용 윈도우 EC2 인스턴스 자동화",
+  "description": "이 가이드는 AWS CLI를 사용하여 윈도우 서버 EC2 인스턴스를 여러 개 자동으로 설정하는 과정을 상세히 설명합니다. 실제 환경에서는 사용자의 요구사항에 맞게 설정을 조정해야 하며, 실제 테스트가 반드시 필요합니다.",
+  "source": "@site/docs/대학-고객을-위한-aws-길라잡이/실습용-윈도우-ec2-인스턴스-자동화.md",
+  "sourceDirName": "대학-고객을-위한-aws-길라잡이",
+  "slug": "/대학-고객을-위한-aws-길라잡이/실습용-윈도우-ec2-인스턴스-자동화",
+  "permalink": "/docusaurus/docs/대학-고객을-위한-aws-길라잡이/실습용-윈도우-ec2-인스턴스-자동화",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/대학-고객을-위한-aws-길라잡이/실습용-윈도우-ec2-인스턴스-자동화.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "title": "실습용 윈도우 EC2 인스턴스 자동화",
+    "sidebar_position": 6
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "쉽게 따라하는 연구실 계정 관리",
+    "permalink": "/docusaurus/docs/대학-고객을-위한-aws-길라잡이/쉽게-따라하는-연구실-계정-관리"
+  },
+  "next": {
+    "title": "Rstudio 실습환경 자동화 구성",
+    "permalink": "/docusaurus/docs/대학-고객을-위한-aws-길라잡이/rstudio-실습환경-자동화-구성"
+  }
+}

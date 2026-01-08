@@ -1,0 +1,28 @@
+{
+  "id": "aws/aws-cli",
+  "title": "AWS CLI",
+  "description": "AWS CLI 소개",
+  "source": "@site/docs/aws/aws-cli.md",
+  "sourceDirName": "aws",
+  "slug": "/aws/aws-cli",
+  "permalink": "/docusaurus/aws/aws-cli",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/aws/aws-cli.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "title": "AWS CLI",
+    "sidebar_position": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "기본 분석 수행하기 (옵션)",
+    "permalink": "/docusaurus/aws/d61e4"
+  },
+  "next": {
+    "title": "워크샵 시작 전 준비사항",
+    "permalink": "/docusaurus/aws/d2dde"
+  }
+}

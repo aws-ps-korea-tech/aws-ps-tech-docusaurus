@@ -1,0 +1,28 @@
+{
+  "id": "omics-on-aws/hail-with-amazon-emr-notebook",
+  "title": "Hail with Amazon EMR notebook",
+  "description": "노트북 셋업 {#bkmrk-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%85%8B%EC%97%85}",
+  "source": "@site/omics-on-aws/hail-with-amazon-emr-notebook.md",
+  "sourceDirName": "omics-on-aws",
+  "slug": "/omics-on-aws/hail-with-amazon-emr-notebook",
+  "permalink": "/docusaurus/omics-on-aws/hail-with-amazon-emr-notebook",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/omics-on-aws/hail-with-amazon-emr-notebook.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Hail with Amazon EMR notebook",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "AWS Glue",
+    "permalink": "/docusaurus/omics-on-aws/aws-glue"
+  },
+  "next": {
+    "title": "Quickstart Hail (Korean)",
+    "permalink": "/docusaurus/omics-on-aws/quickstart-hail-korean"
+  }
+}

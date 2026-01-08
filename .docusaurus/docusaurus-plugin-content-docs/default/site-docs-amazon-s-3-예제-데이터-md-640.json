@@ -1,0 +1,28 @@
+{
+  "id": "amazon-s3/예제-데이터",
+  "title": "예제 데이터",
+  "description": "",
+  "source": "@site/docs/amazon-s3/예제-데이터.md",
+  "sourceDirName": "amazon-s3",
+  "slug": "/amazon-s3/예제-데이터",
+  "permalink": "/docusaurus/docs/amazon-s3/예제-데이터",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/amazon-s3/예제-데이터.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "title": "예제 데이터",
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "추천 링크",
+    "permalink": "/docusaurus/docs/amazon-s3/추천-링크"
+  },
+  "next": {
+    "title": "AWS 계정 안전하게 지키기",
+    "permalink": "/docusaurus/docs/대학-고객을-위한-aws-길라잡이/aws-계정-안전하게-지키기"
+  }
+}

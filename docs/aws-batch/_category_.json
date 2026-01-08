@@ -1,0 +1,8 @@
+{
+  "label": "AWS Batch",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "AWS Batch 관련 문서들"
+  }
+}

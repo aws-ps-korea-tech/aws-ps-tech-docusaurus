@@ -1,0 +1,28 @@
+{
+  "id": "대학-고객을-위한-aws-길라잡이/공유-ami로부터-가상-머신-시작하기",
+  "title": "공유 AMI로부터 가상 머신 시작하기",
+  "description": "AMI 소개",
+  "source": "@site/docs/대학-고객을-위한-aws-길라잡이/공유-ami로부터-가상-머신-시작하기.md",
+  "sourceDirName": "대학-고객을-위한-aws-길라잡이",
+  "slug": "/대학-고객을-위한-aws-길라잡이/공유-ami로부터-가상-머신-시작하기",
+  "permalink": "/docusaurus/docs/대학-고객을-위한-aws-길라잡이/공유-ami로부터-가상-머신-시작하기",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/대학-고객을-위한-aws-길라잡이/공유-ami로부터-가상-머신-시작하기.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "공유 AMI로부터 가상 머신 시작하기",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "리눅스 머신 실행",
+    "permalink": "/docusaurus/docs/대학-고객을-위한-aws-길라잡이/리눅스-머신-실행"
+  },
+  "next": {
+    "title": "저장 장치 추가하기",
+    "permalink": "/docusaurus/docs/대학-고객을-위한-aws-길라잡이/저장-장치-추가하기"
+  }
+}

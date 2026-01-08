@@ -1,0 +1,28 @@
+{
+  "id": "aws-blast-performance-testing/ebs",
+  "title": "EBS 최적화 아키텍처 테스트 결과",
+  "description": "테스트 날짜: 2026-01-02",
+  "source": "@site/docs/aws-blast-performance-testing/ebs.md",
+  "sourceDirName": "aws-blast-performance-testing",
+  "slug": "/aws-blast-performance-testing/ebs",
+  "permalink": "/docusaurus/aws-blast-performance-testing/ebs",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/aws-blast-performance-testing/ebs.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "EBS 최적화 아키텍처 테스트 결과",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "비용 분석 (Cost Analysis)",
+    "permalink": "/docusaurus/aws-blast-performance-testing/cost-analysis"
+  },
+  "next": {
+    "title": "EFS vs FSx for Lustre 비교 분석 (실제 테스트 결과 포함)",
+    "permalink": "/docusaurus/aws-blast-performance-testing/efs-vs-fsx-for-lustre"
+  }
+}

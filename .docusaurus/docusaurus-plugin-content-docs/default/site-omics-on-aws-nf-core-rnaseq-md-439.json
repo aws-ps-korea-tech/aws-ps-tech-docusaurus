@@ -1,0 +1,28 @@
+{
+  "id": "omics-on-aws/nf-core-rnaseq",
+  "title": "Nf-core 워크플로우 마이그레이션 하기 (rnaseq)",
+  "description": "참고 문서//catalog.us-east-1.prod.workshops.aws/workshops/76d4a4ff-fe6f-436a-a1c2-f7ce44bc5d17/en-US",
+  "source": "@site/omics-on-aws/nf-core-rnaseq.md",
+  "sourceDirName": "omics-on-aws",
+  "slug": "/omics-on-aws/nf-core-rnaseq",
+  "permalink": "/docusaurus/omics-on-aws/nf-core-rnaseq",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/omics-on-aws/nf-core-rnaseq.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Nf-core 워크플로우 마이그레이션 하기 (rnaseq)",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Nf-core 워크플로우 마이그레이션 하기 (scrnaseq)",
+    "permalink": "/docusaurus/omics-on-aws/nf-core-scrnaseq"
+  },
+  "next": {
+    "title": "Nf-core 워크플로우 마이그레이션 하기 (spatialvi)",
+    "permalink": "/docusaurus/omics-on-aws/nf-core-spatialvi"
+  }
+}

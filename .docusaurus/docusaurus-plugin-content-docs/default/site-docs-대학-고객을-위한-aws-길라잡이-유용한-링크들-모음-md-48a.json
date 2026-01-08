@@ -1,0 +1,28 @@
+{
+  "id": "대학-고객을-위한-AWS-길라잡이/유용한-링크들-모음",
+  "title": "유용한 링크들 모음",
+  "description": "생명과학 Ramp-Up guide",
+  "source": "@site/docs/대학-고객을-위한-AWS-길라잡이/유용한-링크들-모음.md",
+  "sourceDirName": "대학-고객을-위한-AWS-길라잡이",
+  "slug": "/대학-고객을-위한-AWS-길라잡이/유용한-링크들-모음",
+  "permalink": "/docusaurus/docs/대학-고객을-위한-AWS-길라잡이/유용한-링크들-모음",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/대학-고객을-위한-AWS-길라잡이/유용한-링크들-모음.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "유용한 링크들 모음",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "루트 계정 보호하기 - OTP 설정 (필수 영상)",
+    "permalink": "/docusaurus/docs/대학-고객을-위한-AWS-길라잡이/루트-계정-보호하기-OTP-설정-(필수-영상)"
+  },
+  "next": {
+    "title": "쉽게 따라하는 연구실 계정 관리",
+    "permalink": "/docusaurus/docs/대학-고객을-위한-AWS-길라잡이/쉽게-따라하는-연구실-계정-관리"
+  }
+}

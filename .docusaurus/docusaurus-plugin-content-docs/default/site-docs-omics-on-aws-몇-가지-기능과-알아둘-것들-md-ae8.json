@@ -1,0 +1,28 @@
+{
+  "id": "omics-on-aws/몇-가지-기능과-알아둘-것들",
+  "title": "몇 가지 기능과 알아둘 것들",
+  "description": "서비스 Quota와 리전",
+  "source": "@site/docs/omics-on-aws/몇-가지-기능과-알아둘-것들.md",
+  "sourceDirName": "omics-on-aws",
+  "slug": "/omics-on-aws/몇-가지-기능과-알아둘-것들",
+  "permalink": "/docusaurus/docs/omics-on-aws/몇-가지-기능과-알아둘-것들",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/omics-on-aws/몇-가지-기능과-알아둘-것들.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 9,
+  "frontMatter": {
+    "title": "몇 가지 기능과 알아둘 것들",
+    "sidebar_position": 9
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "AWS HealthOmics - Troubleshooting",
+    "permalink": "/docusaurus/docs/omics-on-aws/aws-healthomics---troubleshooting"
+  },
+  "next": {
+    "title": "",
+    "permalink": "/docusaurus/docs/omics-on-aws/aws-healthomics-run-analyzer-분석-리포트-run-1910249"
+  }
+}

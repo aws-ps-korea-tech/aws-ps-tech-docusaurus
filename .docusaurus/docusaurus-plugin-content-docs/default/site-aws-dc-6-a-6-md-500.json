@@ -1,0 +1,28 @@
+{
+  "id": "aws/dc6a6",
+  "title": "리눅스 머신 실행",
+  "description": "AWS 관리 콘솔 검색 창에 EC2를 입력합니다.",
+  "source": "@site/aws/dc6a6.md",
+  "sourceDirName": "aws",
+  "slug": "/aws/dc6a6",
+  "permalink": "/docusaurus/aws/dc6a6",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/aws/dc6a6.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "리눅스 머신 실행",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Research and Engineering Studio on AWS",
+    "permalink": "/docusaurus/aws/research-and-engineering-studio-on-aws"
+  },
+  "next": {
+    "title": "유용한 링크들 모음",
+    "permalink": "/docusaurus/aws/d82c8"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "aws/ec2-BcK",
+  "title": "실습용 윈도우 EC2 인스턴스 자동화",
+  "description": "이 가이드는 AWS CLI를 사용하여 윈도우 서버 EC2 인스턴스를 여러 개 자동으로 설정하는 과정을 상세히 설명합니다. 실제 환경에서는 사용자의 요구사항에 맞게 설정을 조정해야 하며, 실제 테스트가 반드시 필요합니다.",
+  "source": "@site/docs/aws/ec2-BcK.md",
+  "sourceDirName": "aws",
+  "slug": "/aws/ec2-BcK",
+  "permalink": "/docusaurus/aws/ec2-BcK",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/aws/ec2-BcK.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "title": "실습용 윈도우 EC2 인스턴스 자동화",
+    "sidebar_position": 6
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "EC2로부터 이미지 (AMI) 생성",
+    "permalink": "/docusaurus/aws/ec2-ami"
+  },
+  "next": {
+    "title": "공유 AMI로부터 가상 머신 시작하기",
+    "permalink": "/docusaurus/aws/ami"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "aws/hail-on-ec2",
+  "title": "Hail on EC2 (옵션)",
+  "description": "앞에서 배운 것들을 토대로 새로운 EC2를 생성하고 접속한 뒤 오픈소스 프로그램인 Hail{target=\"_blank\" rel=\"noopener\"} 을 설치 및 사용해 봅시다.",
+  "source": "@site/aws/hail-on-ec2.md",
+  "sourceDirName": "aws",
+  "slug": "/aws/hail-on-ec2",
+  "permalink": "/docusaurus/aws/hail-on-ec2",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/aws/hail-on-ec2.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 11,
+  "frontMatter": {
+    "title": "Hail on EC2 (옵션)",
+    "sidebar_position": 11
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "공유 AMI로부터 가상 머신 시작하기",
+    "permalink": "/docusaurus/aws/ami"
+  },
+  "next": {
+    "title": "Amazon Lightsail for Research",
+    "permalink": "/docusaurus/aws/amazon-lightsail-for-research"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "aws/d61e4",
+  "title": "기본 분석 수행하기 (옵션)",
+  "description": "Bacterial Genome data 분석",
+  "source": "@site/docs/aws/d61e4.md",
+  "sourceDirName": "aws",
+  "slug": "/aws/d61e4",
+  "permalink": "/docusaurus/aws/d61e4",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/aws/d61e4.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 7,
+  "frontMatter": {
+    "title": "기본 분석 수행하기 (옵션)",
+    "sidebar_position": 7
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "AMI로 쉽게 리눅스 머신 셋업하기",
+    "permalink": "/docusaurus/aws/ami-gwl"
+  },
+  "next": {
+    "title": "AWS CLI",
+    "permalink": "/docusaurus/aws/aws-cli"
+  }
+}

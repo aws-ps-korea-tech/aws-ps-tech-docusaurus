@@ -1,0 +1,8 @@
+{
+  "label": "Amazon S3",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Amazon S3 관련 문서들"
+  }
+}

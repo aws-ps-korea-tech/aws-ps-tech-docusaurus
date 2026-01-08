@@ -1,0 +1,28 @@
+{
+  "id": "대학-고객을-위한-aws-길라잡이/저장-장치-추가하기",
+  "title": "저장 장치 추가하기",
+  "description": "생성된 EC2 인스턴스에는 운영 체제를 지원하기에 충분한 저장 용량을 갖춘 루트 볼륨과 분석을 지원하는 데 필요한 몇 가지 추가 애플리케이션이 있습니다.  대용량 데이터(예: Raw reads, aligned sequences 등)를 EC2 인스턴스를 통해 다운로드 하려면 추가 스토리지가 필요할 수도 있습니다. 따라서 추가 스토리지를 연결해야 합니다.",
+  "source": "@site/docs/대학-고객을-위한-aws-길라잡이/저장-장치-추가하기.md",
+  "sourceDirName": "대학-고객을-위한-aws-길라잡이",
+  "slug": "/대학-고객을-위한-aws-길라잡이/저장-장치-추가하기",
+  "permalink": "/docusaurus/docs/대학-고객을-위한-aws-길라잡이/저장-장치-추가하기",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/대학-고객을-위한-aws-길라잡이/저장-장치-추가하기.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "title": "저장 장치 추가하기",
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "공유 AMI로부터 가상 머신 시작하기",
+    "permalink": "/docusaurus/docs/대학-고객을-위한-aws-길라잡이/공유-ami로부터-가상-머신-시작하기"
+  },
+  "next": {
+    "title": "AWS CLI",
+    "permalink": "/docusaurus/docs/대학-고객을-위한-aws-길라잡이/aws-cli"
+  }
+}

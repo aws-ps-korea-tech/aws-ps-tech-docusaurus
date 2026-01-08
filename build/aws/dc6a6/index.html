@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-aws/dc6a6" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">리눅스 머신 실행 | AWS PS Tech Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://aws-wwps-kr-tech.github.io/docusaurus/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://aws-wwps-kr-tech.github.io/docusaurus/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://aws-wwps-kr-tech.github.io/docusaurus/aws/dc6a6"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="리눅스 머신 실행 | AWS PS Tech Docs"><meta data-rh="true" name="description" content="AWS 관리 콘솔 검색 창에 EC2를 입력합니다."><meta data-rh="true" property="og:description" content="AWS 관리 콘솔 검색 창에 EC2를 입력합니다."><link data-rh="true" rel="icon" href="/docusaurus/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://aws-wwps-kr-tech.github.io/docusaurus/aws/dc6a6"><link data-rh="true" rel="alternate" href="https://aws-wwps-kr-tech.github.io/docusaurus/aws/dc6a6" hreflang="ko"><link data-rh="true" rel="alternate" href="https://aws-wwps-kr-tech.github.io/docusaurus/en/aws/dc6a6" hreflang="en"><link data-rh="true" rel="alternate" href="https://aws-wwps-kr-tech.github.io/docusaurus/aws/dc6a6" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"리눅스 머신 실행","item":"https://aws-wwps-kr-tech.github.io/docusaurus/aws/dc6a6"}]}</script><link rel="stylesheet" href="/docusaurus/assets/css/styles.c0aa031c.css">
+<script src="/docusaurus/assets/js/runtime~main.f33d5987.js" defer="defer"></script>
+<script src="/docusaurus/assets/js/main.a66535ea.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/docusaurus/"><div class="navbar__logo"><img src="/docusaurus/img/logo.svg" alt="AWS Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/docusaurus/img/logo.svg" alt="AWS Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">AWS PS Tech</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docusaurus/amazon-s3/s3-select">Amazon S3</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docusaurus/aws/">AWS 길라잡이</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docusaurus/omics-on-aws/aws-healthomics">Omics on AWS</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docusaurus/aws-batch/tagging-w-nextflow">AWS Batch</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docusaurus/aws-blast-performance-testing/26657">BLAST Testing</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docusaurus/">전체 문서</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/aws-wwps-kr-tech/docusaurus" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docusaurus/"><span title="문서 홈" class="linkLabel_WmDU">문서 홈</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docusaurus/amazon-s3/s3-select"><span title="Amazon S3" class="categoryLinkLabel_W154">Amazon S3</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docusaurus/aws/"><span title="대학 고객을 위한 AWS 길라잡이" class="categoryLinkLabel_W154">대학 고객을 위한 AWS 길라잡이</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docusaurus/aws/"><span title="AWS 계정 안전하게 지키기" class="linkLabel_WmDU">AWS 계정 안전하게 지키기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docusaurus/aws/otp"><span title="루트 계정 보호하기 - OTP 설정 (필수 영상)" class="linkLabel_WmDU">루트 계정 보호하기 - OTP 설정 (필수 영상)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docusaurus/aws/28f0b"><span title="저장 장치 추가하기" class="linkLabel_WmDU">저장 장치 추가하기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docusaurus/aws/cloud9"><span title="Cloud9" class="linkLabel_WmDU">Cloud9</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docusaurus/aws/ec2"><span title="EC2 종료와 볼륨 스냅샷 저장 (옵션)" class="linkLabel_WmDU">EC2 종료와 볼륨 스냅샷 저장 (옵션)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docusaurus/aws/ami-gwl"><span title="AMI로 쉽게 리눅스 머신 셋업하기" class="linkLabel_WmDU">AMI로 쉽게 리눅스 머신 셋업하기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docusaurus/aws/d61e4"><span title="기본 분석 수행하기 (옵션)" class="linkLabel_WmDU">기본 분석 수행하기 (옵션)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docusaurus/aws/aws-cli"><span title="AWS CLI" class="linkLabel_WmDU">AWS CLI</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docusaurus/aws/d2dde"><span title="워크샵 시작 전 준비사항" class="linkLabel_WmDU">워크샵 시작 전 준비사항</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docusaurus/aws/40008"><span title="데이터 다운로드 실습" class="linkLabel_WmDU">데이터 다운로드 실습</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docusaurus/aws/ec2-ami"><span title="EC2로부터 이미지 (AMI) 생성" class="linkLabel_WmDU">EC2로부터 이미지 (AMI) 생성</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docusaurus/aws/ec2-BcK"><span title="실습용 윈도우 EC2 인스턴스 자동화" class="linkLabel_WmDU">실습용 윈도우 EC2 인스턴스 자동화</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docusaurus/aws/ami"><span title="공유 AMI로 부터 가상 머신 시작하기" class="linkLabel_WmDU">공유 AMI로부터 가상 머신 시작하기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docusaurus/aws/hail-on-ec2"><span title="Hail on EC2 (옵션)" class="linkLabel_WmDU">Hail on EC2 (옵션)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docusaurus/aws/amazon-lightsail-for-research"><span title="Amazon Lightsail for Research" class="linkLabel_WmDU">Amazon Lightsail for Research</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docusaurus/aws/research-and-engineering-studio-on-aws"><span title="Research and Engineering Studio on AWS" class="linkLabel_WmDU">Research and Engineering Studio on AWS</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docusaurus/aws/dc6a6"><span title="리눅스 머신 실행" class="linkLabel_WmDU">리눅스 머신 실행</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docusaurus/aws/d82c8"><span title="유용한 링크들 모음" class="linkLabel_WmDU">유용한 링크들 모음</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docusaurus/aws/812b4"><span title="쉽게 따라하는 연구실 계정 관리" class="linkLabel_WmDU">쉽게 따라하는 연구실 계정 관리</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docusaurus/aws/rstudio"><span title="Rstudio 실습환경 자동화 구성" class="linkLabel_WmDU">Rstudio 실습환경 자동화 구성</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docusaurus/omics-on-aws/aws-healthomics"><span title="Omics on AWS" class="categoryLinkLabel_W154">Omics on AWS</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docusaurus/aws-batch/tagging-w-nextflow"><span title="AWS Batch" class="categoryLinkLabel_W154">AWS Batch</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docusaurus/aws-blast-performance-testing/26657"><span title="AWS BLAST Performance Testing" class="categoryLinkLabel_W154">AWS BLAST Performance Testing</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/docusaurus/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">대학 고객을 위한 AWS 길라잡이</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">리눅스 머신 실행</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>리눅스 머신 실행</h1></header><p>AWS 관리 콘솔 검색 창에 EC2를 입력합니다.</p>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2023-09-26-at-10-49-54-pm-aa6e742688486a9e600b123b96b239bf.png" width="2098" height="548" class="img_ev3q"></p>
+<p><strong>EC2</strong>를 선택하여 <strong>EC2 대시보드</strong>를 엽니다.</p>
+<p>인스턴스는 그래픽 사용자 인터페이스(콘솔) 또는 명령줄 스크립트를 통해 시작할 수 있습니다. 먼저 <strong>EC2 대시보드</strong>라고 하는 그래픽 콘솔 인터페이스부터 시작하겠습니다.</p>
+<p>대시보드의 레이아웃에 익숙해지는 데 몇 분 정도 시간을 투자하세요:\</p>
+<ul>
+<li class=""><strong>왼쪽 탐색 창</strong>: 저장된 Amazon 머신 이미지(AMI), 스토리지 볼륨, ssh 키와 같은 도구 및 기능.</li>
+<li class=""><strong>가운데</strong>: 리소스 목록 및 인스턴스 시작 기능.</li>
+<li class=""><strong>오른쪽 창</strong>: 문서 및 가격 등의 일반 정보.</li>
+</ul>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2024-05-08-at-9-01-22-pm-fbc60d44b8de8a8e010eca39e8d1c0ae.png" width="1680" height="747" class="img_ev3q"></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="신규-키페어-생성하기">신규 키페어 생성하기<a href="#신규-키페어-생성하기" class="hash-link" aria-label=" 신규 키페어 생성하기에 대한 직접 링크" title="신규 키페어 생성하기에 대한 직접 링크" translate="no">​</a></h2>
+<p>이 실습 섹션에서는 Linux 인스턴스를 생성하고 로그인하여 몇 가지 Linux 명령을 실행합니다. 인스턴스에 로그인하려면 SSH를 통해 연결할 수 있어야 합니다. 인스턴스에 액세스하기 위한 몇 가지 <strong>보안</strong> 계층이 있으며, AWS에서 <strong>기본적으로 사용</strong>하도록 설정되어 있습니다. 그 중 하나는 (아주 대략적으로) 고유한 <strong>사용자 이름과 비밀번호와 비슷</strong>하다고 생각할 수 있는 SSH 키 쌍을 사용하는 것입니다.</p>
+<p>다음 단계에서는 새 Linux 인스턴스에 로그인하는 데 사용할 새 SSH 키 쌍을 만드는 방법을 간략하게 설명합니다.</p>
+<p>1. AWS 관리 콘솔에 로그인하고 Amazon EC2 콘솔()을 엽니다.</p>
+<p>2. AWS 관리 콘솔의 오른쪽 상단 모서리에서 원하는 AWS 지역(예: <strong>N.Virginia 또는 Seoul</strong>)에 있는지 확인합니다.</p>
+<blockquote>
+<p>실습을 하면서 가끔 사용하는 브라우저의 국가 설정에 의해 다른 리전으로 리전 정보가 바뀌는 경우가 있습니다. 워크샵에 사용하고 있는 리전 정보가 맞는지 꼭 확인해주세요. 다른 리전일 경우 실습이 정상적으로 진행되지 않을 수 있습니다.</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2023-09-26-at-10-53-20-pm-728d086d9a68d8db4b7c045f33cbf4a9.png" width="1680" height="388" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2024-05-08-at-9-02-12-pm-2888939aea9c21bdf16b2ed081959b6e.png" width="662" height="684" class="img_ev3q"></p>
+<p>참고: 만일 실습환경이 Seoul 일 경우 위와 같이 선택될 수도 있습니다.</p>
+<p>3. 왼쪽 탐색창의 <strong>Network &amp; Security</strong> 섹션에서 <strong>Key Pairs</strong> 을 클릭합니다. 그러면 SSH 키 쌍을 관리할 수 있는 페이지가 표시됩니다.\</p>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2023-09-26-at-10-57-19-pm-00f1d90776775c659979fccedb000238.png" width="1680" height="1978" class="img_ev3q"></p>
+<p><strong>4. Key Pairs</strong> 페이지에서 브라우저 창 상단의 <strong>Create Key Pair</strong> 버튼을 클릭합니다.\</p>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2023-09-26-at-10-59-25-pm-fc852267632ac794c8b45b5c89663a15.png" width="1680" height="178" class="img_ev3q"></p>
+<p>5. 결과 팝업 창에서 원하는 키 쌍 (Key pair) 이름을 입력하고 EC2 인스턴스에 연결하는 데 사용할 ssh 클라이언트에 따라 .ppk 또는 .pem을 선택합니다(<strong>PuTTY의 경우 .ppk 선택</strong>). Windows 하위 시스템 Linux, MacOS-X ssh 클라이언트, Linux ssh 클라이언트, Windows ssh 클라이언트의 경우 <strong>.pem을 선택</strong>합니다.)</p>
+<p>기본값 그대로 Key pair type <code>RSA</code>를 그리고 실습에서 Cloud9 을 사용할 것이므로 Private key file format으로는 <code>.ppk</code> 를 선택합니다.</p>
+<p><strong>(Optional)</strong> Add new tag 를 클릭합니다. 태그는 AWS에서 리소스를 추적하는 효율적인 방법입니다. 이 리소스에 User(이니셜 입력)와 Grant(숫자를 입력하되 일관성 있게 입력)이라는 두 개의 태그를 추가하겠습니</p>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2024-05-09-at-8-07-33-am-7103be240377fef14142ee19d0d3f568.png" width="512" height="270" class="img_ev3q"></p>
+<p>마지막으로 키페어를 만들기 위해 <code>Create key pair</code>를 선택합니다.</p>
+<blockquote>
+<p>이 워크샵의 목적을 위해 여러 명이 <strong>동일한 AWS 계정을 사용하는 경우 에는</strong> 다른 참가자가 제공한 키 쌍 이름과 충돌하지 않도록 고유한 키 쌍 이름을 제공하세요. 쉽게 식별할 수 있도록 키 쌍에 이름 이니셜을 사용할 수 있습니다.</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2024-05-09-at-8-04-53-am-3fd1a6e1cff8be64665ec38a2bd1ffa0.png" width="1616" height="1958" class="img_ev3q"></p>
+<p>6. 생성한 키 쌍이 시스템에 자동으로 다운로드됩니다. 브라우저의 안내에 따라 파일을 기본 다운로드 위치에 저장합니다. 파일이 다운로드되었는지 확인하고 파일을 찾을 수 있는지 확인합니다. 방금 다운로드한 .<strong>ppk/pem</strong> 파일의 전체 경로를 기억하세요. 이 파일에는 향후 SSH 연결을 위한 개인 키가 포함되어 있습니다.</p>
+<p>7. 화면 상단에 <strong>Successfully created key pair</strong>라는 메시지가 표시됩니다. 생성한 키 쌍을 볼 수 있습니다. \</p>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2024-05-09-at-8-08-47-am-3b9a97d8a75c4248b6d16c481cc91396.png" width="1018" height="366" class="img_ev3q"></p>
+<p>\</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ec2-인스턴스-실행하기">EC2 인스턴스 실행하기<a href="#ec2-인스턴스-실행하기" class="hash-link" aria-label="EC2 인스턴스 실행하기에 대한 직접 링크" title="EC2 인스턴스 실행하기에 대한 직접 링크" translate="no">​</a></h2>
+<p>이제 EC2 Linux 기반 인스턴스를 시작합니다.</p>
+<p>1. AWS 관리 콘솔로 돌아가서 Amazon EC2 대시보드를 엽니다</p>
+<p>2. AWS 관리 콘솔의 오른쪽 상단 모서리에서 원하는 AWS 지역(예: <strong>N. Virginia 또는 Seoul</strong>)에 있는지 확인합니다. \</p>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2023-09-26-at-10-53-20-pm-728d086d9a68d8db4b7c045f33cbf4a9.png" width="1680" height="388" class="img_ev3q"></p>
+<p><strong>3. Launch instance</strong>를 클릭한 다음 드롭다운 메뉴에서 <strong>Launch instance</strong>를 다시 클릭합니다.</p>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2023-09-26-at-11-04-50-pm-18f41f5e1693a65fc4b951bd7cea306e.png" width="1456" height="1300" class="img_ev3q"></p>
+<p><strong>4. Launch an instance</strong> 페이지에서 인스턴스에 대해 원하는 이름을 지정(작성)할 수 있습니다.</p>
+<p>5. &quot;추가 태그 추가&quot; 및 &quot;태그 추가&quot;를 클릭합니다. 인스턴스에 대해 제공한 &quot;이름&quot;을 찾을 수 있습니다. 이제 키와 값을 입력합니다. 이 키(더 정확하게는 태그)는 인스턴스가 시작되면 콘솔에 나타납니다. 이를 통해 복잡한 환경에서 실행 중인 머신을 쉽게 추적할 수 있습니다. 이전에 키 쌍에 사용한 것과 유사한 태그를 추가로 생성하여 이 머신에 사용자와 부여 키를 지정하고 동일한 값을 입력합니다. 준비가 되면 <strong>Resource types</strong> 아래에서 Instances, Volumes, Network interfaces 를 선택합니다. </p>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2024-05-09-at-7-58-20-am-535487e75e60aa908932e8ca7141b445.png" width="1506" height="656" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2024-05-09-at-8-09-18-am-790bc7ca036063e38be19e4bb7ae49f1.png" width="604" height="644" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2024-05-09-at-8-10-28-am-e1fe48b5b877baf729ffad74378df5c7.png" width="1368" height="1326" class="img_ev3q"></p>
+<p>6. 이제 첫 번째 <strong>Amazon Linux 2023 AMI</strong>를 선택하고 <strong>Architecture</strong> 드롭다운 목록에서 **64-bit(x86)**를 선택합니다.</p>
+<blockquote>
+<p>설치된 패키지의 ami-xxxxxxxxx 레이블 및 특정 버전은 아래 이미지와 다를 수 있습니다.</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2023-09-26-at-11-08-49-pm-86f4a01aa60831644c94e41dab10af6d.png" width="1538" height="1340" class="img_ev3q"></p>
+<p><strong>7. Instance type</strong>에서 드롭다운 화살표를 클릭하고 검색창에 <strong>c5.2xlarge</strong>를 입력합니다.</p>
+<blockquote>
+<p>일반적으로 작업/분석에 필요한 RAM 및 CPU의 양을 분석하여 사용 사례에 맞는 적정 크기의 인스턴스를 선택해야 합니다. \</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2023-09-26-at-11-09-52-pm-de48f65a50aaeaba4e87c1669c3eca18.png" width="1598" height="576" class="img_ev3q"></p>
+<p><strong>8. Key pair (login)</strong> 아래의 드롭다운 목록에서 이 실습의 시작 부분에서 만든 키 쌍을 선택합니다. 여기 예시는 앞에서 만들었던 <code>brandon-keypair</code> 입니다. 여러분들이 각자 만들었고 사용할 Key pair를 선택해주세요.\</p>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2024-05-09-at-8-11-29-am-14d9a826876131d92e25a1455a4943c9.png" width="1590" height="474" class="img_ev3q"></p>
+<p>9. 다음으로 <strong>Network settings</strong> 에 대해 <strong>Edit</strong>을 클릭합니다. <strong>Subnet</strong> 및 <strong>Security group</strong> 세부 정보를 입력하라는 메시지가 표시됩니다. 보안 그룹은 방화벽 규칙이 됩니다. </p>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2024-05-09-at-8-00-35-am-5724ba8eae4a8d864a8d4394849ad765.png" width="1600" height="160" class="img_ev3q"></p>
+<p><br>
+<!-- -->    a. 서브넷(Subnet) 필드는 특정 가용 영역(AZ)에서 인  스턴스를 시작하도록 구성할 수 있습니다. 이 워크샵에서는 기본값을 유지하지만, 이렇게 하면 컴퓨터의 위치를 제어할 수 있습니다.<br>
+<!-- -->    b. 새 <strong>Security group name</strong>과 <strong>Description</strong>을 입력합니다. <strong>참고</strong>: 이 실습에서는 &quot;<code>[사용자 이니셜]-sec-group</code>&quot;을 사용합니다.<br>
+<!-- -->    c. TCP 포트 22를 허용하는 기존 SSH 규칙이 있는지 확인합니다.<br>
+<!-- -->    d. 어디서든 연결을 허용하려면 <strong>Source type</strong> 열 아래의 드롭다운 상자를 선택하고 <strong>0.0.0.0/0</strong>에 해당하는 <strong>Anywhere</strong>를 선택합니다.\</p>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2024-05-09-at-8-12-30-am-0b801b7d46f9e8d2fc2e0571c8120421.png" width="1586" height="1806" class="img_ev3q"></p>
+<p>10. <strong>Configure storage</strong> 에서 인스턴스에 스토리지 및 디스크 드라이브를 수정하거나 추가할 수 있습니다. 이 실습에서는 스토리지 기본값을 그대로 사용하겠습니다.</p>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2023-09-26-at-11-12-12-pm-2207c85bca3a1f6c14d27541ebb8bbf4.png" width="1532" height="572" class="img_ev3q"></p>
+<p>11. <strong>Summary</strong>에서 구성을 검토하고 <strong>Launch Instance</strong>을 클릭합니다.</p>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2024-05-09-at-8-01-43-am-0c9bb900f6b2d5401fde89914ca30739.png" width="702" height="1602" class="img_ev3q"></p>
+<p>이제 인스턴스가 시작되며 잠시 시간이 걸릴 수 있습니다. <strong>Successfully initiated launch of instance</strong> 라는 메시지와 함께 <strong>Launch Status</strong> 페이지가 표시됩니다.</p>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2024-05-09-at-8-02-33-am-c4a49ef97158dea33513087eddd3c266.png" width="942" height="284" class="img_ev3q"></p>
+<p>12. 페이지 오른쪽 하단에서 <strong>View all Instances</strong>를 클릭하여 EC2 인스턴스 목록을 확인합니다. 인스턴스를 클릭합니다. 초기화 프로세스를 거치게 됩니다. 인스턴스가 시작되면 Linux 서버는 물론 인스턴스가 속한 가용 영역(Availability Zone)과 공개적으로 라우팅할 수 있는 DNS 이름이 표시됩니다. \</p>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2023-10-06-at-11-39-11-pm-4b39e7f2c8de5ed43233e24900a1ada8.png" width="1680" height="471" class="img_ev3q"></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ssh-를-통한-ec2-인스턴스-접속">SSH 를 통한 EC2 인스턴스 접속<a href="#ssh-를-통한-ec2-인스턴스-접속" class="hash-link" aria-label="SSH 를 통한 EC2 인스턴스 접속에 대한 직접 링크" title="SSH 를 통한 EC2 인스턴스 접속에 대한 직접 링크" translate="no">​</a></h2>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2023-09-26-at-11-17-14-pm-cd53c741aa4efa78fac234b9b8c88e7c.png" width="1370" height="318" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2023-09-26-at-11-19-01-pm-3b860b785d5ea999c614bf95043ae8d4.png" width="1626" height="1306" class="img_ev3q"></p>
+<blockquote>
+<p>각 사용자의 OS 별로 아래의 내용을 참고하되 위와 같이 Connect 버튼을 눌러서도 쉽게 명령어를 참고할 수 있습니다.</p>
+</blockquote>
+<blockquote>
+<p>사용되는 AMI는 Amazon Linux 머신의 AMI이므로 사용자 이름은 &quot;<strong>ec2-user</strong>&quot;가 됩니다. 더 많은 정보는 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managing-users.html#ami-default-user-names" target="_blank" rel="noopener noreferrer" class="">여기</a>를 참고하세요.\</p>
+<p>For Amazon Linux 2023, Amazon Linux 2, or the Amazon Linux AMI, the user name is <strong>ec2-user</strong>.<br>
+<!-- -->For a <strong>CentOS</strong> AMI, the user name is centos or <strong>ec2-user</strong>.<br>
+<!-- -->For an <strong>Ubuntu</strong> AMI, the user name is <strong>ubuntu</strong>.</p>
+</blockquote>
+<blockquote>
+<p>아래의 EC2 접속 방법 중 선호하는 방법 1가지로 사용하면 됩니다. 여기서는 로컬에 설치된 Putty 나 Terminal 프로그램이 아니라 <em><strong>앞 단계에서 만들었던 Cloud9 환경에서 접속</strong></em> 하는 방법을 안내합니다.****</p>
+</blockquote>
+<p><strong>Connecting EC2 using Cloud9 (추천)</strong></p>
+<p>1. 키페어를 업로드합니다.</p>
+<p><code>.pem</code></p>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2023-10-18-at-12-28-40-pm-5a5b38a0272d2b62a93eb54e332b8077.png" width="952" height="846" class="img_ev3q"></p>
+<p>2. 해당 키페어를 사용해 EC2에 접속합니다.</p>
+<p>키페어 파일에 대하여 사용가능하게 파일 권한 수정</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">chmod 400 /path/my-key-pair.pem</span><br></span></code></pre></div></div>
+<p>주어진 키페어를 사용해 ssh로 EC2 서버 로그인</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">ssh -i /path/my-key-pair.pem ec2-user@</span><br></span></code></pre></div></div>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2024-05-09-at-8-26-39-am-4f77a31efa43739521986190082beac9.png" width="1834" height="552" class="img_ev3q"></p>
+<p>로컬 컴퓨터의 운영체제에 따라 로컬 컴퓨터에서 Linux 인스턴스로 연결하는 데 필요한 옵션이 결정됩니다. 다음은 Windows에서 PuTTY 또는 OpenSSH를 사용하여 연결하는 방법, Linux 및 MacOS-X에서 ssh 클라이언트를 사용하여 연결하는 방법입니다. Cloud9 환경이 아니라면 필요시 아래 안내에 따라 각자 맞는 방식으로 접속할 수도 있습니다.</p>
+<p>Connecting from Windows using PuTTY, MobaXterm, Windows Subsystem for Linux, OpenSSH (mac OS)</p>
+<p><strong>Connecting from Windows using PuTTY</strong></p>
+<p>We will now use the private <strong>.ppk</strong> file of the key pair generated earlier to open a SSH session to the EC2 instance.</p>
+<ol>
+<li class="">
+<p>Start the PuTTY application.</p>
+</li>
+<li class="">
+<p>Enter in the IP address of the EC2 instance in the <strong>Host Name (or IP address)</strong> field.</p>
+</li>
+<li class="">
+<p>To save the session (so we dont have to repeat the configuration everytime) provide a name in the <strong>Saved Sessions</strong> field.</p>
+</li>
+<li class="">
+<p>In the left navigation pane under <strong>Connections</strong> click on <strong>SSH</strong> and next click on <strong>Auth</strong>.</p>
+</li>
+<li class="">
+<p>In the <strong>Private key file for authentication</strong> field click <strong>Browse</strong> and browse in the <strong>.ppk</strong> file downloaded when creating the key pair earlier.</p>
+</li>
+<li class="">
+<p>Next in the left navigation pane click on <strong>Session</strong> (<strong>scroll up if you need to</strong>) and and further click on <strong>Save</strong> to save the session.</p>
+</li>
+<li class="">
+<p>Next click on <strong>Open</strong> to start the SSH session.</p>
+</li>
+<li class="">
+<p>PuTTy will now attempt to start an SSH Session.</p>
+</li>
+</ol>
+<p><strong>NOTE</strong>: You will get a security alert <strong>The Servers host key is not cached in the registry</strong>, click on <strong>Yes</strong> to continue.</p>
+<ol start="9">
+<li class="">
+<p>You will now be presented with the <strong>login as</strong> prompt.</p>
+</li>
+<li class="">
+<p>At the <strong>login as</strong> prompt type <strong>ec2-user</strong> and hit enter.</p>
+</li>
+</ol>
+<p><strong>NOTE</strong>: Username to be used here is <strong>ec2-user</strong> if your image is Amazon Linux OS and <strong>ubuntu</strong> if your image is Ubuntu Linux OS.</p>
+<p>You would have now logged into the EC2 instance on AWS.</p>
+<hr>
+<p><strong>Connecting from Windows using MobaXterm</strong></p>
+<p>We will use the private <strong>.pem</strong> key pair to open an SSH session to the EC2 instance.</p>
+<ol>
+<li class="">
+<p>Start the MobaXterm application.</p>
+</li>
+<li class="">
+<p>To open a session, click on <strong>Session</strong> in the top-left corner, then click <strong>SSH</strong>.</p>
+</li>
+<li class="">
+<p>Enter in the IP address of the EC2 instance in the <strong>Host Name</strong> field.</p>
+</li>
+<li class="">
+<p>To the right, select username and enter your username for the session.</p>
+</li>
+</ol>
+<p><strong>NOTE</strong>: Username to be used here is <strong>ec2-user</strong> if your image is Amazon Linux OS and <strong>ubuntu</strong> if your image is Ubuntu Linux OS.</p>
+<ol start="5">
+<li class="">
+<p>Below, click on <strong>Advanced Settings</strong>, and select <strong>private key</strong> (use your .pem file).</p>
+</li>
+<li class="">
+<p>Click <strong>Ok</strong>.</p>
+</li>
+</ol>
+<p>MobaXterm will have logged you in to your EC2 instance.</p>
+<hr>
+<p><strong>Connecting from Windows using Windows Subsystem for Linux</strong></p>
+<p>We will now use the private <strong>.pem</strong> file of the key pair generated earlier to open a SSH session to the EC2 instance.</p>
+<ol>
+<li class="">Copy the private key from Windows to WSL - In a WSL terminal window, copy the .pem file (for the key pair that you specified when you launched the instance) from Windows to WSL. Note the fully-qualified path to the .pem file on WSL to use when connecting to your instance.</li>
+</ol>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">cp /mnt//path/my-key-pair.pem ~/WSL-path/my-key-pair.pem</span><br></span></code></pre></div></div>
+<ol start="2">
+<li class="">In a terminal window, use the ssh command to connect to the instance. Specify the path and file name of the private key (.pem), the user name for your instance, and the public DNS name or IP Address.</li>
+</ol>
+<p><strong>NOTE</strong>: Username to be used here is <strong>ec2-user</strong> if your image is Amazon Linux OS and <strong>ubuntu</strong> if your image is Ubuntu Linux OS.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">sudo ssh -i /path/my-key-pair.pem ec2-user@</span><br></span></code></pre></div></div>
+<p>You will see the following response:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">The authenticity of host &#x27;&#x27;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">can&#x27;t be established.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">RSA key fingerprint is 1f:51:ae:28:bf:89:e9:d8:1f:25:5d:37:2d:7d:b8:ca:9f:f5:f1:6f.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Are you sure you want to continue connecting (yes/no)?</span><br></span></code></pre></div></div>
+<ol start="3">
+<li class="">Enter <strong>Yes</strong></li>
+</ol>
+<p>you will now be logged into the EC2 Instance.</p>
+<hr>
+<p><strong>Connecting using SSH on Linux &amp; MacOS and OpenSSH on Windows</strong></p>
+<p>We will now use the private <strong>.pem</strong> file of the key pair generated earlier to open a SSH session to the EC2 instance.</p>
+<ol>
+<li class="">In a terminal window, use the ssh command to connect to the instance. Specify the path and file name of the private key (.pem), the user name for your instance, and the public DNS name or IP Address of your instance.</li>
+</ol>
+<p><strong>NOTE</strong>: You might need to change the permissions of the key file by running the <strong>chmod</strong> command as follows</p>
+<p><strong>NOTE</strong>: Username to be used here is <strong>ec2-user</strong> if your image is Amazon Linux OS and <strong>ubuntu</strong> if your image is Ubuntu Linux OS.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">chmod 400 /path/my-key-pair.pem</span><br></span></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">ssh -i /path/my-key-pair.pem ec2-user@</span><br></span></code></pre></div></div>
+<p>You see a response like the following:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">The authenticity of host &#x27;ec2-198-51-100-1.compute-1.amazonaws.com (198-51-100-1)&#x27; can&#x27;t be established.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ECDSA key fingerprint is l4UB/neBad9tvkgJf1QZWxheQmR59WgrgzEimCG6kZY.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Are you sure you want to continue connecting (yes/no)?</span><br></span></code></pre></div></div>
+<ol start="2">
+<li class="">Enter <strong>Yes</strong></li>
+</ol>
+<p>You will now be logged into the Instance.</p>
+<p>이에 대한 자세한 안내는 다음 링크를 참조하세요: <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank" rel="noopener noreferrer" class="">PuTTY</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/WSL.html" target="_blank" rel="noopener noreferrer" class="">Windows Susbsystem for Linux</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html" target="_blank" rel="noopener noreferrer" class="">MacOS-X ssh Client</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html" target="_blank" rel="noopener noreferrer" class="">Linux ssh client</a></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="linux-명령-실행">Linux 명령 실행<a href="#linux-명령-실행" class="hash-link" aria-label="Linux 명령 실행에 대한 직접 링크" title="Linux 명령 실행에 대한 직접 링크" translate="no">​</a></h2>
+<p>몇 가지 Linux 명령을 실행하여 몇 가지 소프트웨어 패키지를 설치해 보겠습니다. 다음 명령을 입력하고 필요한 경우 <strong>y</strong>를 누른 다음 <strong>Enter</strong> 키를 누릅니다. 이제 시작한 인스턴스는 완전히 비어 있으며 다운로드한 프로그램이나 소프트웨어가 포함되어 있지 않습니다. 처음부터 새로 구축해야 합니다.</p>
+<p>From yum <strong>(nmap)</strong>: 네트워크 도구를 설치하기 위해\</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">sudo yum install -y nmap</span><br></span></code></pre></div></div>
+<p>From source <strong>(seqtk)</strong>:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">sudo su -</span><br></span></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">yum install git make</span><br></span></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">cd /usr/local/src</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git clone https://github.com/lh3/seqtk.git</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">cd seqtk/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">make</span><br></span></code></pre></div></div>
+<p>Oops! 명령이 실패했습니다. 아직 뭔가 빠졌습니다. 이제 gcc, zlib-devel을 설치합니다:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">yum install -y gcc zlib-devel</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">make</span><br></span></code></pre></div></div>
+<p>이제 명령이 인식되어야 합니다! 이제 됐어요. seqtk를 다시 시도  합니다:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">./seqtk</span><br></span></code></pre></div></div>
+<p>보시다시피, 기본 이미지는 운영 체제만 깔끔하게 초기 설치한 것입니다. 이 이미지는 필요한 소프트웨어가 정확히 설치되도록 사용자 지정하는 데 적합하지만 <strong>약간의 설정이 필요</strong>합니다. 또 다른 옵션은 이미 일부 소프트웨어가 설치되어 있는 <strong>AMI</strong>(Amazon 머신 이미지)를 사용하는 것입니다. 본 실습에서 이후에 사용할 AMI에는 꽤 많은 유전체학 소프트웨어가 사전 설치되어 있어 누구나 사용할 수 있습니다. 다음 섹션에서 이 작업을 수행하겠습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="가상컴퓨터-멈추기-및-종료">가상컴퓨터 멈추기 및 종료<a href="#가상컴퓨터-멈추기-및-종료" class="hash-link" aria-label="가상컴퓨터 멈추기 및 종료에 대한 직접 링크" title="가상컴퓨터 멈추기 및 종료에 대한 직접 링크" translate="no">​</a></h2>
+<p>이제 인스턴스를 중지하고 종료하겠습니다. <strong>이 단계를 수행하기 전에 강사의 말을 들어보세요.</strong> 교육 목적으로 단계를 검토하도록 요청할 수 있지만 실제로 인스턴스를 종료하지는 않을 수 있습니다.</p>
+<p>1. AWS 콘솔로 돌아갑니다. AWS 관리 콘솔 검색창에 &quot;EC2&quot;를 입력하거나 왼쪽 메뉴에서 <strong>EC2 Dashboard</strong> 항목을 클릭합니다.</p>
+<p><strong>2. EC2</strong>를 선택하여 EC2 대시보드를 엽니다.</p>
+<p>3. 왼쪽 탐색 창의 **Instances **섹션에서 <strong>Instances</strong>를 클릭하여 실행 중, 중지된 인스턴스 및 종료된 인스턴스를 모두 확인합니다.</p>
+<p>4. 생성된 인스턴스를 선택하고 <strong>Instance state</strong> 를 클릭한 다음 <strong>Stop instance</strong> 를 클릭합니다.</p>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2023-09-26-at-11-26-35-pm-1cee13e28b64dd3cdba23048fe6c9ebd.png" width="2242" height="412" class="img_ev3q"></p>
+<p><strong>5. Stop</strong>를 클릭하여 인스턴스 중지를 확인합니다.</p>
+<p>이제 인스턴스가 중지를 시도하고 인스턴스 상태 열에 중지됨이 표시될 때까지 인스턴스가 중지될 때까지 몇 분간 기다립니다.</p>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2023-09-26-at-11-27-07-pm-65055ace7b7b4691683b9bde94547e8a.png" width="1158" height="416" class="img_ev3q"></p>
+<p>6. 인스턴스 목록에서 EC2 인스턴스를 선택합니다. <strong>Instance State</strong>를 클릭한 다음 <strong>Terminate instance</strong>를 클릭합니다.\</p>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2023-09-26-at-11-30-49-pm-d996ac46b498fe9c002a7fbfcdddec25.png" width="1742" height="402" class="img_ev3q"></p>
+<p>7. 인스턴스 종료 대화 상자에서 <strong>EBS 지원 인스턴스에서는 인스턴스가 종료될 때 루트 EBS 볼륨이 삭제되는 것이 기본 동작입니다. 로컬 드라이브의 모든 스토리지는 손실</strong>됩니다. 계속하려면 <strong>Terminate</strong>를 선택합니다.</p>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2023-09-26-at-11-31-00-pm-84843453575b7a01ab539dc844f284d8.png" width="1614" height="680" class="img_ev3q">이제 인스턴스가 종료됩니다.</p>
+<p>8. 몇 분 후에 인스턴스의 <strong>Instance state</strong>가 업데이트되어 <strong>Terminated</strong>을 표시합니다.\</p>
+<p><img decoding="async" loading="lazy" alt="이미지" src="/docusaurus/assets/images/screenshot-2023-09-26-at-11-33-02-pm-a86c5d1db3d400962ea92f72e2a1e128.png" width="1086" height="300" class="img_ev3q"></p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/aws/dc6a6.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>페이지 편집</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/docusaurus/aws/research-and-engineering-studio-on-aws"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">Research and Engineering Studio on AWS</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docusaurus/aws/d82c8"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">유용한 링크들 모음</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#신규-키페어-생성하기" class="table-of-contents__link toc-highlight">신규 키페어 생성하기</a></li><li><a href="#ec2-인스턴스-실행하기" class="table-of-contents__link toc-highlight">EC2 인스턴스 실행하기</a></li><li><a href="#ssh-를-통한-ec2-인스턴스-접속" class="table-of-contents__link toc-highlight">SSH 를 통한 EC2 인 스턴스 접속</a></li><li><a href="#linux-명령-실행" class="table-of-contents__link toc-highlight">Linux 명령 실행</a></li><li><a href="#가상컴퓨터-멈추기-및-종료" class="table-of-contents__link toc-highlight">가상컴퓨터 멈추기 및 종료</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docusaurus/docs/amazon-s3/s3-select">AWS Services</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://aws.amazon.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">AWS<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/aws-wwps-kr-tech/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Amazon Web Services, Inc. or its affiliates. All rights reserved.</div></div></div></footer></div>
+</body>
+</html>

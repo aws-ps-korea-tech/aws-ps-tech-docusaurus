@@ -1,0 +1,28 @@
+{
+  "id": "AWS-BLAST-Performance-Testing/EBS-최적화-아키텍처-테스트-결과",
+  "title": "EBS 최적화 아키텍처 테스트 결과",
+  "description": "테스트 날짜 ap-northeast-2 (Seoul)",
+  "source": "@site/docs/AWS-BLAST-Performance-Testing/EBS-최적화-아키텍처-테스트-결과.md",
+  "sourceDirName": "AWS-BLAST-Performance-Testing",
+  "slug": "/AWS-BLAST-Performance-Testing/EBS-최적화-아키텍처-테스트-결과",
+  "permalink": "/docusaurus/docs/AWS-BLAST-Performance-Testing/EBS-최적화-아키텍처-테스트-결과",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/AWS-BLAST-Performance-Testing/EBS-최적화-아키텍처-테스트-결과.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "EBS 최적화 아키텍처 테스트 결과",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "비용 분석 (Cost Analysis)",
+    "permalink": "/docusaurus/docs/AWS-BLAST-Performance-Testing/비용-분석-(Cost-Analysis)"
+  },
+  "next": {
+    "title": "EFS vs FSx for Lustre 비교 분석 (실제 테스트 결과 포함)",
+    "permalink": "/docusaurus/docs/AWS-BLAST-Performance-Testing/EFS-vs-FSx-for-Lustre-비교-분석-(실제-테스트-결과-포함)"
+  }
+}

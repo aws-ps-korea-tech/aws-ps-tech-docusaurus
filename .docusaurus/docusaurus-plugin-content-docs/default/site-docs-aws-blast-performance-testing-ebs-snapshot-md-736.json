@@ -1,0 +1,24 @@
+{
+  "id": "aws-blast-performance-testing/ebs-snapshot",
+  "title": "EBS Snapshot 프로비저닝 성능 분석",
+  "description": "작성일: 2026-01-07",
+  "source": "@site/docs/aws-blast-performance-testing/ebs-snapshot.md",
+  "sourceDirName": "aws-blast-performance-testing",
+  "slug": "/aws-blast-performance-testing/ebs-snapshot",
+  "permalink": "/docusaurus/aws-blast-performance-testing/ebs-snapshot",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/aws-blast-performance-testing/ebs-snapshot.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "title": "EBS Snapshot 프로비저닝 성능 분석",
+    "sidebar_position": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "EFS vs FSx for Lustre 비교 분석 (실제 테스트 결과 포함)",
+    "permalink": "/docusaurus/aws-blast-performance-testing/efs-vs-fsx-for-lustre"
+  }
+}

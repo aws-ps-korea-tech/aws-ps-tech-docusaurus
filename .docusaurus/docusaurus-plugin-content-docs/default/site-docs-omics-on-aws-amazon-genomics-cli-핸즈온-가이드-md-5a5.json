@@ -1,0 +1,28 @@
+{
+  "id": "Omics-on-AWS/Amazon-Genomics-CLI-핸즈온-가이드",
+  "title": "Amazon Genomics CLI - 핸즈온 가이드",
+  "description": "여기서는 Amazon Genomics CLI (이하 AGC)를 간단히 AWS Cloud9 에서 세팅하고, 실행하는 방법을 안내합니다.",
+  "source": "@site/docs/Omics-on-AWS/Amazon-Genomics-CLI-핸즈온-가이드.md",
+  "sourceDirName": "Omics-on-AWS",
+  "slug": "/Omics-on-AWS/Amazon-Genomics-CLI-핸즈온-가이드",
+  "permalink": "/docusaurus/docs/Omics-on-AWS/Amazon-Genomics-CLI-핸즈온-가이드",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/Omics-on-AWS/Amazon-Genomics-CLI-핸즈온-가이드.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Amazon Genomics CLI - 핸즈온 가이드",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "S3 Select 기능 소개",
+    "permalink": "/docusaurus/docs/Amazon-S3/S3-Select-기능-소개"
+  },
+  "next": {
+    "title": "제목 없음",
+    "permalink": "/docusaurus/docs/eGovFramework-on-AWS/제목-없음"
+  }
+}

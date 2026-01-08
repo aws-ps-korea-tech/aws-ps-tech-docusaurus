@@ -1,0 +1,28 @@
+{
+  "id": "aws/ec2-ami",
+  "title": "EC2로부터 이미지 (AMI) 생성",
+  "description": "EC2 인스턴스 중지",
+  "source": "@site/docs/aws/ec2-ami.md",
+  "sourceDirName": "aws",
+  "slug": "/aws/ec2-ami",
+  "permalink": "/docusaurus/aws/ec2-ami",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/aws/ec2-ami.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "title": "EC2로부터 이미지 (AMI) 생성",
+    "sidebar_position": 8
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "데이터 다운로드 실습",
+    "permalink": "/docusaurus/aws/40008"
+  },
+  "next": {
+    "title": "실습용 윈도우 EC2 인스턴스 자동화",
+    "permalink": "/docusaurus/aws/ec2-BcK"
+  }
+}

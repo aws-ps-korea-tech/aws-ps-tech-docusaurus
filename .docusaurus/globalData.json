@@ -1,0 +1,283 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docusaurus/",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docusaurus/",
+          "mainDocId": "index",
+          "docs": [
+            {
+              "id": "amazon-s3/01161",
+              "path": "/docusaurus/amazon-s3/01161",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "amazon-s3/58a2f",
+              "path": "/docusaurus/amazon-s3/58a2f",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "amazon-s3/s3-select",
+              "path": "/docusaurus/amazon-s3/s3-select",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws-batch/tagging-w-nextflow",
+              "path": "/docusaurus/aws-batch/tagging-w-nextflow",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws-batch/troubleshooting-for-aws-batch-nextflow",
+              "path": "/docusaurus/aws-batch/troubleshooting-for-aws-batch-nextflow",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws-blast-performance-testing/26657",
+              "path": "/docusaurus/aws-blast-performance-testing/26657",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws-blast-performance-testing/cost-analysis",
+              "path": "/docusaurus/aws-blast-performance-testing/cost-analysis",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws-blast-performance-testing/ebs",
+              "path": "/docusaurus/aws-blast-performance-testing/ebs",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws-blast-performance-testing/ebs-snapshot",
+              "path": "/docusaurus/aws-blast-performance-testing/ebs-snapshot",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws-blast-performance-testing/efs-vs-fsx-for-lustre",
+              "path": "/docusaurus/aws-blast-performance-testing/efs-vs-fsx-for-lustre",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws/28f0b",
+              "path": "/docusaurus/aws/28f0b",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws/40008",
+              "path": "/docusaurus/aws/40008",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws/812b4",
+              "path": "/docusaurus/aws/812b4",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws/amazon-lightsail-for-research",
+              "path": "/docusaurus/aws/amazon-lightsail-for-research",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws/ami",
+              "path": "/docusaurus/aws/ami",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws/ami-gwl",
+              "path": "/docusaurus/aws/ami-gwl",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws/aws",
+              "path": "/docusaurus/aws/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws/aws-cli",
+              "path": "/docusaurus/aws/aws-cli",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws/cloud9",
+              "path": "/docusaurus/aws/cloud9",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws/d2dde",
+              "path": "/docusaurus/aws/d2dde",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws/d61e4",
+              "path": "/docusaurus/aws/d61e4",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws/d82c8",
+              "path": "/docusaurus/aws/d82c8",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws/dc6a6",
+              "path": "/docusaurus/aws/dc6a6",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws/ec2",
+              "path": "/docusaurus/aws/ec2",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws/ec2-ami",
+              "path": "/docusaurus/aws/ec2-ami",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws/ec2-BcK",
+              "path": "/docusaurus/aws/ec2-BcK",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws/hail-on-ec2",
+              "path": "/docusaurus/aws/hail-on-ec2",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws/otp",
+              "path": "/docusaurus/aws/otp",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws/research-and-engineering-studio-on-aws",
+              "path": "/docusaurus/aws/research-and-engineering-studio-on-aws",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "aws/rstudio",
+              "path": "/docusaurus/aws/rstudio",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "index",
+              "path": "/docusaurus/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "omics-on-aws/65b9e",
+              "path": "/docusaurus/omics-on-aws/65b9e",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "omics-on-aws/a597e",
+              "path": "/docusaurus/omics-on-aws/a597e",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "omics-on-aws/amazon-emr-on-ec2",
+              "path": "/docusaurus/omics-on-aws/amazon-emr-on-ec2",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "omics-on-aws/amazon-genomics-cli-vDj",
+              "path": "/docusaurus/omics-on-aws/amazon-genomics-cli-vDj",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "omics-on-aws/aws-glue",
+              "path": "/docusaurus/omics-on-aws/aws-glue",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "omics-on-aws/aws-healthomics",
+              "path": "/docusaurus/omics-on-aws/aws-healthomics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "omics-on-aws/aws-healthomics-annotation",
+              "path": "/docusaurus/omics-on-aws/aws-healthomics-annotation",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "omics-on-aws/aws-healthomics-fastq-to-vcf-annotation",
+              "path": "/docusaurus/omics-on-aws/aws-healthomics-fastq-to-vcf-annotation",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "omics-on-aws/aws-healthomics-run-analyzer-run-1910249",
+              "path": "/docusaurus/omics-on-aws/aws-healthomics-run-analyzer-run-1910249",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "omics-on-aws/aws-healthomics-storage",
+              "path": "/docusaurus/omics-on-aws/aws-healthomics-storage",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "omics-on-aws/aws-healthomics-troubleshooting",
+              "path": "/docusaurus/omics-on-aws/aws-healthomics-troubleshooting",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "omics-on-aws/example-code",
+              "path": "/docusaurus/omics-on-aws/example-code",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "omics-on-aws/hail-with-amazon-emr-notebook",
+              "path": "/docusaurus/omics-on-aws/hail-with-amazon-emr-notebook",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "omics-on-aws/nf-core-rnaseq",
+              "path": "/docusaurus/omics-on-aws/nf-core-rnaseq",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "omics-on-aws/nf-core-scrnaseq",
+              "path": "/docusaurus/omics-on-aws/nf-core-scrnaseq",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "omics-on-aws/nf-core-spatialvi",
+              "path": "/docusaurus/omics-on-aws/nf-core-spatialvi",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "omics-on-aws/quickstart-hail-english",
+              "path": "/docusaurus/omics-on-aws/quickstart-hail-english",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "omics-on-aws/quickstart-hail-korean",
+              "path": "/docusaurus/omics-on-aws/quickstart-hail-korean",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "omics-on-aws/store-multimodal-data-with-purpose-built-health-ai-services",
+              "path": "/docusaurus/omics-on-aws/store-multimodal-data-with-purpose-built-health-ai-services",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "omics-on-aws/wdl-hifi-human-wgs-wdl",
+              "path": "/docusaurus/omics-on-aws/wdl-hifi-human-wgs-wdl",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/docusaurus/",
+                "label": "index"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

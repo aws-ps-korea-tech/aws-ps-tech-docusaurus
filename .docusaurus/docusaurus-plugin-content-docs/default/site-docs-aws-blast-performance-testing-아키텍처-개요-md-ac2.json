@@ -1,0 +1,28 @@
+{
+  "id": "aws-blast-performance-testing/아키텍처-개요",
+  "title": "아키텍처 개요",
+  "description": "Architecture Overview",
+  "source": "@site/docs/aws-blast-performance-testing/아키텍처-개요.md",
+  "sourceDirName": "aws-blast-performance-testing",
+  "slug": "/aws-blast-performance-testing/아키텍처-개요",
+  "permalink": "/docusaurus/docs/aws-blast-performance-testing/아키텍처-개요",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/aws-blast-performance-testing/아키텍처-개요.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "아키텍처 개요",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Troubleshooting for AWS Batch & Nextflow",
+    "permalink": "/docusaurus/docs/aws-batch/troubleshooting-for-aws-batch--nextflow"
+  },
+  "next": {
+    "title": "비용 분석 (Cost Analysis)",
+    "permalink": "/docusaurus/docs/aws-blast-performance-testing/비용-분석-cost-analysis"
+  }
+}

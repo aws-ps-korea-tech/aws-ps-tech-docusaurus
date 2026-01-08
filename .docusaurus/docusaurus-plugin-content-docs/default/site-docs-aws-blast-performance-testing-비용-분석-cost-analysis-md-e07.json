@@ -1,0 +1,28 @@
+{
+  "id": "AWS-BLAST-Performance-Testing/비용-분석-(Cost-Analysis)",
+  "title": "비용 분석 (Cost Analysis)",
+  "description": "Region: ap-northeast-2 (Seoul)",
+  "source": "@site/docs/AWS-BLAST-Performance-Testing/비용-분석-(Cost-Analysis).md",
+  "sourceDirName": "AWS-BLAST-Performance-Testing",
+  "slug": "/AWS-BLAST-Performance-Testing/비용-분석-(Cost-Analysis)",
+  "permalink": "/docusaurus/docs/AWS-BLAST-Performance-Testing/비용-분석-(Cost-Analysis)",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/AWS-BLAST-Performance-Testing/비용-분석-(Cost-Analysis).md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "비용 분석 (Cost Analysis)",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "아키텍처 개요",
+    "permalink": "/docusaurus/docs/AWS-BLAST-Performance-Testing/아키텍처-개요"
+  },
+  "next": {
+    "title": "EBS 최적화 아키텍처 테스트 결과",
+    "permalink": "/docusaurus/docs/AWS-BLAST-Performance-Testing/EBS-최적화-아키텍처-테스트-결과"
+  }
+}

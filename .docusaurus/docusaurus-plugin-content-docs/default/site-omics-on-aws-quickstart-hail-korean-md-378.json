@@ -1,0 +1,28 @@
+{
+  "id": "omics-on-aws/quickstart-hail-korean",
+  "title": "Quickstart Hail (Korean)",
+  "description": "bkmrk-%C2%A0}",
+  "source": "@site/omics-on-aws/quickstart-hail-korean.md",
+  "sourceDirName": "omics-on-aws",
+  "slug": "/omics-on-aws/quickstart-hail-korean",
+  "permalink": "/docusaurus/omics-on-aws/quickstart-hail-korean",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/omics-on-aws/quickstart-hail-korean.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Quickstart Hail (Korean)",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Hail with Amazon EMR notebook",
+    "permalink": "/docusaurus/omics-on-aws/hail-with-amazon-emr-notebook"
+  },
+  "next": {
+    "title": "Quickstart Hail (English)",
+    "permalink": "/docusaurus/omics-on-aws/quickstart-hail-english"
+  }
+}

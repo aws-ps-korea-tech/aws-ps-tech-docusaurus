@@ -1,0 +1,28 @@
+{
+  "id": "omics-on-aws/aws-healthomics로-유전체-분석-fastq-to-vcf-annotation-자동화하기",
+  "title": "AWS HealthOmics로 유전체 분석 (Fastq to VCF, Annotation) 자동화하기",
+  "description": "AWS HealthOmics 워크플로 기능을 사용해 자체 워크플로를 가져오거나 기존의 Ready2Run 워크플로를 실행하여 유전체학 또는 기타 다중 오믹스 데이터를 처리할 수 있습니다.",
+  "source": "@site/docs/omics-on-aws/aws-healthomics로-유전체-분석-fastq-to-vcf-annotation-자동화하기.md",
+  "sourceDirName": "omics-on-aws",
+  "slug": "/omics-on-aws/aws-healthomics로-유전체-분석-fastq-to-vcf-annotation-자동화하기",
+  "permalink": "/docusaurus/docs/omics-on-aws/aws-healthomics로-유전체-분석-fastq-to-vcf-annotation-자동화하기",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/omics-on-aws/aws-healthomics로-유전체-분석-fastq-to-vcf-annotation-자동화하기.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "title": "AWS HealthOmics로 유전체 분석 (Fastq to VCF, Annotation) 자동화하기",
+    "sidebar_position": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "WDL 워크플로우 마이그레이션 하기 (HiFi-human-WGS-WDL)",
+    "permalink": "/docusaurus/docs/omics-on-aws/wdl-워크플로우-마이그레이션-하기-hifi-human-wgs-wdl"
+  },
+  "next": {
+    "title": "AWS HealthOmics - Storage",
+    "permalink": "/docusaurus/docs/omics-on-aws/aws-healthomics---storage"
+  }
+}

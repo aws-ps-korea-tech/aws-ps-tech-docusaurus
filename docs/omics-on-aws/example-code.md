@@ -1,5 +1,5 @@
 ---
-title: Example code
+title: "Example code"
 sidebar_position: 0
 ---
 
@@ -7,9 +7,9 @@ sidebar_position: 0
 
 Python으로 Nextflow 작성하기
 
-``` {#bkmrk-import-os-from-textw dir="ltr"}
-import os
-from textwrap import dedent
+``` 
+Import os
+from textwrap Import dedent
 
 os.makedirs('workflows/nf/sample', exist_ok=True)
 
@@ -21,24 +21,11 @@ params.addressee = null
 
 if (!params.addressee) exit 1, "required parameter 'addressee' missing"
 
-process Greet {
-    publishDir '/mnt/workflow/pubdir'
-    input:
-        val greeting
-        val addressee
-    
-    output:
-        path "output", emit: output_file
-    
-    script:
-        """
-        echo "${greeting} ${addressee}" | tee output
+process Greet  $" | tee output
         """
 }
 
-workflow {
-    Greet(params.greeting, params.addressee)
-}
+workflow 
 
 ''').strip()
 

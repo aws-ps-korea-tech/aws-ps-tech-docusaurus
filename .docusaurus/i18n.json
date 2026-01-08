@@ -1,0 +1,31 @@
+{
+  "defaultLocale": "ko",
+  "locales": [
+    "ko",
+    "en"
+  ],
+  "path": "i18n",
+  "currentLocale": "ko",
+  "localeConfigs": {
+    "ko": {
+      "label": "한국어",
+      "direction": "ltr",
+      "htmlLang": "ko",
+      "calendar": "gregory",
+      "path": "ko",
+      "translate": false,
+      "url": "https://aws-wwps-kr-tech.github.io",
+      "baseUrl": "/docusaurus/"
+    },
+    "en": {
+      "label": "English",
+      "direction": "ltr",
+      "htmlLang": "en",
+      "calendar": "gregory",
+      "path": "en",
+      "translate": false,
+      "url": "https://aws-wwps-kr-tech.github.io",
+      "baseUrl": "/docusaurus/en/"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "omics-on-aws/65b9e",
+  "title": "소개 및 실습 준비",
+  "description": "본 문서는 Guidance for Multi-Modal Data Analysis with AWS Health and ML Services 를 참고하였으며 여기에 있는 Open sample code를 참고하여 정리하였습니다.",
+  "source": "@site/omics-on-aws/65b9e.md",
+  "sourceDirName": "omics-on-aws",
+  "slug": "/omics-on-aws/65b9e",
+  "permalink": "/docusaurus/omics-on-aws/65b9e",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/omics-on-aws/65b9e.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 0,
+  "frontMatter": {
+    "title": "소개 및 실습 준비",
+    "sidebar_position": 0
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "AWS HealthOmics - Troubleshooting",
+    "permalink": "/docusaurus/omics-on-aws/aws-healthomics-troubleshooting"
+  },
+  "next": {
+    "title": "AWS HealthOmics Run Analyzer 분석 리포트 (Run: 1910249)",
+    "permalink": "/docusaurus/omics-on-aws/aws-healthomics-run-analyzer-run-1910249"
+  }
+}

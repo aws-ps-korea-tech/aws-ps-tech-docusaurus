@@ -1,0 +1,28 @@
+{
+  "id": "aws-batch/tagging-w-nextflow",
+  "title": "Tagging w/ Nextflow",
+  "description": "Tagging 소개",
+  "source": "@site/docs/aws-batch/tagging-w-nextflow.md",
+  "sourceDirName": "aws-batch",
+  "slug": "/aws-batch/tagging-w-nextflow",
+  "permalink": "/docusaurus/aws-batch/tagging-w-nextflow",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/aws-batch/tagging-w-nextflow.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Tagging w/ Nextflow",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Example code",
+    "permalink": "/docusaurus/omics-on-aws/example-code"
+  },
+  "next": {
+    "title": "Troubleshooting for AWS Batch & Nextflow",
+    "permalink": "/docusaurus/aws-batch/troubleshooting-for-aws-batch-nextflow"
+  }
+}

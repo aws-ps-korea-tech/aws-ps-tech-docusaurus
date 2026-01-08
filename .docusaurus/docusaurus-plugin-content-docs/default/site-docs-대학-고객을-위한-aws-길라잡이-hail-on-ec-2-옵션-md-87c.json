@@ -1,0 +1,28 @@
+{
+  "id": "대학-고객을-위한-aws-길라잡이/hail-on-ec2-옵션",
+  "title": "Hail on EC2 (옵션)",
+  "description": "앞에서 배운 것들을 토대로 새로운 EC2를 생성하고 접속한 뒤 오픈소스 프로그램인 Hail`{target=\"_blank\" rel=\"noopener\"}` 을 설치 및 사용해 봅시다.",
+  "source": "@site/docs/대학-고객을-위한-aws-길라잡이/hail-on-ec2-옵션.md",
+  "sourceDirName": "대학-고객을-위한-aws-길라잡이",
+  "slug": "/대학-고객을-위한-aws-길라잡이/hail-on-ec2-옵션",
+  "permalink": "/docusaurus/docs/대학-고객을-위한-aws-길라잡이/hail-on-ec2-옵션",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/대학-고객을-위한-aws-길라잡이/hail-on-ec2-옵션.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 11,
+  "frontMatter": {
+    "title": "Hail on EC2 (옵션)",
+    "sidebar_position": 11
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "AMI로 쉽게 리눅스 머신 셋업하기",
+    "permalink": "/docusaurus/docs/대학-고객을-위한-aws-길라잡이/ami로-쉽게-리눅스-머신-셋업하기"
+  },
+  "next": {
+    "title": "Amazon Lightsail for Research",
+    "permalink": "/docusaurus/docs/대학-고객을-위한-aws-길라잡이/amazon-lightsail-for-research"
+  }
+}

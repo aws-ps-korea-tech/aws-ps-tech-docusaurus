@@ -1,0 +1,28 @@
+{
+  "id": "omics-on-aws/amazon-genomics-cli---핸즈온-가이드",
+  "title": "Amazon Genomics CLI - 핸즈온 가이드",
+  "description": "여기서는 Amazon Genomics CLI (이하 AGC)를 간단히 AWS Cloud9 에서 세팅하고, 실행하는 방법을 안내합니다.",
+  "source": "@site/docs/omics-on-aws/amazon-genomics-cli---핸즈온-가이드.md",
+  "sourceDirName": "omics-on-aws",
+  "slug": "/omics-on-aws/amazon-genomics-cli---핸즈온-가이드",
+  "permalink": "/docusaurus/docs/omics-on-aws/amazon-genomics-cli---핸즈온-가이드",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/omics-on-aws/amazon-genomics-cli---핸즈온-가이드.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Amazon Genomics CLI - 핸즈온 가이드",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Store multimodal data with purpose-built Health AI services",
+    "permalink": "/docusaurus/docs/omics-on-aws/store-multimodal-data-with-purpose-built-health-ai-services"
+  },
+  "next": {
+    "title": "Example code",
+    "permalink": "/docusaurus/docs/omics-on-aws/example-code"
+  }
+}

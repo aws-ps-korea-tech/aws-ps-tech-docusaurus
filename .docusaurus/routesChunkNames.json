@@ -1,0 +1,262 @@
+{
+  "/docusaurus/__docusaurus/debug-324": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docusaurus-docusaurus-debugb-38-1ea"
+    }
+  },
+  "/docusaurus/__docusaurus/debug/config-fe4": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docusaurus-docusaurus-debugb-38-1ea"
+    }
+  },
+  "/docusaurus/__docusaurus/debug/content-572": {
+    "__comp": "__comp---theme-debug-contentba-8-ce7",
+    "__context": {
+      "plugin": "plugin---docusaurus-docusaurus-debugb-38-1ea"
+    },
+    "__props": "__props---docusaurus-docusaurus-debug-content-185-9ec"
+  },
+  "/docusaurus/__docusaurus/debug/globalData-aab": {
+    "__comp": "__comp---theme-debug-global-dataede-0fa",
+    "__context": {
+      "plugin": "plugin---docusaurus-docusaurus-debugb-38-1ea"
+    }
+  },
+  "/docusaurus/__docusaurus/debug/metadata-ca1": {
+    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
+    "__context": {
+      "plugin": "plugin---docusaurus-docusaurus-debugb-38-1ea"
+    }
+  },
+  "/docusaurus/__docusaurus/debug/registry-f2e": {
+    "__comp": "__comp---theme-debug-registry-679-501",
+    "__context": {
+      "plugin": "plugin---docusaurus-docusaurus-debugb-38-1ea"
+    }
+  },
+  "/docusaurus/__docusaurus/debug/routes-75c": {
+    "__comp": "__comp---theme-debug-routes-946-699",
+    "__context": {
+      "plugin": "plugin---docusaurus-docusaurus-debugb-38-1ea"
+    }
+  },
+  "/docusaurus/-bd0": {
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
+    "__context": {
+      "plugin": "plugin---docusaurus-aba-623"
+    }
+  },
+  "/docusaurus/-fc2": {
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "__props": "__props---docusaurus-9-ab-b0b"
+  },
+  "/docusaurus/-c1d": {
+    "__comp": "__comp---theme-doc-roota-94-67a"
+  },
+  "/docusaurus/amazon-s3/01161-dba": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-amazon-s-3-01161-fd-8-82f"
+  },
+  "/docusaurus/amazon-s3/58a2f-179": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-amazon-s-3-58-a-2-f-0-d-7-d24"
+  },
+  "/docusaurus/amazon-s3/s3-select-c70": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-amazon-s-3-s-3-selectd-35-aae"
+  },
+  "/docusaurus/aws-batch/tagging-w-nextflow-78d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-batch-tagging-w-nextflow-8-b-3-0c1"
+  },
+  "/docusaurus/aws-batch/troubleshooting-for-aws-batch-nextflow-a8f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-batch-troubleshooting-for-aws-batch-nextflow-12-d-ac0"
+  },
+  "/docusaurus/aws-blast-performance-testing/26657-c99": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-blast-performance-testing-26657-e-3-f-6bc"
+  },
+  "/docusaurus/aws-blast-performance-testing/cost-analysis-149": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-blast-performance-testing-cost-analysis-3-e-0-e21"
+  },
+  "/docusaurus/aws-blast-performance-testing/ebs-4de": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-blast-performance-testing-ebs-10-f-393"
+  },
+  "/docusaurus/aws-blast-performance-testing/ebs-snapshot-688": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-blast-performance-testing-ebs-snapshot-736-a48"
+  },
+  "/docusaurus/aws-blast-performance-testing/efs-vs-fsx-for-lustre-fda": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-blast-performance-testing-efs-vs-fsx-for-lustre-971-797"
+  },
+  "/docusaurus/aws/-6eb": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-6-db-6df"
+  },
+  "/docusaurus/aws/28f0b-683": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-28-f-0-bd-07-aa6"
+  },
+  "/docusaurus/aws/40008-6fb": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-400085-ff-d48"
+  },
+  "/docusaurus/aws/812b4-678": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-812-b-481-e-8f6"
+  },
+  "/docusaurus/aws/amazon-lightsail-for-research-ac7": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-amazon-lightsail-for-researchd-28-130"
+  },
+  "/docusaurus/aws/ami-075": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-ami-023-b6f"
+  },
+  "/docusaurus/aws/ami-gwl-177": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-ami-gwl-342-603"
+  },
+  "/docusaurus/aws/aws-cli-192": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-aws-cli-621-d4a"
+  },
+  "/docusaurus/aws/cloud9-a77": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-cloud-9-f-0-a-d54"
+  },
+  "/docusaurus/aws/d2dde-e79": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-d-2-dde-9-b-2-902"
+  },
+  "/docusaurus/aws/d61e4-547": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-d-61-e-45-ad-ac6"
+  },
+  "/docusaurus/aws/d82c8-74d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-d-82-c-8210-02a"
+  },
+  "/docusaurus/aws/dc6a6-a6a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-dc-6-a-65-fb-c49"
+  },
+  "/docusaurus/aws/ec2-731": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-ec-2-a-79-bda"
+  },
+  "/docusaurus/aws/ec2-ami-d80": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-ec-2-ami-1-b-2-509"
+  },
+  "/docusaurus/aws/ec2-BcK-013": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-ec-2-bc-kc-64-0d3"
+  },
+  "/docusaurus/aws/hail-on-ec2-08f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-hail-on-ec-2074-352"
+  },
+  "/docusaurus/aws/otp-f5d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-otp-36-f-a2e"
+  },
+  "/docusaurus/aws/research-and-engineering-studio-on-aws-eed": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-research-and-engineering-studio-on-awsae-5-ada"
+  },
+  "/docusaurus/aws/rstudio-c37": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-aws-rstudio-412-d41"
+  },
+  "/docusaurus/omics-on-aws/65b9e-894": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-omics-on-aws-65-b-9-e-4-a-6-165"
+  },
+  "/docusaurus/omics-on-aws/a597e-92d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-omics-on-aws-a-597-e-0-eb-ed3"
+  },
+  "/docusaurus/omics-on-aws/amazon-emr-on-ec2-ca9": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-omics-on-aws-amazon-emr-on-ec-26-e-9-5ef"
+  },
+  "/docusaurus/omics-on-aws/amazon-genomics-cli-vDj-720": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-omics-on-aws-amazon-genomics-cli-v-dj-1-fd-c77"
+  },
+  "/docusaurus/omics-on-aws/aws-glue-5d3": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-omics-on-aws-aws-glue-058-2d2"
+  },
+  "/docusaurus/omics-on-aws/aws-healthomics-5e8": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-omics-on-aws-aws-healthomics-555-155"
+  },
+  "/docusaurus/omics-on-aws/aws-healthomics-annotation-920": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-omics-on-aws-aws-healthomics-annotation-70-d-b15"
+  },
+  "/docusaurus/omics-on-aws/aws-healthomics-fastq-to-vcf-annotation-c24": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-omics-on-aws-aws-healthomics-fastq-to-vcf-annotation-5-d-9-edb"
+  },
+  "/docusaurus/omics-on-aws/aws-healthomics-run-analyzer-run-1910249-8c0": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-omics-on-aws-aws-healthomics-run-analyzer-run-1910249-f-3-f-49d"
+  },
+  "/docusaurus/omics-on-aws/aws-healthomics-storage-d05": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-omics-on-aws-aws-healthomics-storage-015-3c9"
+  },
+  "/docusaurus/omics-on-aws/aws-healthomics-troubleshooting-847": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-omics-on-aws-aws-healthomics-troubleshootingd-5-e-082"
+  },
+  "/docusaurus/omics-on-aws/example-code-76f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-omics-on-aws-example-code-914-d8a"
+  },
+  "/docusaurus/omics-on-aws/hail-with-amazon-emr-notebook-933": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-omics-on-aws-hail-with-amazon-emr-notebookf-60-05f"
+  },
+  "/docusaurus/omics-on-aws/nf-core-rnaseq-142": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-omics-on-aws-nf-core-rnaseqc-72-5bf"
+  },
+  "/docusaurus/omics-on-aws/nf-core-scrnaseq-087": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-omics-on-aws-nf-core-scrnaseqc-57-0ef"
+  },
+  "/docusaurus/omics-on-aws/nf-core-spatialvi-d02": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-omics-on-aws-nf-core-spatialvi-361-060"
+  },
+  "/docusaurus/omics-on-aws/quickstart-hail-english-a03": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-omics-on-aws-quickstart-hail-english-750-bba"
+  },
+  "/docusaurus/omics-on-aws/quickstart-hail-korean-cd4": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-omics-on-aws-quickstart-hail-koreanb-61-be2"
+  },
+  "/docusaurus/omics-on-aws/store-multimodal-data-with-purpose-built-health-ai-services-fe5": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-omics-on-aws-store-multimodal-data-with-purpose-built-health-ai-servicesd-18-c79"
+  },
+  "/docusaurus/omics-on-aws/wdl-hifi-human-wgs-wdl-db2": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-omics-on-aws-wdl-hifi-human-wgs-wdl-026-604"
+  },
+  "/docusaurus/-243": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docusaurus-c-37-c19"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "대학-고객을-위한-aws-길라잡이/ami로-쉽게-리눅스-머신-셋업하기",
+  "title": "AMI로 쉽게 리눅스 머신 셋업하기",
+  "description": "이제 앞 세션에서 만들어낸 AMI로 부터 새로운 인스턴스를 생성하는 방법을 배우겠습니다.",
+  "source": "@site/docs/대학-고객을-위한-aws-길라잡이/ami로-쉽게-리눅스-머신-셋업하기.md",
+  "sourceDirName": "대학-고객을-위한-aws-길라잡이",
+  "slug": "/대학-고객을-위한-aws-길라잡이/ami로-쉽게-리눅스-머신-셋업하기",
+  "permalink": "/docusaurus/docs/대학-고객을-위한-aws-길라잡이/ami로-쉽게-리눅스-머신-셋업하기",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/대학-고객을-위한-aws-길라잡이/ami로-쉽게-리눅스-머신-셋업하기.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 10,
+  "frontMatter": {
+    "title": "AMI로 쉽게 리눅스 머신 셋업하기",
+    "sidebar_position": 10
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "EC2 종료와 볼륨 스냅샷 저장 (옵션)",
+    "permalink": "/docusaurus/docs/대학-고객을-위한-aws-길라잡이/ec2-종료와-볼륨-스냅샷-저장-옵션"
+  },
+  "next": {
+    "title": "Hail on EC2 (옵션)",
+    "permalink": "/docusaurus/docs/대학-고객을-위한-aws-길라잡이/hail-on-ec2-옵션"
+  }
+}

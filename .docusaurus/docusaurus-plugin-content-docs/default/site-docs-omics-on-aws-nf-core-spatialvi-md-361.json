@@ -1,0 +1,28 @@
+{
+  "id": "omics-on-aws/nf-core-spatialvi",
+  "title": "Nf-core 워크플로우 마이그레이션 하기 (spatialvi)",
+  "description": "2025년 5월 22일 현재 dev 버전 branch에서 테스트 되었습니다.",
+  "source": "@site/docs/omics-on-aws/nf-core-spatialvi.md",
+  "sourceDirName": "omics-on-aws",
+  "slug": "/omics-on-aws/nf-core-spatialvi",
+  "permalink": "/docusaurus/omics-on-aws/nf-core-spatialvi",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/omics-on-aws/nf-core-spatialvi.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Nf-core 워크플로우 마이그레이션 하기 (spatialvi)",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Nf-core 워크플로우 마이그레이션 하기 (rnaseq)",
+    "permalink": "/docusaurus/omics-on-aws/nf-core-rnaseq"
+  },
+  "next": {
+    "title": "WDL 워크플로우 마이그레이션 하기 (HiFi-human-WGS-WDL)",
+    "permalink": "/docusaurus/omics-on-aws/wdl-hifi-human-wgs-wdl"
+  }
+}

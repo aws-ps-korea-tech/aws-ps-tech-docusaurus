@@ -1,0 +1,28 @@
+{
+  "id": "대학-고객을-위한-aws-길라잡이/데이터-다운로드-실습",
+  "title": "데이터 다운로드 실습",
+  "description": "실습 데이터 소개",
+  "source": "@site/docs/대학-고객을-위한-aws-길라잡이/데이터-다운로드-실습.md",
+  "sourceDirName": "대학-고객을-위한-aws-길라잡이",
+  "slug": "/대학-고객을-위한-aws-길라잡이/데이터-다운로드-실습",
+  "permalink": "/docusaurus/docs/대학-고객을-위한-aws-길라잡이/데이터-다운로드-실습",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/대학-고객을-위한-aws-길라잡이/데이터-다운로드-실습.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "title": "데이터 다운로드 실습",
+    "sidebar_position": 6
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "AWS CLI",
+    "permalink": "/docusaurus/docs/대학-고객을-위한-aws-길라잡이/aws-cli"
+  },
+  "next": {
+    "title": "기본 분석 수행하기 (옵션)",
+    "permalink": "/docusaurus/docs/대학-고객을-위한-aws-길라잡이/기본-분석-수행하기-옵션"
+  }
+}

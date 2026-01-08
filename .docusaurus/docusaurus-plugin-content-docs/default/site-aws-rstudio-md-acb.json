@@ -1,0 +1,28 @@
+{
+  "id": "aws/rstudio",
+  "title": "Rstudio 실습환경 자동화 구성",
+  "description": "Amazon EC2의 Ubuntu 24버전 기준으로 아래 문서를 작성했습니다. 아래 내용은 시간이 지남에 따라 적절히 작동하지 않을 수 있으므로 필요한대로 수정하고 확인하는 것을 추천드립니다!",
+  "source": "@site/aws/rstudio.md",
+  "sourceDirName": "aws",
+  "slug": "/aws/rstudio",
+  "permalink": "/docusaurus/aws/rstudio",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/aws/rstudio.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 7,
+  "frontMatter": {
+    "title": "Rstudio 실습환경 자동화 구성",
+    "sidebar_position": 7
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "쉽게 따라하는 연구실 계정 관리",
+    "permalink": "/docusaurus/aws/812b4"
+  },
+  "next": {
+    "title": "AWS HealthOmics 소개 및 주요 링크",
+    "permalink": "/docusaurus/omics-on-aws/aws-healthomics"
+  }
+}

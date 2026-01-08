@@ -1,0 +1,28 @@
+{
+  "id": "대학-고객을-위한-AWS-길라잡이/AWS-계정-안전하게-지키기",
+  "title": "AWS 계정 안전하게 지키기",
+  "description": "[[ ]{offset-key=\"e45913f7e0ff41748d1d7083830905f5:0\"}]{key=\"e45913f7e0ff41748d1d7083830905f5\"}",
+  "source": "@site/docs/대학-고객을-위한-AWS-길라잡이/AWS-계정-안전하게-지키기.md",
+  "sourceDirName": "대학-고객을-위한-AWS-길라잡이",
+  "slug": "/대학-고객을-위한-AWS-길라잡이/AWS-계정-안전하게-지키기",
+  "permalink": "/docusaurus/docs/대학-고객을-위한-AWS-길라잡이/AWS-계정-안전하게-지키기",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/대학-고객을-위한-AWS-길라잡이/AWS-계정-안전하게-지키기.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "AWS 계정 안전하게 지키기",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "제목 없음",
+    "permalink": "/docusaurus/docs/eGovFramework-on-AWS/제목-없음"
+  },
+  "next": {
+    "title": "루트 계정 보호하기 - OTP 설정 (필수 영상)",
+    "permalink": "/docusaurus/docs/대학-고객을-위한-AWS-길라잡이/루트-계정-보호하기-OTP-설정-(필수-영상)"
+  }
+}

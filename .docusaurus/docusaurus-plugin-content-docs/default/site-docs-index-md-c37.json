@@ -1,0 +1,24 @@
+{
+  "id": "index",
+  "title": "문서 홈",
+  "description": "이 사이트는 AWS 관련 기술 문서들을 모아놓은 곳입니다.",
+  "source": "@site/docs/index.md",
+  "sourceDirName": ".",
+  "slug": "/",
+  "permalink": "/docusaurus/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "문서 홈",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "next": {
+    "title": "S3 Select 기능 소개",
+    "permalink": "/docusaurus/amazon-s3/s3-select"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "대학-고객을-위한-aws-길라잡이/research-and-engineering-studio-on-aws",
+  "title": "Research and Engineering Studio on AWS",
+  "description": "RES(Research and Engineering Studio on AWS)는 관리자가 안전한 클라우드 기반 연구 및 엔지니어링 환경을 만들고 관리할 수 있는 사용하기 쉬운 오픈 소스 웹 기반 포털입니다. 과학자와 엔지니어는 RES를 사용하여 클라우드 전문 지식 없이도 데이터를 시각화하고 대화형 애플리케이션을 실행할 수 있습니다.",
+  "source": "@site/docs/대학-고객을-위한-aws-길라잡이/research-and-engineering-studio-on-aws.md",
+  "sourceDirName": "대학-고객을-위한-aws-길라잡이",
+  "slug": "/대학-고객을-위한-aws-길라잡이/research-and-engineering-studio-on-aws",
+  "permalink": "/docusaurus/docs/대학-고객을-위한-aws-길라잡이/research-and-engineering-studio-on-aws",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/docs/대학-고객을-위한-aws-길라잡이/research-and-engineering-studio-on-aws.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Research and Engineering Studio on AWS",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Amazon Lightsail for Research",
+    "permalink": "/docusaurus/docs/대학-고객을-위한-aws-길라잡이/amazon-lightsail-for-research"
+  },
+  "next": {
+    "title": "유용한 링크들 모음",
+    "permalink": "/docusaurus/docs/대학-고객을-위한-aws-길라잡이/유용한-링크들-모음"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "omics-on-aws/example-code",
+  "title": "Example code",
+  "description": "Python으로 Nextflow 작성하기",
+  "source": "@site/omics-on-aws/example-code.md",
+  "sourceDirName": "omics-on-aws",
+  "slug": "/omics-on-aws/example-code",
+  "permalink": "/docusaurus/omics-on-aws/example-code",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/omics-on-aws/example-code.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 0,
+  "frontMatter": {
+    "title": "Example code",
+    "sidebar_position": 0
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Amazon Genomics CLI - 핸즈온 가이드",
+    "permalink": "/docusaurus/omics-on-aws/amazon-genomics-cli-vDj"
+  },
+  "next": {
+    "title": "Tagging w/ Nextflow",
+    "permalink": "/docusaurus/aws-batch/tagging-w-nextflow"
+  }
+}
