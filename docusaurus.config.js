@@ -9,10 +9,10 @@ const config = {
   tagline: 'AWS Professional Services Technical Documentation',
   favicon: 'img/favicon.ico',
 
-  url: 'https://aws-wwps-kr-tech.github.io',
+  url: 'https://aws-ps-korea-tech.github.io',
   baseUrl: '/docusaurus/',
 
-  organizationName: 'aws-wwps-kr-tech',
+  organizationName: 'aws-ps-korea-tech',
   projectName: 'docusaurus',
 
   onBrokenLinks: 'warn',
@@ -35,7 +35,7 @@ const config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/aws-wwps-kr-tech/docusaurus/tree/main/',
+          editUrl: 'https://github.com/aws-ps-korea-tech/docusaurus/tree/main/',
         },
         blog: false,
         theme: {
@@ -63,7 +63,7 @@ const config = {
             label: '전체 문서',
           },
           {
-            href: 'https://github.com/aws-wwps-kr-tech/docusaurus',
+            href: 'https://github.com/aws-ps-korea-tech/docusaurus',
             label: 'GitHub',
             position: 'right',
           },
@@ -95,7 +95,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/aws-wwps-kr-tech/docusaurus',
+                href: 'https://github.com/aws-ps-korea-tech/docusaurus',
               },
             ],
           },
