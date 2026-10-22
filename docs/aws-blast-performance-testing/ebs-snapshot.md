@@ -1,7 +1,8 @@
 ---
 title: "EBS Snapshot 프로비저닝 성능 분석"
-sidebar_position: 5
 ---
+
+# EBS Snapshot 프로비저닝 성능 분석
 
 # EBS Snapshot 기반 프로비저닝 성능 분석
 
