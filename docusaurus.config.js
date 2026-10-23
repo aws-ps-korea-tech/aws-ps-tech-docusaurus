@@ -61,9 +61,27 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'start',
             position: 'left',
-            label: '전체 문서',
+            label: "시작하기",
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'omics',
+            position: 'left',
+            label: "오믹스·유전체",
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'batch',
+            position: 'left',
+            label: "배치·BLAST",
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'ai',
+            position: 'left',
+            label: "AI·의사결정",
           },
           {
             href: 'https://github.com/aws-ps-korea-tech/docusaurus',
