@@ -4,7 +4,11 @@ title: "[DRAFT] gbrain 검색 파이프라인 이해하기: 하이브리드 검�
 
 # [DRAFT] gbrain 검색 파이프라인 이해하기: 하이브리드 검색에서 무엇을 고를 수 있고, 논문 코퍼스에는 어떻게 맞출까
 
-<p class="callout warning"><strong>비공개 초안 v0.1 (2026-10-12)</strong> - AWS 블로그 게재 후보. 근거는 gbrain v0.51.6.0 소스와 문서(docs/architecture/RETRIEVAL.md, docs/ENGINES.md)입니다. 게재 전 검토: 측정치는 upstream 문서 인용값이므로 버전 재확인, 그림은 draw.io로 교체, 리랭커 Bedrock 경유안은 검증 후 표현 조정.</p>
+
+> **⚠️ 주의**
+>
+> 비공개 초안 v0.1 (2026-10-12) - AWS 블로그 게재 후보. 근거는 gbrain v0.51.6.0 소스와 문서(docs/architecture/RETRIEVAL.md, docs/ENGINES.md)입니다. 게재 전 검토: 측정치는 upstream 문서 인용값이므로 버전 재확인, 그림은 draw.io로 교체, 리랭커 Bedrock 경유안은 검증 후 표현 조정.
+
 
 이 글은 오픈소스 지식 베이스 gbrain을 AWS에 올려 연구 노트와 논문을 쌓기 시작한 팀을 위해 썼습니다. "벡터 검색으로 설치했는데 하이브리드로 바꿀 수 있나", "검색 알고리즘을 직접 가져올 수 있나", "논문을 많이 읽는 연구실은 무엇을 켜야 하나"라는 세 가지 질문에 소스 코드를 근거로 답합니다. 결론부터 말하면, gbrain에서 선택하는 것은 알고리즘의 종류가 아니라 **파이프라인 각 단계의 설정과 모델**이며, 점수를 가장 크게 움직이는 것은 벡터와 키워드의 비율이 아니라 **지식 그래프와 리랭커**입니다.
 
@@ -26,7 +30,7 @@ gbrain은 Markdown 페이지를 Postgres(또는 단일 파일 PGLite)에 저장�
 
 gbrain의 `query` 연산은 다음 순서로 동작합니다. `search` 연산은 같은 파이프라인에서 쿼리 확장을 끈 저비용 경로입니다.
 
-{/* 그림 1 삽입: 파이프라인 다이어그램(draw.io). 삽입 후 아래 ASCII 블록 삭제 */}
+\{/* 그림 1 삽입: 파이프라인 다이어그램(draw.io). 삽입 후 아래 ASCII 블록 삭제 */\}
 ```
 질의
  │
@@ -168,7 +172,7 @@ gbrain은 PDF 텍스트 추출을 직접 하지 않고 에이전트에 위임합
 
 ## 6. AWS 위의 참조 구성
 
-{/* 그림 2 삽입: AWS 구성도(draw.io). ECS(gbrain + LiteLLM) / RDS pgvector / Bedrock(임베딩, 리랭커) / 선택: 자체 호스팅 리랭커 */}
+\{/* 그림 2 삽입: AWS 구성도(draw.io). ECS(gbrain + LiteLLM) / RDS pgvector / Bedrock(임베딩, 리랭커) / 선택: 자체 호스팅 리랭커 */\}
 
 | 구성요소 | AWS 서비스 | 비고 |
 |---|---|---|

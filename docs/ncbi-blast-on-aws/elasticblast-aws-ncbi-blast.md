@@ -20,7 +20,7 @@ title: "ElasticBLAST로 AWS에서 대규모 NCBI BLAST 검색 실행하기: 동�
 
 ElasticBLAST는 AWS에서 다음 자원을 만들고 움직입니다.
 
-![ElasticBLAST가 검색 1건마다 AWS 계정 안에 만드는 자원과 데이터 흐름. 사용자 PC의 elastic-blast submit이 CloudFormation 스택(IAM 역할, janitor Lambda, VPC, AWS Batch 컴퓨팅 환경과 잡 큐)을 만들고, 쿼리를 잘라 S3에 올리면 Batch가 EC2 인스턴스를 띄워 NCBI 공개 버킷에서 데이터베이스를 인스턴스마다 한 번 내려받아 blastn을 실행하고 결과를 S3에 쓴 뒤, janitor가 스택을 삭제한다.](_assets/259d5a188aa1.png)
+![ElasticBLAST가 검색 1건마다 AWS 계정 안에 만드는 자원과 데이터 흐름. 사용자 PC의 elastic-blast submit이 CloudFormation 스택(IAM 역할, janitor Lambda, VPC, AWS Batch 컴퓨팅 환경과 잡 큐)을 만들고, 쿼리를 잘라 S3에 올리면 Batch가 EC2 인스턴스를 띄워 NCBI 공개 버킷에서 데이터베이스를 인스턴스마다 한 번 내려받아 blastn을 실행하고 결과를 S3에 쓴 뒤, janitor가 스택을 삭제한다.](./_assets/259d5a188aa1.png)
 
 *그림 1. ElasticBLAST가 검색 1건(submit)마다 AWS 계정 안에 만드는 자원과 데이터 흐름 [1]~[6]*
 
@@ -40,7 +40,7 @@ ElasticBLAST는 AWS에서 다음 자원을 만들고 움직입니다.
 
 BLAST+는 데이터베이스 파일을 운영체제의 `mmap`으로 읽습니다. 그래서 S3 같은 객체 스토리지에서 바로 읽을 수 없고, 반드시 블록 디스크에 파일이 있어야 합니다.
 
-![BLAST 데이터베이스가 거치는 세 층. 1층 S3 원본(NCBI 공개 버킷), 2층 노드 로컬 디스크(BLAST가 mmap으로 여는 곳), 3층 RAM 페이지 캐시(검색 속도를 결정). 오른쪽에 RAM 기준 인스턴스 선택 규칙과 nt가 RAM보다 클 때 웜 검색이 없다는 실측 요약.](_assets/16157bad5e82.png)
+![BLAST 데이터베이스가 거치는 세 층. 1층 S3 원본(NCBI 공개 버킷), 2층 노드 로컬 디스크(BLAST가 mmap으로 여는 곳), 3층 RAM 페이지 캐시(검색 속도를 결정). 오른쪽에 RAM 기준 인스턴스 선택 규칙과 nt가 RAM보다 클 때 웜 검색이 없다는 실측 요약.](./_assets/16157bad5e82.png)
 
 *그림 2. BLAST 데이터베이스가 거치는 세 층: S3 원본, 노드 디스크(mmap), RAM 페이지 캐시*
 

@@ -107,10 +107,11 @@ echo "includeConfig 'conf/omics.config'" >> rnaseq/nextflow.config
 
 `paramter-descrption.json`을 만들어 아래와 같이 저장합니다.
 
-<p class="callout warning">새 워크플로마다 다른 매개변수를 사용할 수 있습니다. 위의 매개변수 템플릿 파일은 SCRNA-Seq nf-core 워크플로에만 해당됩니다. 새 파라미터 파일을 만들 때는 이 워크플로우에 대한 파라미터를 확인해야 합니다.  
-  
-NF-Core 워크플로우에 대한 파라미터를 찾으려면 설명서를 참조하세요(예: RNA-Seq 파이프라인 파라미터는 [여기](https://nf-co.re/rnaseq/3.14.0/parameters)).  
-</p>
+
+> **⚠️ 주의**
+>
+> 새 워크플로마다 다른 매개변수를 사용할 수 있습니다. 위의 매개변수 템플릿 파일은 SCRNA-Seq nf-core 워크플로에만 해당됩니다. 새 파라미터 파일을 만들 때는 이 워크플로우에 대한 파라미터를 확인해야 합니다. NF-Core 워크플로우에 대한 파라미터를 찾으려면 설명서를 참조하세요(예: RNA-Seq 파이프라인 파라미터는 [여기](https://nf-co.re/rnaseq/3.14.0/parameters)).
+
 
 ```
 {
@@ -337,7 +338,7 @@ aws s3 mv samplesheet_test.csv s3://{mybucket}/workshop/
 
 상기 bbsplit\_fasta\_list.txt 파일 내용도 s3 bucket을 지정합니다.
 
-s3://{mybucket}/workshop/reference/bbsplit\_fasta\_list.txt 의 내용
+s3://\{mybucket\}/workshop/reference/bbsplit\_fasta\_list.txt 의 내용
 
 ```
 sarscov2,s3://{mybucket}/workshop/reference/GCA_009858895.3_ASM985889v3_genomic.200409.fna
@@ -346,17 +347,19 @@ human,s3://{mybucket}/workshop/reference/chr22_23800000-23980000.fa
 
 ##### S3 policy 관련 참고사항
 
-<p class="callout warning">위의 입력데이터로 필요한 S3 버킷에 대해 아래 Policy 준비에 반영되어야 합니다.  
-마찬가지로 결과 데이터를 작성할 버킷에 대한 권한도 Policy 준비에 반영해주세요.  
-</p>
+
+> **⚠️ 주의**
+>
+> 위의 입력데이터로 필요한 S3 버킷에 대해 아래 Policy 준비에 반영되어야 합니다. 마찬가지로 결과 데이터를 작성할 버킷에 대한 권한도 Policy 준비에 반영해주세요.
+
 
 s3:GetObject, s3:ListBucket 권한
 
-![image.png](_assets/7035e542f257.png)
+![image.png](./_assets/7035e542f257.png)
 
 s3:PutObject 권한
 
-![image.png](_assets/14e0ff07be62.png)
+![image.png](./_assets/14e0ff07be62.png)
 
 #### Policy 준비
 

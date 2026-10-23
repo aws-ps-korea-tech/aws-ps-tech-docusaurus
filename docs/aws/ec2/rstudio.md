@@ -4,7 +4,11 @@ title: "Rstudio 실습환경 자동화 구성"
 
 # Rstudio 실습환경 자동화 구성
 
-<p class="callout info">Amazon EC2의 Ubuntu 24버전 기준으로 아래 문서를 작성했습니다. 아래 내용은 시간이 지남에 따라 적절히 작동하지 않을 수 있으므로 필요한대로 수정하고 확인하는 것을 추천드립니다!</p>
+
+> **ℹ️ 정보**
+>
+> Amazon EC2의 Ubuntu 24버전 기준으로 아래 문서를 작성했습니다. 아래 내용은 시간이 지남에 따라 적절히 작동하지 않을 수 있으므로 필요한대로 수정하고 확인하는 것을 추천드립니다!
+
 
 Amazon EC2의 [User data 기능](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html)을 사용하기 위해 User Data내용을 파일로 만들어둡니다.
 
@@ -75,9 +79,13 @@ aws ec2 create-image \
 
 **이제 만들어진 AMI로 원하는 수와 설정내용으로 새로운 인스턴스를 실행해보세요!**
 
-<p class="callout warning">대규모 인스턴스 수의 실습환경을 제공시 사전에 실습 환경 구성을 해둘 것을 권장합니다. 아래 설명한 인스턴스 생성에대한 Quota 제한도 존재할 수 있고 예기치못한 상황이 있을 수 있으므로 반드시 실습 환경을 실제로 운영하기 시작 전에 충분한 시간을 가지고 인스턴스를 미리 만들어 두는 것을 추천합니다.</p>
 
-<p class="callout warning">AWS에서는 기본 서비스 Quota가 존재합니다. 예를들어 계정 내의 API 초당 요청수, Ec2 인스턴스 요청 수 등이 그 예입니다.  
-[https://docs.aws.amazon.com/general/latest/gr/aws\_service\_limits.html](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html)  
-다음을 참고하여 필요한 만큼 Quota를 사전에 늘리시는 것을 권장드립니다.  
-https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html</p>
+> **⚠️ 주의**
+>
+> 대규모 인스턴스 수의 실습환경을 제공시 사전에 실습 환경 구성을 해둘 것을 권장합니다. 아래 설명한 인스턴스 생성에대한 Quota 제한도 존재할 수 있고 예기치못한 상황이 있을 수 있으므로 반드시 실습 환경을 실제로 운영하기 시작 전에 충분한 시간을 가지고 인스턴스를 미리 만들어 두는 것을 추천합니다.
+
+
+
+> **⚠️ 주의**
+>
+> AWS에서는 기본 서비스 Quota가 존재합니다. 예를들어 계정 내의 API 초당 요청수, Ec2 인스턴스 요청 수 등이 그 예입니다. [https://docs.aws.amazon.com/general/latest/gr/aws\_service\_limits.html](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html) 다음을 참고하여 필요한 만큼 Quota를 사전에 늘리시는 것을 권장드립니다. https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html

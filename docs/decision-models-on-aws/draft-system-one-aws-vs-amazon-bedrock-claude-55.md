@@ -367,7 +367,7 @@ python3 -m venv .venv && .venv/bin/pip install -q boto3
 
 | 조건 | 권장 |
 |---|---|
-| 하루 결정 수 < 2~4만, 지연 1초 허용, 데이터 국외 처리 허용 | Bedrock (Sonnet 5.5 `effort=low` 또는 Haiku급), 인프라 0 |
+| 하루 결정 수 &lt; 2~4만, 지연 1초 허용, 데이터 국외 처리 허용 | Bedrock (Sonnet 5.5 `effort=low` 또는 Haiku급), 인프라 0 |
 | 하루 결정 수 > 4만, 또는 GPU를 다른 워크로드와 공유 | 자체 호스팅 (g5.2xlarge, Savings Plan) |
 | ≤100 ms 응답, 형식 오류 0, 확률 출력 필요 | 자체 호스팅 결정 모델 |
 | 국내 데이터 처리 요건, 폐쇄망 | 자체 호스팅 (서울 리전, 인바운드 0 설계) |
