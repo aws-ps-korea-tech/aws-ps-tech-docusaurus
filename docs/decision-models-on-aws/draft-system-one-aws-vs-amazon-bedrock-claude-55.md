@@ -1,5 +1,5 @@
 ---
-title: "[DRAFT] \\\"결정 모델(System One)\\\"을 AWS에서 쓰는 방법 — 자체 호스팅 결정 모델 vs Amazon Bedrock Claude 5.5, 서울 리전 실측"
+title: "[DRAFT] \"결정 모델(System One)\"을 AWS에서 쓰는 방법 — 자체 호스팅 결정 모델 vs Amazon Bedrock Claude 5.5, 서울 리전 실측"
 ---
 
 # [DRAFT] "결정 모델(System One)"을 AWS에서 쓰는 방법 — 자체 호스팅 결정 모델 vs Amazon Bedrock Claude 5.5, 서울 리전 실측
