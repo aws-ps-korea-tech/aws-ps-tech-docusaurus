@@ -1,0 +1,8 @@
+# Netlify deploy config — Docusaurus
+# Root baseUrl (DEPLOY_BASE_URL unset) so static/_redirects gives real 301s.
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "22"
