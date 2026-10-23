@@ -4,10 +4,16 @@ title: "1편 · AlphaMissense 7,100만 missense 변이 점수표를 Amazon Athen
 
 # 1편 · AlphaMissense 7,100만 missense 변이 점수표를 Amazon Athena로 조회하기: 서버 없는 변이 주석 데이터 레이크
 
-<p class="callout warning"><strong>비공개 초안 v0.1 (2026-09-22)</strong> — AWS 공식 블로그 게재용 시리즈 1편(AlphaMissense). 원본: <code>test-alphagenome/docs/blog_series_01_alphamissense_athena_ko.md</code> (git 2353cd7). 본문에 <code>[TODO]</code> 14개가 남아 있습니다. 검토 후 게재 절차(Public Model·데이터셋 승인, BLL Media Review, Open Source 리뷰, PCSR)를 거쳐 게재하며, 이 페이지는 게재 전까지 비공개입니다.</p>
 
-<details>
-<summary>초고 메모 (블로그 본문 아님, 게재 시 삭제)</summary>
+> **⚠️ 주의**
+>
+> 비공개 초안 v0.1 (2026-09-22) — AWS 공식 블로그 게재용 시리즈 1편(AlphaMissense). 원본: test-alphagenome/docs/blog_series_01_alphamissense_athena_ko.md (git 2353cd7). 본문에 [TODO] 14개가 남아 있습니다. 검토 후 게재 절차(Public Model·데이터셋 승인, BLL Media Review, Open Source 리뷰, PCSR)를 거쳐 게재하며, 이 페이지는 게재 전까지 비공개입니다.
+
+
+
+
+**▸ 초고 메모 (블로그 본문 아님, 게재 시 삭제)**
+
 
 초고 메모 (블로그 본문 아님, 게재 시 삭제)
 - 상태: 초고 v0.1, 2026-09-22. 시리즈 1편(내부 라벨 Part 2). 개요: docs/blog_series_outline.md §3, 규정: §6.
@@ -23,7 +29,7 @@ title: "1편 · AlphaMissense 7,100만 missense 변이 점수표를 Amazon Athen
   5. 아키텍처 그림 1장(AWS Architecture Icons, 자체 제작).
   6. 법무·데이터셋 승인 티켓 번호를 블로그 SIM에 기재. 리뷰 순서는 outline §6-D.
 
-</details>
+
 
 *시리즈 1편. 2편에서는 유전체 서열 모델을 GPU 인스턴스에서 직접 실행하는 방법을 다룰 예정입니다.*
 

@@ -53,17 +53,17 @@ Human Pangenome Reference Consortium (HPRC)의 핵심 인프라로서 다음과 
 
 ### 운영 효율성 향상
 
-<div id="bkmrk-%EA%B8%B0%EC%A1%B4-%EC%98%A8%ED%94%84%EB%A0%88%EB%AF%B8%EC%8A%A4-%EB%8C%80%EB%B9%84-%EA%B0%9C%EC%84%A0-%ED%9A%A8%EA%B3%BC%3A-%E2%80%A2" style="background-color: #f8f9fa; padding: 15px; border-left: 4px solid #007bff; margin: 15px 0;">**기존 온프레미스 대비 개선 효과:**  
+**기존 온프레미스 대비 개선 효과:**  
 • 인프라 관리 시간: 80% 감소  
 • 워크플로우 실행 시간: 20% 단축  
 • 시스템 가용성: 99.9% 달성  
-• 확장성: 10배 향상 (10 → 100+ 동시 샘플) </div>### 비용 최적화
+• 확장성: 10배 향상 (10 → 100+ 동시 샘플) ### 비용 최적화
 
-<div id="bkmrk-tco-%EB%B6%84%EC%84%9D-%28%EC%97%B0%EA%B0%84-1%2C200-%EC%83%98%ED%94%8C-" style="background-color: #f8f9fa; padding: 15px; border-left: 4px solid #28a745; margin: 15px 0;">**TCO 분석 (연간 1,200 샘플 기준):**  
+**TCO 분석 (연간 1,200 샘플 기준):**  
 • HealthOmics: $240,000 (완전 관리형)  
 • 온프레미스: $400,000 (하드웨어 + 인력)  
 • 절감 효과: $160,000 (40% 절약)  
-• ROI: 18개월 내 투자 회수 </div>### 혁신 가속화
+• ROI: 18개월 내 투자 회수 ### 혁신 가속화
 
 - 새로운 워크플로우 개발 시간 50% 단축
 - 연구자 생산성 향상 (인프라 관리 → 연구 집중)
@@ -84,5 +84,5 @@ Human Pangenome Reference Consortium (HPRC)의 핵심 인프라로서 다음과 
 9. **모범 사례 및 권장사항** - 개발/테스트 전략 및 최적화 가이드
 10. **FAQ 및 결론** - 자주 묻는 질문 및 최종 권장사항
 
-<div id="bkmrk-%E2%9A%A0%EF%B8%8F-%EC%A4%91%EC%9A%94-%EC%B0%B8%EA%B3%A0%EC%82%AC%ED%95%AD%3A-%EB%B3%B8-%EB%AC%B8%EC%84%9C%EC%9D%98-%EB%AA%A8%EB%93%A0" style="background-color: #fff3cd; padding: 15px; border-left: 4px solid #ffc107; margin: 20px 0;">**⚠️ 중요 참고사항:**  
-본 문서의 모든 예시에서 사용된 AWS 계정 ID, S3 버킷명, 이메일 주소 등은 보안을 위해 일반적인 플레이스홀더로 교체되었습니다. 실제 구현 시에는 고객의 실제 리소스명으로 교체하여 사용하시기 바랍니다. </div>
+**⚠️ 중요 참고사항:**  
+본 문서의 모든 예시에서 사용된 AWS 계정 ID, S3 버킷명, 이메일 주소 등은 보안을 위해 일반적인 플레이스홀더로 교체되었습니다. 실제 구현 시에는 고객의 실제 리소스명으로 교체하여 사용하시기 바랍니다.

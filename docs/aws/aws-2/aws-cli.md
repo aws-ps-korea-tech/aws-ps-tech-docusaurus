@@ -8,7 +8,11 @@ title: "AWS CLI"
 
 [AWS CLI](https://aws.amazon.com/cli/)를 사용하면 명령줄을 사용하여 서비스를 관리하고 스크립트를 통해 서비스를 제어할 수 있습니다. 많은 사용자가 AWS CLI를 사용하여 일정 수준의 자동화를 수행합니다.
 
-<p class="callout info">최신 버전의 AWS CLI 설치 또는 업데이트는 [다음](https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/getting-started-install.html)을 참고해주세요. </p>
+
+> **ℹ️ 정보**
+>
+> 최신 버전의 AWS CLI 설치 또는 업데이트는 [다음](https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/getting-started-install.html)을 참고해주세요.
+
 
 ### AWS CLI 사용
 
@@ -26,7 +30,7 @@ aws --version
 
 예) Cloud9 과 AWS 에서 제공하는 OS 이미지에서는 기본적으로 AWS CLI가 설치되어 있습니다.
 
-![Screenshot 2023-10-18 at 12.05.36 PM.png](_assets/f2250b3bc14f.png)
+![Screenshot 2023-10-18 at 12.05.36 PM.png](./_assets/f2250b3bc14f.png)
 
 ```bash
 aws help
@@ -56,21 +60,27 @@ aws ec2 describe-key-pairs
 
 > AWS 에서 제공하는 워크샵 스튜디오 환경에서 실습을 할 경우는 아래와 같이 사전에 준비된 Credential을 사용하면 됩니다. 만일 그렇지 않을 경우 Access Key 를 만드는 방법은 다음 [링크](https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey)를 참고하세요.
 
-![Screenshot 2023-09-27 at 10.52.34 AM.png](_assets/071459885e33.png)
+![Screenshot 2023-09-27 at 10.52.34 AM.png](./_assets/071459885e33.png)
 
-![Screenshot 2023-09-27 at 10.52.25 AM copy.png](_assets/97b3582cd5bf.png)
+![Screenshot 2023-09-27 at 10.52.25 AM copy.png](./_assets/97b3582cd5bf.png)
 
 터미널 창에 바로 Copy &amp; Paste 할 수 있습니다.
 
 이제 다시 한번 `aws ec2 describe-key-pairs` 명령어를 입력해보세요.
 
-![Untitled.png](_assets/116d219dc274.png)
+![Untitled.png](./_assets/116d219dc274.png)
 
 ### 계정 설정 (개인 AWS 계정)
 
-<p class="callout warning"><span lang="KO">워크샵 스튜디오 환경에서 진행할 경우 아래 내용을 따라갈 필요는 없습니다!</span></p>
 
-<details id="bkmrk-%EA%B3%84%EC%A0%95-%EC%84%A4%EC%A0%95-%28%EC%9D%BC%EB%B0%98-aws-%EA%B3%84%EC%A0%95-%EC%82%AC%EC%9A%A9%EC%9E%90-1"><summary>계정 설정 (일반 AWS 계정 사용자)</summary>
+> **⚠️ 주의**
+>
+> 워크샵 스튜디오 환경에서 진행할 경우 아래 내용을 따라갈 필요는 없습니다!
+
+
+
+**▸ 계정 설정 (일반 AWS 계정 사용자)**
+
 
 #### Configuration
 
@@ -120,7 +130,11 @@ aws ec2 describe-key-pairs
 
 ```
 
-<p class="callout warning">이것은 AWS CLI에 대한 매우 간략한 소개입니다. 막강한 힘에는 막중한 책임이 따르므로 인스턴스 자동화에 사용하기 전에 충분히 숙지하고 연습하세요. </p>
+
+> **⚠️ 주의**
+>
+> 이것은 AWS CLI에 대한 매우 간략한 소개입니다. 막강한 힘에는 막중한 책임이 따르므로 인스턴스 자동화에 사용하기 전에 충분히 숙지하고 연습하세요.
+
 
 #### Verifying AWS Credentials
 
@@ -143,7 +157,7 @@ cat ~/.aws/config
 
 이제 사용자 신원을 성공적으로 구성했습니다.
 
-</details>### 참고자료
+### 참고자료
 
 - [AWS CLI tips and tricks (Workshop)](https://catalog.us-east-1.prod.workshops.aws/workshops/79521eff-62b5-4792-a2e0-6dbb59d83f4a/en-US)
 - [AWS CLI (Workshop)](https://catalog.us-east-1.prod.workshops.aws/workshops/74f5dee0-a709-4e9f-ada3-c48f25d36a0c/en-US)

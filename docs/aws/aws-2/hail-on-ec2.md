@@ -4,7 +4,11 @@ title: "Hail on EC2 (옵션)"
 
 # Hail on EC2 (옵션)
 
-<p class="callout success">앞에서 배운 것들을 토대로 새로운 EC2를 생성하고 접속한 뒤 오픈소스 프로그램인 [Hail](https://hail.is/) 을 설치 및 사용해 봅시다.</p>
+
+> **✅ 참고**
+>
+> 앞에서 배운 것들을 토대로 새로운 EC2를 생성하고 접속한 뒤 오픈소스 프로그램인 [Hail](https://hail.is/) 을 설치 및 사용해 봅시다.
+
 
 **Python3 버전 확인**
 

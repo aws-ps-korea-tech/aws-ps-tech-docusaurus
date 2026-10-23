@@ -75,13 +75,13 @@ HealthOmics 콘솔의 Run summary에서 두 모드의 차이를 확인할 수 �
 
 RESTRICTED 모드로 실행한 경우, **Networking mode** 항목에 `Restricted`로 표시됩니다. Configuration 항목은 표시되지 않으며, 워크플로우는 HealthOmics의 기본 네트워크 환경에서 실행됩니다. 같은 리전의 S3와 ECR만 접근 가능하고, 외부 인터넷 연결은 불가합니다.
 
-![restricted-networking-mode.png](_assets/6087fd444998.png)
+![restricted-networking-mode.png](./_assets/6087fd444998.png)
 
 ### VPC 모드 실행 화면
 
 VPC 모드로 실행한 경우, **Networking mode** 항목에 `Virtual Private Cloud (VPC)`로 표시되며, 그 아래에 **Configuration** 항목이 추가로 나타납니다. 여기에는 연결된 VPC Configuration의 이름(예: `tutorial-vpc-config`)이 링크로 표시되어, 클릭하면 해당 Configuration의 상세 정보(VPC ID, 서브넷, 보안 그룹 등)를 확인할 수 있습니다.
 
-![vpc-mode.png](_assets/0efdcb3e6d8c.png)
+![vpc-mode.png](./_assets/0efdcb3e6d8c.png)
 
 두 실행 모두 동일한 워크플로우(`vpc-connectivity-test-v3`, WDL)를 사용했으며, 실행 시간도 유사합니다(RESTRICTED: 5분 49초, VPC: 5분 21초).
 

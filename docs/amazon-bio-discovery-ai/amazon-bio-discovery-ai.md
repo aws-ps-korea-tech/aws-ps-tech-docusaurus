@@ -94,7 +94,7 @@ Hosted Recipe는 검증된 모델 조합을 추상화한 것으로, 사용자가
 
 ## 4. 실습: HER2 항체 후보 10개 설계
 
-![HER2 과발현과 항체 결합 개념도](_assets/0a5d94974c7e.png)
+![HER2 과발현과 항체 결합 개념도](./_assets/0a5d94974c7e.png)
 
 정상 세포에는 HER2 수용체가 소수만 존재하지만, 유방암을 포함한 일부 암세포에서는 HER2가 과발현됩니다. 따라서 HER2에 특이적으로 결합하는 항체는 유력한 치료 후보가 됩니다. 이번 실습에서는 HER2에 결합하는 항체 후보를 AI로 설계합니다.
 
@@ -118,13 +118,13 @@ Hosted Recipe는 검증된 모델 조합을 추상화한 것으로, 사용자가
 
 > **참고.** 각 단계의 화면과 세부 항목은 콘솔의 Amazon Bio Discovery → Documentation에서 제공하는 Console Guide(PDF)에 그림과 함께 안내되어 있습니다. 개인 경로(소셜 로그인·이메일)로 가입한 경우에는 이 단계가 없으며, 가입 직후 애플리케이션 홈 화면이 바로 열립니다.
 
-{/* SCREENSHOT-01: 애플리케이션 홈(로그인 직후) 화면 */}
+\{/* SCREENSHOT-01: 애플리케이션 홈(로그인 직후) 화면 */\}
 
 ### 4-2. Project 생성
 
 작업을 담을 공간인 Project를 먼저 생성합니다. 홈 또는 Projects 메뉴에서 Create project를 선택하고 이름(예: HER2 Antibody Design)과 설명을 입력합니다. 하나의 연구 주제를 하나의 Project로 구성합니다.
 
-{/* SCREENSHOT-02: Create project 입력 화면 */}
+\{/* SCREENSHOT-02: Create project 입력 화면 */\}
 
 Project가 생성되면 "Project … was successfully created" 메시지와 함께 Project 개요 화면이 열립니다. 이 화면은 세 개의 탭으로 구성됩니다.
 
@@ -132,7 +132,7 @@ Project가 생성되면 "Project … was successfully created" 메시지와 함�
 - **Files**: Project에 업로드한 구조·서열 파일
 - **Collaborators**: 공동 작업자(Share 버튼으로 초대)
 
-{/* SCREENSHOT-03: Project 개요(Experiments 탭, No experiments 상태) 화면 */}
+\{/* SCREENSHOT-03: Project 개요(Experiments 탭, No experiments 상태) 화면 */\}
 
 화면의 안내 문구에 나타나듯, Experiment는 "Recipe를 선택하고, 데이터를 가져오고, 파라미터를 설정하여 실행"하는 단위입니다. Hosted Recipe를 사용하는 이 실습에서는 Recipe를 따로 만들지 않고 Experiment 생성 과정에서 바로 선택하므로, 다음 단계에서 입력 데이터를 준비한 뒤 Create experiment로 진행합니다.
 
@@ -190,20 +190,20 @@ Project 개요의 Create experiment 버튼을 선택하면 Experiment 생성 마
 
 Recipes 메뉴에서 미리 저장해 둔 사용자 정의 Recipe(캔버스에서 모듈을 직접 연결한 레시피)가 있으면 이 목록에서 함께 선택할 수 있습니다. 사용자 정의 Recipe는 Experiment 생성 전에 먼저 만들어 두어야 하며, 처음에는 Hosted Recipe를 권장합니다.
 
-{/* SCREENSHOT-04: Create experiment – Recipe 선택 화면 */}
+\{/* SCREENSHOT-04: Create experiment – Recipe 선택 화면 */\}
 
 **③ 데이터 업로드.** 4-3에서 준비한 두 파일을 각각 Target Structure(`her2_domain4.pdb`)와 Antibody Framework Structure(`trastuzumab_fv.pdb`)로 지정합니다. Files 탭에 이미 올려 둔 파일이 있으면 목록에서 선택합니다.
 
-{/* SCREENSHOT-05: Create experiment – 데이터 업로드/선택 화면 */}
+\{/* SCREENSHOT-05: Create experiment – 데이터 업로드/선택 화면 */\}
 
 **④ 파라미터 설정.** Framework는 Antibody, 생성 후보 수는 10으로 설정합니다. Generate hotspot recommendations를 켜면 AI 에이전트가 타겟 표면에서 결합에 유리한 잔기(hotspot)를 추천합니다.
 
-{/* SCREENSHOT-06: Create experiment – 파라미터 설정 화면(후보 수 10) */}
+\{/* SCREENSHOT-06: Create experiment – 파라미터 설정 화면(후보 수 10) */\}
 
 **⑤ 예상 EU 확인 후 실행.** ABD는 실행 전에 해당 실험의 예상 EU(Experiment Unit)를 표시하므로, 예상치 못한 비용이 발생하지 않도록 사전에 비용을 확인할 수 있습니다. 이번 실습의 예상 소요 시간은 2–4시간으로 안내되었고, 실제로는 약 2시간이 소요되었으며 1 EU가 사용되었습니다. 실행 후에는 Experiments 탭에서 상태(Status)와 소요 시간(Duration)을 확인할 수 있습니다.
 
-{/* SCREENSHOT-07: 예상 EU 표시 및 실행 확인 화면 */}
-{/* SCREENSHOT-08: Experiments 탭에서 실행 중/완료 상태 목록 */}
+\{/* SCREENSHOT-07: 예상 EU 표시 및 실행 확인 화면 */\}
+\{/* SCREENSHOT-08: Experiments 탭에서 실행 중/완료 상태 목록 */\}
 
 ### 4-5. Experiment 결과 확인
 
@@ -215,8 +215,8 @@ Recipes 메뉴에서 미리 저장해 둔 사용자 정의 Recipe(캔버스에�
 
 화면 왼쪽에서 결합력, 접힘 가능성 등 조건으로 필터링하면 해당 조건에 맞는 후보의 분석 결과가 오른쪽에 표시됩니다.
 
-{/* SCREENSHOT-09: 결과 Overview / In silico results 화면 */}
-{/* SCREENSHOT-10: Functional Clustering 또는 Sequences & CDR Analysis 화면 */}
+\{/* SCREENSHOT-09: 결과 Overview / In silico results 화면 */\}
+\{/* SCREENSHOT-10: Functional Clustering 또는 Sequences & CDR Analysis 화면 */\}
 
 > **AI 에이전트의 역할.** ABD는 결과 수치와 함께 판단 근거를 제시합니다. 설정 보조 에이전트는 타겟 표면에서 결합에 유리한 hotspot 잔기를 표면 접근성·소수성 등을 고려해 추천하고 그 근거를 제공합니다. 후보 선별 에이전트는 여러 속성을 동시에 최적화하고 잠재적 결함(liability)을 평가한 뒤, 사전 선별된 후보와 선택 근거를 함께 제시합니다. 이를 통해 결과를 단순히 확인하는 데 그치지 않고 선택의 이유를 함께 파악할 수 있습니다.
 
@@ -228,7 +228,7 @@ in silico 분석으로 후보를 선별한 뒤, 유망한 후보를 선택해 Se
 - Assay(분석 방법)와 Expression Host(발현 숙주)를 선택하면 ABD가 예상 비용과 소요 시간을 거의 실시간으로 표시합니다.
 - 실험 결과는 애플리케이션으로 자동 회수되어 in silico 예측값과 실측값을 비교할 수 있습니다. 이 결과로 모델을 다시 학습(fine-tuning)하면 다음 설계 주기의 예측 정확도가 향상되며, 이 지점에서 Lab-in-the-Loop 주기가 완성됩니다.
 
-{/* SCREENSHOT-11: Send to Wet Lab – 파트너/Assay 선택 및 예상 비용 화면 */}
+\{/* SCREENSHOT-11: Send to Wet Lab – 파트너/Assay 선택 및 예상 비용 화면 */\}
 
 이로써 항체 후보 설계(in silico), 실험실 검증(wet lab), 모델 개선으로 이어지는 전체 과정을 하나의 애플리케이션에서 수행할 수 있습니다.
 

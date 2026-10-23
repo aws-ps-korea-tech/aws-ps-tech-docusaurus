@@ -35,7 +35,7 @@ from the pipeline docs:
 |---|---------|-----------|-----|
 | 1 | `ValidationException ... StartRun: S3 object not found` before any task | nf-schema validates the default `snpeff_cache = 's3://annotation-cache/...'` param (schema `format: directory-path`) by *stat-ing* the S3 prefix; HealthOmics' S3 provider throws on non-object keys | Run with `validate_params = false` |
 | 2 | `ECR_PERMISSION_ERROR` at container resolution | Wave images were mirrored to **manually-created** ECR repos, which have **no repository policy** granting `omics.amazonaws.com` pull access | `set-repository-policy` on every mirrored repo |
-| 3 | `INVALID_TASK_RESOURCE_VALUE` after 2 tasks | `BWAMEM1_INDEX` requests `memory { 6.B * fasta.size() }`; a tiny test genome yields **< 1 GiB**, below the HealthOmics minimum | Floor resources in a `conf/healthomics.config` |
+| 3 | `INVALID_TASK_RESOURCE_VALUE` after 2 tasks | `BWAMEM1_INDEX` requests `memory { 6.B * fasta.size() }`; a tiny test genome yields **&lt; 1 GiB**, below the HealthOmics minimum | Floor resources in a `conf/healthomics.config` |
 | 4 | `multiqc: command not found` on the final task | sarek's MULTIQC container is a **Seqera Wave "pixi" image**; its binary is on `PATH` only via the image `ENTRYPOINT`, which HealthOmics **ignores** | Override MULTIQC to the `quay.io/biocontainers` image |
 | — | (not an issue for 3.9.0) config parse | 3.9.0 is written for the strict **v2 parser** (default on 26.04.0) | No `syntaxVersion=v1` needed |
 

@@ -100,7 +100,7 @@ DeepPolisher 성능 비교:
 
 **A:** 데이터 크기에 따른 마이그레이션 전략:
 
-**소규모 데이터 (<1TB):**
+**소규모 데이터 (&lt;1TB):**
 - AWS CLI 또는 S3 콘솔 사용
 - 인터넷 연결을 통한 직접 업로드
 - S3 Transfer Acceleration 활용

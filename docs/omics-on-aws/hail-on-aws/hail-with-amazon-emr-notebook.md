@@ -24,22 +24,24 @@ pip install hail
     1. sudo curl -sSL https://search.maven.org/remotecontent?filepath=org/apache/hadoop/hadoop-aws/3.3.2/hadoop-aws-3.3.2.jar &gt; ./hadoop-aws-3.3.2.jar
     2. sudo curl -sSL https://search.maven.org/remotecontent?filepath=com/amazonaws/aws-java-sdk-bundle/1.12.99/aws-java-sdk-bundle-1.12.99.jar &gt; ./aws-java-sdk-bundle-1.12.99.jar
 
-<details id="bkmrk-%EC%9D%98%EC%A1%B4%EC%84%B1-%EC%84%A4%EC%B9%98-https%3A%2F%2Frepo1"><summary>의존성 설치</summary>
+
+**▸ 의존성 설치**
+
 
 [https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.6/](https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.6/)
 
 [https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/](https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/)
 
-</details><span style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); font-family: -webkit-standard; font-size: medium; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration: none; display: inline !important; float: none;">There are 2 jars missing in the java class path the notebook is using. Using python shell directly from the cluster does not need to do this (but only need to point </span>`SPARK_HOME`<span style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); font-family: -webkit-standard; font-size: medium; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration: none; display: inline !important; float: none;"> to the jars because the required dependencies are already there if run from hadoop environment) as Notebook hosts a different environment for all dependencies installed. Also, the hadoop version (uses aws version of hadoop) and package is slightly different from what we get in the hadoop environment in </span>`SPARK_HOME;`<span style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); font-family: -webkit-standard; font-size: medium; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration: none; display: inline !important; float: none;"> Notebook environment uses the external hadoop client, meaning that it will not be able to connect to S3. </span>  
-<span style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); font-family: -webkit-standard; font-size: medium; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration: none; display: inline !important; float: none;">We need to download aws sdk jar and hadoop aws jar and put them into Notebook’s environment jar collection. </span>
+There are 2 jars missing in the java class path the notebook is using. Using python shell directly from the cluster does not need to do this (but only need to point `SPARK_HOME` to the jars because the required dependencies are already there if run from hadoop environment) as Notebook hosts a different environment for all dependencies installed. Also, the hadoop version (uses aws version of hadoop) and package is slightly different from what we get in the hadoop environment in `SPARK_HOME;` Notebook environment uses the external hadoop client, meaning that it will not be able to connect to S3.   
+We need to download aws sdk jar and hadoop aws jar and put them into Notebook’s environment jar collection. 
 
-<span style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); font-family: -webkit-standard; font-size: medium; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration: none; display: inline !important; float: none;">Primary 노드의 인스턴스 EC2 Monitoring</span>
+Primary 노드의 인스턴스 EC2 Monitoring
 
-![Screenshot 2024-05-21 at 4.34.18 PM.png](_assets/4cfd3220afe8.png)
+![Screenshot 2024-05-21 at 4.34.18 PM.png](./_assets/4cfd3220afe8.png)
 
 **Core 노드의 인스턴스 EC2 Monitoring**
 
-![Screenshot 2024-05-21 at 4.35.31 PM.png](_assets/0166b28c3b5b.png)
+![Screenshot 2024-05-21 at 4.35.31 PM.png](./_assets/0166b28c3b5b.png)
 
 **예제 노트북 다운로드**
 
