@@ -1,7 +1,8 @@
 ---
 title: "EBS 최적화 아키텍처 테스트 결과"
-sidebar_position: 3
 ---
+
+# EBS 최적화 아키텍처 테스트 결과
 
 # AWS BLAST EBS 최적화 아키텍처 테스트 결과
 
@@ -234,8 +235,10 @@ aws batch submit-job \
   --job-name "blast-ebs-test-$(date +%Y%m%d-%H%M%S)" \
   --job-queue blast-ebs-r6i-queue \
   --job-definition blast-ebs-job:2 \
-  --container-overrides ',
-      
+  --container-overrides '{
+    "environment": [
+      {"name": "QUERY_FILE", "value": "query.fasta"},
+      {"name": "JOB_NAME", "value": "blast-test-500"}
     ]
   }' \
   --region ap-northeast-2
