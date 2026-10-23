@@ -4,7 +4,7 @@ title: "Getting Started with AI Antibody Design on Amazon Bio Discovery: A Guide
 
 # Getting Started with AI Antibody Design on Amazon Bio Discovery: A Guide for Life Science Researchers
 
-> This article is written for life science researchers who are not yet familiar with the cloud. Every technical term is explained in plain language, and the entire AI antibody design workflow is carried out with clicks in the web console, without writing any code. A Korean version is available at [Amazon Bio Discovery로 AI 항체 설계 시작하기](/amazon-bio-discovery-ai/amazon-bio-discovery-ai/).
+> This article is written for life science researchers who are not yet familiar with the cloud. Every technical term is explained in plain language, and the entire AI antibody design workflow is carried out with clicks in the web console, without writing any code. A Korean version is available at [Amazon Bio Discovery로 AI 항체 설계 시작하기](/amazon-bio-discovery-ai/).
 
 ## Overview
 
