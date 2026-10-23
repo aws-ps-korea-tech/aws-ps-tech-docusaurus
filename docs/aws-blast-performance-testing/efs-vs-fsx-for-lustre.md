@@ -1,7 +1,8 @@
 ---
 title: "EFS vs FSx for Lustre 비교 분석 (실제 테스트 결과 포함)"
-sidebar_position: 4
 ---
+
+# EFS vs FSx for Lustre 비교 분석 (실제 테스트 결과 포함)
 
 # BLAST 파일 시스템 성능 비교 테스트
 
