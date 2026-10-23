@@ -5,9 +5,9 @@ const {themes} = require('prism-react-renderer');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'AWS PS Tech Docs',
+  title: 'AWS Korea Public Sector SA Team',
   tagline: 'AWS Professional Services Technical Documentation',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.png',
 
   // Platform-dependent: GH Pages uses /docusaurus/, CF Pages/Netlify use root.
   // Set DEPLOY_BASE_URL=/docusaurus/ + DEPLOY_URL for GH Pages (CI); unset = root.
@@ -52,11 +52,20 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       image: 'img/docusaurus-social-card.jpg',
+      announcementBar: {
+        id: 'disclaimer',
+        content:
+          '⚠️ 이 사이트의 게시물은 최신 정보를 반영하지 않을 수 있으며, <strong>AWS 공식 콘텐츠가 아닙니다.</strong> 최신 정보는 <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com">AWS 공식 문서</a>를 참고하세요.',
+        backgroundColor: '#fff3cd',
+        textColor: '#664d03',
+        isCloseable: false,
+      },
       navbar: {
-        title: 'AWS PS Tech',
+        title: 'AWS Korea Public Sector SA Team',
         logo: {
-          alt: 'AWS Logo',
-          src: 'img/logo.svg',
+          alt: 'AWS',
+          src: 'img/logo-light-mode.png',
+          srcDark: 'img/logo-dark-mode.png',
         },
         items: [
           {
@@ -108,6 +117,10 @@ const config = {
               {
                 label: 'AWS',
                 href: 'https://aws.amazon.com',
+              },
+              {
+                label: 'Privacy Policy',
+                href: 'https://aws.amazon.com/ko/privacy/',
               },
             ],
           },
