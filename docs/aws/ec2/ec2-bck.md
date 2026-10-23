@@ -217,7 +217,7 @@ echo "주의: 비밀번호가 무작위로 생성된 새 비밀번호로 변경�
 
 *참고: 30개의 인스턴스를 실행하는데 약 74초 정도 소요되었습니다.*
 
-![Screenshot 2024-07-06 at 12.24.23 AM.png](_assets/8993b1dcc5bb.png)
+![Screenshot 2024-07-06 at 12.24.23 AM.png](./_assets/8993b1dcc5bb.png)
 
 ## 결론
 

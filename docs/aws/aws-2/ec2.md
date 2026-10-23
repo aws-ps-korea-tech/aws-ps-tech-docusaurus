@@ -35,32 +35,32 @@ EC2 인스턴스의 현재 인스턴스 상태를 보려면 다음과 같이 하
 2. In the left Navigation pane click on **Instances** under the **Instances** section.
 3. Select your EC2 Instance and in the Instance Details pane below, select **Storage** to view the **Block Devices** and then click on the **Volume ID** of your additional EBS Volume attached previously (e.g. /dev/sdh; the device name may be different in your case).
 
-![Screenshot 2023-09-27 at 6.06.44 PM.png](_assets/9a7430d633e6.png)
+![Screenshot 2023-09-27 at 6.06.44 PM.png](./_assets/9a7430d633e6.png)
 
 This will open the Volumes page showing the specific Volume details.
 
 4. Click on the **Actions** button and further click on **Detach Volume** to detach the volume from the EC2 Instance.
 
-![Screenshot 2023-09-27 at 6.07.48 PM.png](_assets/acfaa237c7bd.png)
+![Screenshot 2023-09-27 at 6.07.48 PM.png](./_assets/acfaa237c7bd.png)
 
 5. In the **Detach Volume** dialog box, click **Detach**; the volume will now be detached and in a few moments the **Status** of the volume will change to **available**, indicating that it could be attached to another instance if required.
 
-## ![Screenshot 2023-09-27 at 6.08.28 PM.png](_assets/032b3286ad72.png)Create snapshot of detached Volume
+## ![Screenshot 2023-09-27 at 6.08.28 PM.png](./_assets/032b3286ad72.png)Create snapshot of detached Volume
 
 1. lick on **Actions**, then select **Create Snapshot**.
 
-![Screenshot 2023-09-27 at 6.09.20 PM.png](_assets/f29349f2c9ed.png)
+![Screenshot 2023-09-27 at 6.09.20 PM.png](./_assets/f29349f2c9ed.png)
 
 2. In the **Create Snapshot** screen, provide a **Description** for the Volume; this will be an identifier to search for the Snapshot of the Volume.
 
-![Screenshot 2023-09-27 at 6.13.07 PM.png](_assets/534db0e71838.png)
+![Screenshot 2023-09-27 at 6.13.07 PM.png](./_assets/534db0e71838.png)
 
 3. Click on **Add Tag** to provide a unique name tag for better identificaiton of the snapshot. Enter “Name” in the **Key** field, and “\[your initials\]-snapshot” for the **Value** field. Add the “User” and “Grant” tag you’ve previously used as well.
 4. Click on **Create Snapshot**.
 5. A Snapshot creation task will be started, and a message indicating the same will be displayed in a green bar on the top of the screen.
 6. Click on **Snapshots** under the **Elastic Block Store** section in the left Navigation pane to view all the snapshots created.
 
-![Screenshot 2023-09-27 at 6.14.06 PM.png](_assets/c0e43f8c47f7.png)
+![Screenshot 2023-09-27 at 6.14.06 PM.png](./_assets/c0e43f8c47f7.png)
 
 ## Delete the detached Volume
 
@@ -68,7 +68,7 @@ Now that a Snapshot has been taken of the volume, we will delete the volume itse
 
 1. In the left Navigation pane click on **Volumes** under the **Elastic Block Store** section to view all the volumes.
 
-![Screenshot 2023-09-27 at 6.14.54 PM.png](_assets/f1ea5c9537f5.png)
+![Screenshot 2023-09-27 at 6.14.54 PM.png](./_assets/f1ea5c9537f5.png)
 
 2. Click on **Actions** and select **Delete Volume**.
 
@@ -84,11 +84,11 @@ We will now Terminate the EC2 Instance.
 
 1. Select the EC2 Instance from the list of instances. Click on **Instance State** &gt; **Terminate Instance**.
 
-![Screenshot 2023-09-27 at 6.15.56 PM.png](_assets/3cacf9d7d167.png)
+![Screenshot 2023-09-27 at 6.15.56 PM.png](./_assets/3cacf9d7d167.png)
 
 2. On the Terminate Instance dialog, observe the note “Associated resources may incur costs after these instances are terminated” and click **Delete EBS Volume**. Read the additional note. To proceed, select **Yes, terminate**. This is an important safeguard, and never click this automatically!
 
-![Screenshot 2023-09-27 at 6.16.23 PM.png](_assets/683b0c2724c8.png)
+![Screenshot 2023-09-27 at 6.16.23 PM.png](./_assets/683b0c2724c8.png)
 
 The instance will now be terminated.
 

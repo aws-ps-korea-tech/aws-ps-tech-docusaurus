@@ -36,7 +36,7 @@ c. EC2 인스턴스에 SSH로 접속하여 Linux 명령을 실행합니다.
 - 가운데: 리소스 목록 및 인스턴스 시작 기능.
 - 오른쪽 창: 문서 및 가격 등의 일반 정보.
 
-![Screenshot 2023-09-26 at 11.36.10 PM.png](_assets/cca34d465c3b.png)
+![Screenshot 2023-09-26 at 11.36.10 PM.png](./_assets/cca34d465c3b.png)
 
 ## EC2 인스턴스 시작
 
@@ -44,72 +44,83 @@ c. EC2 인스턴스에 SSH로 접속하여 Linux 명령을 실행합니다.
 
 **1. Launch Instance** 을 클릭한 다음 드롭다운 메뉴에서 **Launch Instance**을 다시 클릭합니다.
 
-![Screenshot 2023-09-26 at 11.36.35 PM.png](_assets/a1b62c02654f.png)
+![Screenshot 2023-09-26 at 11.36.35 PM.png](./_assets/a1b62c02654f.png)
 
 **2. Launch an instance** 페이지에서 인스턴스의 원하는 이름을 지정할 수 있습니다.
 
-### ![Screenshot 2023-09-26 at 11.37.10 PM.png](_assets/3064ad1ac21b.png)
+### ![Screenshot 2023-09-26 at 11.37.10 PM.png](./_assets/3064ad1ac21b.png)
 
 **3. Add additional tags** 를 클릭하고 "Add Tag"를 클릭합니다. 인스턴스에 대해 제공한 "Name"을 찾을 수 있습니다. 이제 키와 값을 입력합니다. 이 키(더 정확하게는 태그)는 인스턴스가 시작되면 콘솔에 나타납니다. 이를 통해 복잡한 환경에서 실행 중인 머신을 쉽게 추적할 수 있습니다. 이전에 키 쌍에 사용한 것과 유사한 태그를 추가로 생성하여 이 머신에 사용자와 부여 키를 지정하고 동일한 값을 입력합니다. 준비가 되면 **Resource types** 아래에서 **Instances**, **Volumes**, **Network interfaces** 선택합니다.
 
-![Screenshot 2023-10-07 at 12.03.29 AM.png](_assets/00951ff29f6a.png)
+![Screenshot 2023-10-07 at 12.03.29 AM.png](./_assets/00951ff29f6a.png)
 
-**4. Application and OS images (Amazon Machine Image)** 아래에서 검색 상자에 교육용으로 공유된 AMI ID를 입력 또는 `CHENLAB`을 검색하여 선택합니다. **AMI**는 사진과 다를 수 있으므로 **강사의 안내를 참조**하세요. **특히 `N.Virginia` 리전이 아닌 `Seoul` 리전 등 다른 리전에서 실습할 경우 <span style="color: rgb(224, 62, 45);">강사에 의해 AMI가 사전에 공유</span>되어야지만 사용할 수 있습니다.**
+**4. Application and OS images (Amazon Machine Image)** 아래에서 검색 상자에 교육용으로 공유된 AMI ID를 입력 또는 `CHENLAB`을 검색하여 선택합니다. **AMI**는 사진과 다를 수 있으므로 **강사의 안내를 참조**하세요. **특히 `N.Virginia` 리전이 아닌 `Seoul` 리전 등 다른 리전에서 실습할 경우 강사에 의해 AMI가 사전에 공유되어야지만 사용할 수 있습니다.**
 
-<p class="callout info"> **참고로 AMI는 각 리전 별로 모두 AMI ID 가 다릅니다. 리전 간 AMI를 복사하는 방법은 [다음](https://repost.aws/ko/knowledge-center/copy-ami-region)을 참고하세요. [그외 (AMI 공유 방법 참고](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-explicit.html))**</p>
+
+> **ℹ️ 정보**
+>
+> **참고로 AMI는 각 리전 별로 모두 AMI ID 가 다릅니다. 리전 간 AMI를 복사하는 방법은 [다음](https://repost.aws/ko/knowledge-center/copy-ami-region)을 참고하세요. [그외 (AMI 공유 방법 참고](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-explicit.html))**
+
 
 **5. Community AMIs에서** 결과를 클릭합니다. 검색 결과는 **Community AMIs**에 표시됩니다.  **Select** 버튼을 클릭하여 AMI를 선택합니다. 최신 버전의 AMI를 선택해야 합니다.
 
-![Screenshot 2023-10-18 at 12.17.13 PM.png](_assets/6dece1501298.png)
+![Screenshot 2023-10-18 at 12.17.13 PM.png](./_assets/6dece1501298.png)
 
-![Screenshot 2024-05-09 at 9.31.13 AM.png](_assets/ef26a0e203ca.png)
+![Screenshot 2024-05-09 at 9.31.13 AM.png](./_assets/ef26a0e203ca.png)
 
 **6. Instance type**에서 드롭다운 화살표를 클릭하고 검색창에 **c5.4xlarge**을 입력합니다.
 
-![Screenshot 2023-10-07 at 12.08.34 AM.png](_assets/bc980c06b804.png)
+![Screenshot 2023-10-07 at 12.08.34 AM.png](./_assets/bc980c06b804.png)
 
 **7. Key pair (login)** 아래의 드롭다운 목록에서 이 실습의 시작 부분에서 만든 키 쌍을 선택합니다.
 
-![Screenshot 2023-09-27 at 10.08.50 AM.png](_assets/3ea175ef3f6f.png)
+![Screenshot 2023-09-27 at 10.08.50 AM.png](./_assets/3ea175ef3f6f.png)
 
 8\. 다음으로 **Network settings**에 대해 Edit을 클릭합니다. **Subnet** 및 **Security group** 세부 정보를 입력하라는 메시지가 표시됩니다. 보안 그룹은 방화벽 규칙이 됩니다. 앞 챕터에서 진행했다면 [만들어진 보안 그룹](/aws/aws-2/리눅스-머신-실행/)을 사용할 수도 있습니다.
 
-<p class="callout info">Network에서 VPC ID, 보안 그룹 아이디는 사용자마다 다르게 보입니다.  
-</p>
 
-![Screenshot 2023-10-07 at 12.10.00 AM.png](_assets/74f5ac1511c5.png)
+> **ℹ️ 정보**
+>
+> Network에서 VPC ID, 보안 그룹 아이디는 사용자마다 다르게 보입니다.
+
+
+![Screenshot 2023-10-07 at 12.10.00 AM.png](./_assets/74f5ac1511c5.png)
 
 **9. Configure storage** 에서 인스턴스에 스토리지 및 디스크 드라이브를 수정하거나 추가할 수 있습니다. 이 실습에서는 AMI를 선택한 뒤 제시된 용량 기본값 그대로 사용하겠습니다.
 
-![Screenshot 2023-09-27 at 10.10.08 AM.png](_assets/53267ba51e34.png)
+![Screenshot 2023-09-27 at 10.10.08 AM.png](./_assets/53267ba51e34.png)
 
 **10. Summary** 에서 구성을 검토하고 **Launch instance**를 클릭합니다.
 
-<table border="1" id="bkmrk-%EB%98%90%EB%8A%94-%28%EC%8B%A4%EC%8A%B5-%ED%99%98%EA%B2%BD%EC%9D%B4-us-east-1" style="border-collapse: collapse; width: 84.5238%; height: 551px;"><colgroup><col style="width: 50.0596%;" /></col><col style="width: 50.0596%;" /></col></colgroup><tbody><tr><td>![Screenshot 2024-05-09 at 9.33.45 AM.png](_assets/5d88de6c92ea.png)</td><td class="align-center">또는
+![Screenshot 2024-05-09 at 9.33.45 AM.png](./_assets/5d88de6c92ea.png)또는
 
 (실습 환경이 us-east-1일 경우 보이는 AMI ID 다름)
 
 [  
-![Screenshot 2023-10-07 at 12.15.06 AM.png](_assets/faba8110d149.png)](https://www.aws-ps-tech.kr/uploads/images/gallery/2023-10/screenshot-2023-10-07-at-12-15-06-am.png)
+![Screenshot 2023-10-07 at 12.15.06 AM.png](./_assets/faba8110d149.png)](https://www.aws-ps-tech.kr/uploads/images/gallery/2023-10/screenshot-2023-10-07-at-12-15-06-am.png)
 
-</td></tr></tbody></table>
+
 
 이제 인스턴스가 시작되며 잠시 시간이 걸릴 수 있습니다. **Successfully initiated launch of instance** 메시지와 함께 **Launch Status** 페이지가 표시됩니다.
 
-![Screenshot 2023-10-07 at 12.24.53 AM.png](_assets/96617dd7edea.png)
+![Screenshot 2023-10-07 at 12.24.53 AM.png](./_assets/96617dd7edea.png)
 
 11\. 페이지 오른쪽 하단에서 **View all Instances**를 클릭하여 EC2 인스턴스 목록을 확인합니다. 인스턴스를 클릭합니다. 초기화 프로세스를 거치게 됩니다. 인스턴스가 시작되면 Linux 서버는 물론 인스턴스가 속한 가용 영역과 공개적으로 라우팅할 수 있는 DNS 이름이 표시됩니다.
 
-![Screenshot 2023-09-27 at 10.17.42 AM.png](_assets/b5a83a6381d0.png)
+![Screenshot 2023-09-27 at 10.17.42 AM.png](./_assets/b5a83a6381d0.png)
 
 ## SSH를 통해 EC2 인스턴스 접속하기
 
 **Connect** 를 클릭해서 접속 방법을 가이드 받을 수 있습니다.
 
-![Screenshot 2023-10-07 at 12.48.06 AM.png](_assets/b45cf740b2a1.png)
+![Screenshot 2023-10-07 at 12.48.06 AM.png](./_assets/b45cf740b2a1.png)
 
-<p class="callout warning">사전 제작된 `CHENLAB-PUBLIC` AMI는 우분투이므로 사용자 이름은 "**ubuntu**"가 됩니다. 참고로 이전 챕터에서 실습에 사용했던 Amazon Linux 2 이미지에 대한 사용자 이름은 "ec2-user" 였습니다.</p>
 
-![Screenshot 2023-10-07 at 12.49.34 AM.png](_assets/cdb6e6273df8.png)
+> **⚠️ 주의**
+>
+> 사전 제작된 `CHENLAB-PUBLIC` AMI는 우분투이므로 사용자 이름은 "**ubuntu**"가 됩니다. 참고로 이전 챕터에서 실습에 사용했던 Amazon Linux 2 이미지에 대한 사용자 이름은 "ec2-user" 였습니다.
+
+
+![Screenshot 2023-10-07 at 12.49.34 AM.png](./_assets/cdb6e6273df8.png)
 
 앞에서 설명한 Cloud9 환경에서의 접속방법대로 해보세요. ([SSH 를 통한 EC2 인스턴스 접속](/aws/aws-2/리눅스-머신-실행/))

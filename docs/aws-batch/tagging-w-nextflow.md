@@ -59,8 +59,8 @@ workflow {
 
 다음과 같이 AWS Batch 의 Job 내용에 Tags가 부여됩니다.
 
-![image.png](_assets/8369cb7f5257.png)
+![image.png](./_assets/8369cb7f5257.png)
 
 다음과 같이 ECS 에 작업 (Task)에도 Tag가 적용되었음을 확인할 수 있습니다.
 
-![image.png](_assets/ca979367b0f6.png)
+![image.png](./_assets/ca979367b0f6.png)

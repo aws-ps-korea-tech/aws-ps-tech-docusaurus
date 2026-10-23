@@ -28,7 +28,7 @@ GBrain은 이 문제를 푸는 오픈소스입니다. 마크다운 페이지를 
 
 ## 2. 무엇이 만들어지나
 
-![그림 1. 전체 배포 아키텍처 — 노트북·폰의 클라이언트가 CloudFront(WAF) → VPC Origin → 내부 ALB → Fargate(gbrain + litellm) → RDS pgvector로 이어지고, Bedrock·Secrets Manager·EventBridge·SNS가 태스크 롤로 연결된 모습](_assets/564ab9b5ca2d.png)
+![그림 1. 전체 배포 아키텍처 — 노트북·폰의 클라이언트가 CloudFront(WAF) → VPC Origin → 내부 ALB → Fargate(gbrain + litellm) → RDS pgvector로 이어지고, Bedrock·Secrets Manager·EventBridge·SNS가 태스크 롤로 연결된 모습](./_assets/564ab9b5ca2d.png)
 
 *그림 1. 무엇이 만들어지나. 인터넷에서 들어오는 길은 CloudFront 하나이고 그 뒤의 ALB·컨테이너·DB는 전부 프라이빗 서브넷에 있습니다. 용어: **VPC Origin**은 CloudFront가 프라이빗 서브넷의 ALB에 공개 IP 없이 직접 붙는 기능, **pgvector**는 PostgreSQL 안에서 벡터(임베딩) 유사도 검색을 해 주는 확장, **태스크 롤**은 컨테이너에 자동으로 주어지는 임시 자격증명(API 키를 둘 필요가 없음)입니다.*
 
@@ -45,7 +45,7 @@ GBrain은 이 문제를 푸는 오픈소스입니다. 마크다운 페이지를 
 
 CDK 스택은 v1 4개(`Network -> Data -> Service -> Ops`)에 v2에서 us-east-1 2개(`EdgeWaf`, `EdgeAlarms` -- CloudFront용 WAF와 그 지표의 알람은 버지니아에만 만들 수 있습니다)가 붙습니다. 비용은 **v1 추정 $195, 실측 $210/월**이었고, v2(WAF ≈ $10)를 포함한 10월 1–11일 실측은 **≈ $200/월**(유휴 상태, Bedrock 호출 거의 0)입니다. 절반 이상이 RDS(≈ $73)와 NAT 게이트웨이(≈ $41)입니다(그림 2).
 
-![그림 2. 월 비용 구성 — RDS $73, Fargate $42, NAT $41, 인터페이스 엔드포인트 $17, ALB $15, WAF $7, 기타 $6을 가로 막대로, Bedrock은 호출량 비례 $0으로 표시하고, 가동 중 ≈ $201과 Fargate 정지 시 ≈ $159를 비교한 그림](_assets/27f12fb29cb3.png)
+![그림 2. 월 비용 구성 — RDS $73, Fargate $42, NAT $41, 인터페이스 엔드포인트 $17, ALB $15, WAF $7, 기타 $6을 가로 막대로, Bedrock은 호출량 비례 $0으로 표시하고, 가동 중 ≈ $201과 Fargate 정지 시 ≈ $159를 비교한 그림](./_assets/27f12fb29cb3.png)
 
 *그림 2. 월 비용 구성(Cost Explorer, `Project=gbrain` 태그, 10월 1–11일 실측을 월로 환산). 절반 이상이 RDS와 NAT 게이트웨이이고 둘 다 "켜져 있는 시간"에 과금되므로, Fargate를 멈춰도 ≈ $160는 남습니다. Bedrock은 호출량 비례(유휴 시 월 $1 미만)이고 태그가 붙지 않아 예산 밖입니다. 용어: **NAT 게이트웨이**는 프라이빗 서브넷이 밖으로 나가는(인바운드는 없는) 출구, **인터페이스 엔드포인트**는 NAT를 거치지 않고 AWS 서비스(여기서는 Secrets Manager)에 사설망으로 붙는 접점입니다.*
 
@@ -89,7 +89,7 @@ npx cdk deploy GbrainService GbrainOps      # 13분 (이미지 빌드·푸시 �
 
 표에서 가장 비직관적인 것은 504 건입니다. 그림으로 보면 이렇습니다.
 
-![그림 3. VPC Origin 504 함정 — 왼쪽은 첫 배포: CloudFront에서 ALB로 온 요청의 소스 IP가 54.182.x.x(CloudFront 공개 IP)라 app 서브넷 CIDR만 허용한 ALB 보안 그룹이 REJECT하고 클라이언트는 504를 받으며 단서는 VPC Flow Logs의 REJECT 줄. 오른쪽은 수정: 관리형 접두사 목록 com.amazonaws.global.cloudfront.origin-facing을 허용해 200](_assets/cc175ae2823a.png)
+![그림 3. VPC Origin 504 함정 — 왼쪽은 첫 배포: CloudFront에서 ALB로 온 요청의 소스 IP가 54.182.x.x(CloudFront 공개 IP)라 app 서브넷 CIDR만 허용한 ALB 보안 그룹이 REJECT하고 클라이언트는 504를 받으며 단서는 VPC Flow Logs의 REJECT 줄. 오른쪽은 수정: 관리형 접두사 목록 com.amazonaws.global.cloudfront.origin-facing을 허용해 200](./_assets/cc175ae2823a.png)
 
 *그림 3. 첫 공개 배포에서 모든 요청이 504였던 이유. **VPC Origin**으로 들어온 요청은 ALB에 CloudFront의 공개 IP(54.182.x.x)를 소스로 도착하므로, "같은 VPC 안에서 오니까"라고 서브넷 CIDR을 허용한 **보안 그룹**(인스턴스 단위 방화벽) 규칙은 한 건도 맞지 않습니다. 답은 AWS가 관리하는 CloudFront origin-facing **접두사 목록**(IP 대역 묶음, 리전마다 ID가 다름) 하나를 허용하는 것이고, 단서는 ALB 로그가 아니라 VPC Flow Logs의 REJECT 줄이었습니다. ALB는 그대로 사설 IP만 가집니다.*
 
@@ -99,7 +99,7 @@ npx cdk deploy GbrainService GbrainOps      # 13분 (이미지 빌드·푸시 �
 
 업스트림은 3주 사이에 0.51에서 0.60으로 뛰었고(릴리스가 하루 수 회), 스키마는 **v159에서 v242로 83개 마이그레이션**이 쌓였습니다. 절차는 네 단계였고 총 15분이 걸렸습니다.
 
-![그림 4. 업그레이드 절차와 되돌리기 경계 — .env 두 줄 수정, 로컬 docker build, RDS 수동 스냅샷(5.5분), cdk deploy 3스택(553초), 새 태스크의 init이 83개 마이그레이션 적용, /health와 기존 토큰으로 확인 후 노트북 CLI 업그레이드까지 여섯 단계를 가로로 놓고, 아래에 ECS 서킷 브레이커(앱만 되돌림)와 스냅샷 복원(DB까지 되돌림) 두 되돌리기 선을 그린 그림](_assets/bfcddd3e0b86.png)
+![그림 4. 업그레이드 절차와 되돌리기 경계 — .env 두 줄 수정, 로컬 docker build, RDS 수동 스냅샷(5.5분), cdk deploy 3스택(553초), 새 태스크의 init이 83개 마이그레이션 적용, /health와 기존 토큰으로 확인 후 노트북 CLI 업그레이드까지 여섯 단계를 가로로 놓고, 아래에 ECS 서킷 브레이커(앱만 되돌림)와 스냅샷 복원(DB까지 되돌림) 두 되돌리기 선을 그린 그림](./_assets/bfcddd3e0b86.png)
 
 *그림 4. 업그레이드 한 번의 흐름과 되돌리기 선 두 개. ECS **서킷 브레이커**는 새 태스크가 건강 검사를 통과하지 못하면 자동으로 이전 태스크 정의로 돌아가는 기능이지만 DB 스키마는 건드리지 않습니다. 그래서 스키마 **마이그레이션**(DB 구조를 새 버전에 맞게 바꾸는 SQL, 되돌릴 수 없음)의 되돌리기는 배포 전 **스냅샷**(RDS가 찍는 DB 전체의 시점 복사본)뿐입니다. 토큰과 OAuth 클라이언트는 주소(issuer)가 바뀌지 않았으므로 전부 그대로입니다.*
 
@@ -118,7 +118,7 @@ npx cdk deploy GbrainService GbrainOps      # 13분 (이미지 빌드·푸시 �
 
 여기서부터가 매일 하는 일입니다. 구조를 먼저 그리면: 데이터·검색·임베딩·Bedrock 호출은 전부 서울 Fargate의 gbrain 서버에서 일어나고, 노트북에 설치한 gbrain은 **thin-client**(`gbrain init --mcp-only`)라 로컬 DB가 없습니다. `capture`/`search`/`think`를 서버 `/mcp`에 위임하는 터미널용 클라이언트입니다. Claude Desktop·Claude Code·Codex·Kiro는 이 CLI를 거치지 않고 **각자 MCP(HTTP)로 같은 `/mcp`에 직접** 붙습니다(5장).
 
-![그림 5. 노트북 쪽 구조 — CLI thin-client와 Claude Desktop·Claude Code·Codex·Kiro가 각자의 설정 파일에서 같은 공개 URL /mcp로 수렴하고, 터널은 관리자의 /admin에만 쓰이는 모습](_assets/99627f4d9512.png)
+![그림 5. 노트북 쪽 구조 — CLI thin-client와 Claude Desktop·Claude Code·Codex·Kiro가 각자의 설정 파일에서 같은 공개 URL /mcp로 수렴하고, 터널은 관리자의 /admin에만 쓰이는 모습](./_assets/99627f4d9512.png)
 
 *그림 5. 브레인은 서울에 하나, 노트북에는 클라이언트만. 다섯 클라이언트가 전부 같은 주소에 같은 방식(Bearer 토큰)으로 붙고, 설정이 남는 파일이 각각 다릅니다. 용어: **thin-client**는 로컬 DB 없이 모든 명령을 서버 `/mcp`에 위임하는 CLI 모드, **MCP**는 에이전트가 외부 도구(여기서는 브레인)를 호출하는 표준 프로토콜입니다.*
 
@@ -394,7 +394,7 @@ Kiro는 `mcp.json`에 원격 서버를 `url` + `headers`로 직접 적습니다.
 
 ### 6.1 무엇이 어디에 묶여 있나
 
-![그림 6. 자격증명 지도 — Bearer 토큰, OAuth 클라이언트, Connectors OAuth 세션, owner 토큰 네 가지를 누가 쓰고 어떻게 만들고 무엇이 서버에 남고 어떻게 회수하는지 표로, 아래에 주소 변경·버전 업그레이드·revoke 세 사건에서 각각 무효가 되는지를 배지로 정리](_assets/c327211750c2.png)
+![그림 6. 자격증명 지도 — Bearer 토큰, OAuth 클라이언트, Connectors OAuth 세션, owner 토큰 네 가지를 누가 쓰고 어떻게 만들고 무엇이 서버에 남고 어떻게 회수하는지 표로, 아래에 주소 변경·버전 업그레이드·revoke 세 사건에서 각각 무효가 되는지를 배지로 정리](./_assets/c327211750c2.png)
 
 *그림 6. 자격증명 네 가지와 무효가 되는 사건. 서버에는 어느 것도 원문이 남지 않고 해시만 남습니다. 용어: **OAuth 클라이언트**는 프로그램(여기서는 CLI)에 주는 아이디·비밀번호 한 쌍이고 그걸로 매번 짧게 쓰는 토큰을 받아 옵니다. **Bearer 토큰**은 그 자체가 열쇠인 긴 문자열로 에이전트 설정 파일에 들어갑니다. **issuer**는 토큰을 발급한 서버 주소이며 토큰이 그 주소에 묶입니다.*
 

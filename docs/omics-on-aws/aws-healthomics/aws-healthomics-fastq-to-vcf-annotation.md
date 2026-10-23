@@ -20,7 +20,7 @@ AWS HealthOmics 워크플로 기능을 사용해 자체 워크플로를 가져�
 
 Ready2Run의 GATK-BP Germline fq2vcf for 30x genome 워크플로우로부터 입력한 FASTQ 를 VCF로 변환하고 이 VCF파일에 대해 VEP workflow (Private workflow에 등록하여)를 수행하여 최종적으로 Annotation된 결과 VCF를 얻게 됩니다.
 
-![omics-eventbridge-architecture.png](_assets/294f0ba70cf5.png)
+![omics-eventbridge-architecture.png](./_assets/294f0ba70cf5.png)
 
 ## 사전 요구사항
 
@@ -101,7 +101,7 @@ aws stepfunctions start-execution \
 
 최종적으로 Amazon ECR에 접속해서 컨테이너 이미지 정보가 repository에 잘 등록되었는지 확인해볼 수 있습니다.
 
-![Screenshot 2024-06-14 at 7.08.03 PM.png](_assets/fc225b6aa325.png)
+![Screenshot 2024-06-14 at 7.08.03 PM.png](./_assets/fc225b6aa325.png)
 
 ## 솔루션 살펴보기 및 테스트
 
@@ -111,13 +111,13 @@ aws stepfunctions start-execution \
 
 Amazon SNS 로 진입해 healthomics workflow status topic 주제 세부 페이지에서 Subscrition을 만들면됩니다.
 
-![Screenshot 2024-06-14 at 6.49.56 PM.png](_assets/3555bf9dab3d.png)
+![Screenshot 2024-06-14 at 6.49.56 PM.png](./_assets/3555bf9dab3d.png)
 
-![Screenshot 2024-06-14 at 6.50.30 PM.png](_assets/731807ce484d.png)
+![Screenshot 2024-06-14 at 6.50.30 PM.png](./_assets/731807ce484d.png)
 
 이메일을 통해 구독 확인을 하면 아래와 같이 최종적으로 구독이 완료됬음을 알 수 있습니다.
 
-![Screenshot 2024-06-14 at 6.50.38 PM.png](_assets/2f580134ed3e.png)
+![Screenshot 2024-06-14 at 6.50.38 PM.png](./_assets/2f580134ed3e.png)
 
 ### 샘플 manifest CSV 파일 만들기 및 업로드
 
@@ -130,7 +130,7 @@ NA12878,Sample_U0a,s3://aws-genomics-static-{aws-region}/omics-tutorials/data/fa
 
 우리는 공용 AWS 테스트 데이터 버킷에서 호스팅되는 공개적으로 사용 가능한 테스트 FASTQ 파일을 사용할 것입니다. S3 버킷에서도 자체 FASTQ 파일을 사용할 수 있습니다.
 
-1. 솔루션 코드에 제공된 테스트 파일을 사용하세요: "workflows/vep/test\_data/sample\_manifest\_with\_test\_data.csv". 파일 내용 중 {aws-region} 문자열을 솔루션을 배포한 AWS 리전으로 바꿉니다. CSV에서 참조된 공개적으로 사용 가능한 FASTQ 데이터는 AWS HealthOmics를 사용할 수 있는 모든 지역에서 사용할 수 있습니다.
+1. 솔루션 코드에 제공된 테스트 파일을 사용하세요: "workflows/vep/test\_data/sample\_manifest\_with\_test\_data.csv". 파일 내용 중 \{aws-region\} 문자열을 솔루션을 배포한 AWS 리전으로 바꿉니다. CSV에서 참조된 공개적으로 사용 가능한 FASTQ 데이터는 AWS HealthOmics를 사용할 수 있는 모든 지역에서 사용할 수 있습니다.
 2. 이 파일을 솔루션에서 생성한 입력 버킷에 "fastq" 접두사를 붙여 업로드합니다.
 
 ```
@@ -143,9 +143,9 @@ aws s3 cp sample_manifest_with_test_data.csv s3://<INPUTBUCKET>/fastqs/
 
 Omics Run 내에 연결된 정보를 통해 최종 결과는 S3에서 확인할 수 있습니다.
 
-![Screenshot 2024-06-14 at 8.27.04 PM.png](_assets/af8345b84ef3.png)
+![Screenshot 2024-06-14 at 8.27.04 PM.png](./_assets/af8345b84ef3.png)
 
-![Screenshot 2024-06-14 at 8.28.19 PM.png](_assets/3afe13566d67.png)
+![Screenshot 2024-06-14 at 8.28.19 PM.png](./_assets/3afe13566d67.png)
 
 ## 참고
 

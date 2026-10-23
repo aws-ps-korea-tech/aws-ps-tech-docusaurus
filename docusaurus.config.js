@@ -9,8 +9,10 @@ const config = {
   tagline: 'AWS Professional Services Technical Documentation',
   favicon: 'img/favicon.ico',
 
-  url: 'https://aws-ps-korea-tech.github.io',
-  baseUrl: '/docusaurus/',
+  // Platform-dependent: GH Pages uses /docusaurus/, CF Pages/Netlify use root.
+  // Set DEPLOY_BASE_URL=/docusaurus/ + DEPLOY_URL for GH Pages (CI); unset = root.
+  url: process.env.DEPLOY_URL || 'https://aws-ps-korea-tech.github.io',
+  baseUrl: process.env.DEPLOY_BASE_URL || '/',
 
   organizationName: 'aws-ps-korea-tech',
   projectName: 'docusaurus',

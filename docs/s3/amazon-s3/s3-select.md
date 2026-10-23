@@ -16,7 +16,7 @@ Amazon Simple Storage Solution(S3)은 무한하고 내구성이 뛰어나며 탄
 한 가지 제한 사항은 SQL 표현식의 최대 길이가 256KB라는 점입니다. 또한 입력 또는 결과에서 레코드의 최대 길이는 1MB입니다. 또한 복잡한 분석 쿼리 및 조인은 지원되지 않습니다. 마지막으로, 선택 쿼리는 한 번에 하나의 파일에서만 실행할 수 있습니다.
 
 ## 사용해보기
-![Screenshot 2023-08-30 at 8.37.31 PM.png](_assets/dfd17fa0b2d3.png)
+![Screenshot 2023-08-30 at 8.37.31 PM.png](./_assets/dfd17fa0b2d3.png)
 
 ### SQL Query 결과
-![Screenshot 2023-08-30 at 8.38.08 PM.png](_assets/02fc5027f5dc.png)
+![Screenshot 2023-08-30 at 8.38.08 PM.png](./_assets/02fc5027f5dc.png)

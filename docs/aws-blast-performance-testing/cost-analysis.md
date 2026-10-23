@@ -120,7 +120,7 @@ Daily: $91.56 / 30 = $3.05/day
 | Storage (daily) | $0.0002 |
 | API Requests | $0.0001 |
 | Data Transfer | $0.00 |
-| **Total** | **< $0.01** |
+| **Total** | **&lt; $0.01** |
 
 ---
 
@@ -188,8 +188,8 @@ Example: 3m 56s = 0.0656 hours x $7.776 = $0.51
 | EC2 (Batch) | $5.18 | 4 jobs, ~40 min total |
 | EFS Storage | $3.05 | Daily portion of $91.56/month |
 | EFS Throughput | $70.33 | 1.6 TB read (BLAST DB) |
-| S3 Storage | < $0.01 | 236 MB |
-| S3 Requests | < $0.01 | ~38 requests |
+| S3 Storage | &lt; $0.01 | 236 MB |
+| S3 Requests | &lt; $0.01 | ~38 requests |
 | CloudWatch | ~$0.01 | Logs & metrics |
 | **Total Direct** | **$78.57** | |
 
@@ -282,7 +282,7 @@ Other:             0.0% ($0.01)
 | EFS Storage | $91.56 | 254 GB Standard |
 | EFS Throughput | $2,110+ | 50 TB read/month |
 | EC2 (Batch) | $155+ | ~20 hours/month |
-| S3 | < $1 | Minimal storage |
+| S3 | &lt; $1 | Minimal storage |
 | **Total** | **~$2,360/month** | |
 
 ### Optimized Architecture (with EBS)
@@ -292,7 +292,7 @@ Other:             0.0% ($0.01)
 | EBS Snapshot | $12.70 | 254 GB @ $0.05/GB |
 | EBS Volume Usage | ~$50 | Attached during jobs |
 | EC2 Spot | $31+ | 60% savings |
-| S3 | < $1 | |
+| S3 | &lt; $1 | |
 | **Total** | **~$95/month** | |
 
 **Potential Monthly Savings: ~$2,265 (96%)**

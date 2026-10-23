@@ -59,7 +59,7 @@ python3 amazon-omics-tutorials/utils/scripts/inspect_nf.py \
 
 `scrnaseq_271_docker_images_manifest.json` 파일은 예를들어 다음과 같은 모습이어야 합니다:
 
-![Screenshot 2025-04-18 at 4.47.02 PM.png](_assets/b1de33b9a1ba.png)
+![Screenshot 2025-04-18 at 4.47.02 PM.png](./_assets/b1de33b9a1ba.png)
 
 #### 컨테이너 사설화 (into Amazon ECR)
 
@@ -72,9 +72,9 @@ aws stepfunctions start-execution \
 
 [step function 콘솔](https://console.aws.amazon.com/states/home)에서 state machines중에 `omx-container-puller`를 확인하여 Execution이 완료되었는지 확인합니다.
 
-![Screenshot 2025-04-15 at 3.52.46 PM.png](_assets/8233abbf1258.png)
+![Screenshot 2025-04-15 at 3.52.46 PM.png](./_assets/8233abbf1258.png)
 
-![Screenshot 2024-08-20 at 3.38.18 PM.png](_assets/44e768ae8305.png)
+![Screenshot 2024-08-20 at 3.38.18 PM.png](./_assets/44e768ae8305.png)
 
 #### nf-core project 코드 업데이트
 
@@ -149,7 +149,9 @@ echo $workflow_id
 
 아래는 테스트 샘플의 파라미터 예시입니다. ([참고](https://github.com/nf-core/scrnaseq/blob/e0ddddbff9d8b8c2421c67ff07449a06f9ca02d2/conf/test.config#L26))
 
-<details id="bkmrk-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A4%80%EB%B9%84-%EC%B0%B8%EA%B3%A0-%EC%98%88%EC%A0%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%8A%94-%EB%8B%A4%EC%9D%8C"><summary>데이터 준비 참고</summary>
+
+**▸ 데이터 준비 참고**
+
 
 예제 데이터는 다음과 같이 다운로드 해볼 수 있습니다.
 
@@ -165,7 +167,7 @@ wget https://github.com/nf-core/test-datasets/raw/scrnaseq/reference/gencode.vM1
 aws s3 sync . s3://omics-output-us-east-1-462922227709/workflow_migration_workshop/nfcore-scrnaseq-v4.0.0/
 ```
 
-</details>**sample sheet 만들기**
+**sample sheet 만들기**
 
 ```bash
 cat << EOF > samplesheet-2-0.csv
@@ -238,11 +240,15 @@ cat << EOF > input_full.json
 EOF
 ```
 
-<span style="color: rgb(34, 34, 34); font-family: 'Amazon Ember', 'Noto Sans KR', sans-serif; font-size: 1.666em; font-weight: 400;">Policy 준비</span>
+Policy 준비
 
 ##### Prepare IAM service role to run AWS HealthOmics workflow
 
-<p class="callout warning">your-bucket-name, your-account-id, your-region을 모두 본인 환경에 맞게 수정하여 사용하세요.</p>
+
+> **⚠️ 주의**
+>
+> your-bucket-name, your-account-id, your-region을 모두 본인 환경에 맞게 수정하여 사용하세요.
+
 
 `omics_workflow_policy.json` 만들기
 

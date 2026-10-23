@@ -12,8 +12,11 @@ title: "WDL 워크플로우 마이그레이션 하기 (HiFi-human-WGS-WDL)"
 
 EC2 인스턴스의 사양 역시 문서 내용을 참고 ( 64 cpu cores and 256 GB of RAM) 하여 c6i.32xlarge 에서 테스트했습니다.
 
-<p class="callout warning">EC2 인스턴스의 사양 역시 문서 내용을 참고 ( 64 cpu cores and 256 GB of RAM) 하여 c6i.32xlarge 에서 테스트했습니다.  
-**시간당 $5.440 달러**, 비용 참고: https://instances.vantage.sh/aws/ec2/c6i.32xlarge</p>
+
+> **⚠️ 주의**
+>
+> EC2 인스턴스의 사양 역시 문서 내용을 참고 ( 64 cpu cores and 256 GB of RAM) 하여 c6i.32xlarge 에서 테스트했습니다. **시간당 $5.440 달러**, 비용 참고: https://instances.vantage.sh/aws/ec2/c6i.32xlarge
+
 
 개발 환경을 위해 tmux, git을 설치했습니다.
 
