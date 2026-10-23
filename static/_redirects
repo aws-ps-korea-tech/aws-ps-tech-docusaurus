@@ -6,8 +6,8 @@
 /books/ai-agent-memory-on-aws/page/ai-gbrain-aws/  /ai-agent-memory-on-aws/ai-gbrain-aws/  301
 /books/amazon-bio-discovery-ai  /amazon-bio-discovery-ai/  301
 /books/amazon-bio-discovery-ai/  /amazon-bio-discovery-ai/  301
-/books/amazon-bio-discovery-ai/page/amazon-bio-discovery-ai  /amazon-bio-discovery-ai/amazon-bio-discovery-ai/  301
-/books/amazon-bio-discovery-ai/page/amazon-bio-discovery-ai/  /amazon-bio-discovery-ai/amazon-bio-discovery-ai/  301
+/books/amazon-bio-discovery-ai/page/amazon-bio-discovery-ai  /amazon-bio-discovery-ai/  301
+/books/amazon-bio-discovery-ai/page/amazon-bio-discovery-ai/  /amazon-bio-discovery-ai/  301
 /books/amazon-bio-discovery-ai/page/getting-started-with-ai-antibody-design-on-amazon-bio-discovery-a-guide-for-life-science-researchers  /amazon-bio-discovery-ai/getting-started-with-ai-antibody-design-on-amazon-bio-discovery-a-guide-for-life-science-researchers/  301
 /books/amazon-bio-discovery-ai/page/getting-started-with-ai-antibody-design-on-amazon-bio-discovery-a-guide-for-life-science-researchers/  /amazon-bio-discovery-ai/getting-started-with-ai-antibody-design-on-amazon-bio-discovery-a-guide-for-life-science-researchers/  301
 /books/amazon-s3  /s3/amazon-s3/  301
@@ -56,8 +56,8 @@
 /books/aws/page/ami/  /aws/aws-2/ami/  301
 /books/aws/page/ami-gwl  /aws/aws-2/ami-gwl/  301
 /books/aws/page/ami-gwl/  /aws/aws-2/ami-gwl/  301
-/books/aws/page/aws  /aws/aws/  301
-/books/aws/page/aws/  /aws/aws/  301
+/books/aws/page/aws  /aws/  301
+/books/aws/page/aws/  /aws/  301
 /books/aws/page/aws-cli  /aws/aws-2/aws-cli/  301
 /books/aws/page/aws-cli/  /aws/aws-2/aws-cli/  301
 /books/aws/page/cloud9  /aws/aws-2/cloud9/  301
@@ -94,8 +94,8 @@
 /books/decision-models-on-aws/page/draft-system-one-aws-vs-amazon-bedrock-claude-55/  /decision-models-on-aws/draft-system-one-aws-vs-amazon-bedrock-claude-55/  301
 /books/draft-gbrain  /draft-gbrain/  301
 /books/draft-gbrain/  /draft-gbrain/  301
-/books/draft-gbrain/page/draft-gbrain  /draft-gbrain/draft-gbrain/  301
-/books/draft-gbrain/page/draft-gbrain/  /draft-gbrain/draft-gbrain/  301
+/books/draft-gbrain/page/draft-gbrain  /draft-gbrain/  301
+/books/draft-gbrain/page/draft-gbrain/  /draft-gbrain/  301
 /books/egovframework-on-aws  /egovframework-on-aws/  301
 /books/egovframework-on-aws/  /egovframework-on-aws/  301
 /books/fsx-for-lustre  /fsx-for-lustre/  301
@@ -150,8 +150,8 @@
 /books/omics-on-aws/page/aws/  /omics-on-aws/hpp-production-workflows/aws/  301
 /books/omics-on-aws/page/aws-glue  /omics-on-aws/hail-on-aws/aws-glue/  301
 /books/omics-on-aws/page/aws-glue/  /omics-on-aws/hail-on-aws/aws-glue/  301
-/books/omics-on-aws/page/aws-healthomics  /omics-on-aws/aws-healthomics/aws-healthomics/  301
-/books/omics-on-aws/page/aws-healthomics/  /omics-on-aws/aws-healthomics/aws-healthomics/  301
+/books/omics-on-aws/page/aws-healthomics  /omics-on-aws/aws-healthomics/  301
+/books/omics-on-aws/page/aws-healthomics/  /omics-on-aws/aws-healthomics/  301
 /books/omics-on-aws/page/aws-healthomics-Ksh  /omics-on-aws/aws-healthomics-ksh/  301
 /books/omics-on-aws/page/aws-healthomics-Ksh/  /omics-on-aws/aws-healthomics-ksh/  301
 /books/omics-on-aws/page/aws-healthomics-annotation  /omics-on-aws/aws-healthomics/aws-healthomics-annotation/  301
