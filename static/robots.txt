@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aws-ps-tech-docusaurus.netlify.app/sitemap.xml

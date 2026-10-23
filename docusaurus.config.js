@@ -11,7 +11,7 @@ const config = {
 
   // Platform-dependent: GH Pages uses /docusaurus/, CF Pages/Netlify use root.
   // Set DEPLOY_BASE_URL=/docusaurus/ + DEPLOY_URL for GH Pages (CI); unset = root.
-  url: process.env.DEPLOY_URL || 'https://aws-ps-korea-tech.github.io',
+  url: process.env.DEPLOY_URL || 'https://aws-ps-tech-docusaurus.netlify.app',
   baseUrl: process.env.DEPLOY_BASE_URL || '/',
 
   organizationName: 'aws-ps-korea-tech',
@@ -26,7 +26,7 @@ const config = {
 
   i18n: {
     defaultLocale: 'ko',
-    locales: ['ko', 'en'],
+    locales: ['ko'],
   },
 
   presets: [
@@ -36,6 +36,7 @@ const config = {
       ({
         docs: {
           routeBasePath: '/',
+          numberPrefixParser: false,
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/aws-ps-korea-tech/docusaurus/tree/main/',
         },
@@ -79,7 +80,7 @@ const config = {
             items: [
               {
                 label: 'AWS Services',
-                to: '/amazon-s3/s3-select',
+                to: '/s3/amazon-s3/s3-select',
               },
             ],
           },
