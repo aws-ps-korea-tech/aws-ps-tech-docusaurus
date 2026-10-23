@@ -94,7 +94,7 @@ In addition, Score and prediction modules such as binding affinity, structure pr
 
 ## 4. Hands-on: Designing 10 HER2 Antibody Candidates
 
-![Concept diagram of HER2 overexpression and antibody binding](_assets/86600c2b2f27.png)
+![Concept diagram of HER2 overexpression and antibody binding](./_assets/86600c2b2f27.png)
 
 Normal cells carry only a few HER2 receptors, whereas some cancer cells, including breast cancer cells, overexpress HER2. An antibody that binds HER2 specifically is therefore a strong therapeutic candidate. In this exercise, we design HER2-binding antibody candidates with AI.
 
@@ -118,13 +118,13 @@ When you open Amazon Bio Discovery in the console, the initial setup screen appe
 
 > **Note.** The screens and details of each step are illustrated in the Console Guide (PDF) available under Amazon Bio Discovery → Documentation in the console. If you signed up through the individual path (social login or email), this step does not apply; the application home opens right after sign-up.
 
-{/* SCREENSHOT-01: Application home right after sign-in */}
+\{/* SCREENSHOT-01: Application home right after sign-in */\}
 
 ### 4-2. Create a Project
 
 First create a Project, the space that holds your work. From Home or the Projects menu, choose Create project and enter a name (for example, HER2 Antibody Design) and a description. Use one Project per research topic.
 
-{/* SCREENSHOT-02: Create project form */}
+\{/* SCREENSHOT-02: Create project form */\}
 
 Once created, the message "Project … was successfully created" appears along with the Project overview, which has three tabs.
 
@@ -132,7 +132,7 @@ Once created, the message "Project … was successfully created" appears along w
 - **Files**: Structure and sequence files uploaded to the Project
 - **Collaborators**: Co-workers (invite them with the Share button)
 
-{/* SCREENSHOT-03: Project overview (Experiments tab, No experiments) */}
+\{/* SCREENSHOT-03: Project overview (Experiments tab, No experiments) */\}
 
 As the on-screen guidance states, an Experiment is the unit in which you "choose recipes, import data, and configure parameters" to run. Because this exercise uses a Hosted Recipe, no Recipe needs to be created separately; it is selected while creating the Experiment. In the next step we prepare the input data, then proceed with Create experiment.
 
@@ -190,20 +190,20 @@ Choose the Create experiment button on the Project overview to open the Experime
 
 If you have saved a custom Recipe in the Recipes menu (one composed by connecting modules on the canvas), it appears in this list as well. A custom Recipe must be created before the Experiment; a Hosted Recipe is recommended for a first run.
 
-{/* SCREENSHOT-04: Create experiment – Recipe selection */}
+\{/* SCREENSHOT-04: Create experiment – Recipe selection */\}
 
 **③ Upload data.** Assign the two files prepared in 4-3 as Target Structure (`her2_domain4.pdb`) and Antibody Framework Structure (`trastuzumab_fv.pdb`). If the files are already in the Files tab, select them from the list.
 
-{/* SCREENSHOT-05: Create experiment – data upload/selection */}
+\{/* SCREENSHOT-05: Create experiment – data upload/selection */\}
 
 **④ Set parameters.** Set Framework to Antibody and the number of candidates to 10. Turning on Generate hotspot recommendations lets an AI agent recommend residues (hotspots) on the target surface that favor binding.
 
-{/* SCREENSHOT-06: Create experiment – parameters (10 candidates) */}
+\{/* SCREENSHOT-06: Create experiment – parameters (10 candidates) */\}
 
 **⑤ Check the estimated EU and run.** ABD shows the estimated EU (Experiment Unit) for the experiment before it runs, so you can confirm the cost in advance and avoid unexpected charges. The estimated duration for this exercise was 2–4 hours; it actually took about two hours and consumed 1 EU. After launching, you can follow the Status and Duration in the Experiments tab.
 
-{/* SCREENSHOT-07: Estimated EU and run confirmation */}
-{/* SCREENSHOT-08: Experiments tab showing running/completed status */}
+\{/* SCREENSHOT-07: Estimated EU and run confirmation */\}
+\{/* SCREENSHOT-08: Experiments tab showing running/completed status */\}
 
 ### 4-5. Review Experiment results
 
@@ -215,8 +215,8 @@ When the run completes, the results screen lets you review candidates from three
 
 Filtering on the left by conditions such as binding affinity and foldability shows the analysis for the matching candidates on the right.
 
-{/* SCREENSHOT-09: Results Overview / In silico results */}
-{/* SCREENSHOT-10: Functional Clustering or Sequences & CDR Analysis */}
+\{/* SCREENSHOT-09: Results Overview / In silico results */\}
+\{/* SCREENSHOT-10: Functional Clustering or Sequences & CDR Analysis */\}
 
 > **The role of AI agents.** ABD presents the reasoning behind its numbers. A setup-assistance agent recommends hotspot residues on the target surface that favor binding, taking surface accessibility, hydrophobicity, and other factors into account, and explains its reasoning. A candidate-selection agent optimizes several properties simultaneously, assesses potential liabilities, and presents pre-selected candidates together with the rationale for the selection. This lets you understand why a candidate was chosen rather than merely reading the results.
 
@@ -228,7 +228,7 @@ After selecting candidates through in silico analysis, you can choose the promis
 - When you choose an Assay and an Expression Host, ABD displays the estimated cost and turnaround time almost in real time.
 - Experimental results are returned automatically to the application, where in silico predictions can be compared with measured values. Fine-tuning the models on these results improves prediction accuracy in the next design cycle—and this is where the Lab-in-the-Loop cycle closes.
 
-{/* SCREENSHOT-11: Send to Wet Lab – partner/assay selection and cost estimate */}
+\{/* SCREENSHOT-11: Send to Wet Lab – partner/assay selection and cost estimate */\}
 
 The entire process—antibody candidate design (in silico), laboratory validation (wet lab), and model improvement—can thus be carried out in a single application.
 

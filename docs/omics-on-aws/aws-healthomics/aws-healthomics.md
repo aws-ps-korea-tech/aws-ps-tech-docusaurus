@@ -13,7 +13,7 @@ HealthOmics에는 **2가지 주요 구성 요소**가 있습니다. Healthomics 
 ## AWS HealthOmics는 무엇입니까?
 ### 중요 공지
 
-<span style="color: rgb(224, 62, 45);">HealthOmics는 전문적인 의학적 조언, 진단 또는 치료를 대체하지 않으며 질병이나 건강 상태를 치료, 치료, 완화, 예방 또는 진단하기 위한 것이 아닙니다.임상 의사 결정에 정보를 제공하기 위한 타사 제품과 연계하는 것을 포함하여 AWS Healthomics를 사용할 때 인적 검토를 실시할 책임은 귀하에게 있습니다.</span>
+HealthOmics는 전문적인 의학적 조언, 진단 또는 치료를 대체하지 않으며 질병이나 건강 상태를 치료, 치료, 완화, 예방 또는 진단하기 위한 것이 아닙니다.임상 의사 결정에 정보를 제공하기 위한 타사 제품과 연계하는 것을 포함하여 AWS Healthomics를 사용할 때 인적 검토를 실시할 책임은 귀하에게 있습니다.
 
 HealthOmics는 데이터를 전송, 저장, 형식 지정 또는 표시하고 워크플로 관리를 위한 인프라 및 구성 지원을 제공하기 위한 용도로만 사용됩니다. AWS Healthomics는 변종 호출 또는 유전체 분석 및 해석을 직접 수행하기 위한 것이 아닙니다. AWS HealthOmics는 임상 실험실 테스트 또는 기타 디바이스 데이터, 결과 및 결과를 해석하거나 분석하기 위한 것이 아니며, 게놈 분석에 사용하기 위한 타사 도구를 대체하지도 않습니다.
 
@@ -41,15 +41,15 @@ HealthOmics는 데이터를 전송, 저장, 형식 지정 또는 표시하고 �
 
  Ready2Run (R2R) 워크플로우를 제공합니다. GATK, Singlecell, AlphaFold 등 이미 최적화된 파이프라인을 사용해보세요.
 
-![Screenshot 2024-04-11 at 11.00.43 AM.png](_assets/fa5188adf76f.png)
+![Screenshot 2024-04-11 at 11.00.43 AM.png](./_assets/fa5188adf76f.png)
 
-![Screenshot 2024-04-11 at 11.01.05 AM.png](_assets/425cf6d0f341.png)
+![Screenshot 2024-04-11 at 11.01.05 AM.png](./_assets/425cf6d0f341.png)
 
 ##### Private workflow
 
 Private 워크플로우 또는 R2R 워크플로우를 사용해 분석을 수행하면 아래와 같이 하나의 Run 에 수많은 Task단위의 로그 및 컴퓨팅 사용량을 확인할 수도 있습니다.
 
-### ![Screenshot 2024-04-11 at 11.01.56 AM.png](_assets/bd0706de7311.png)
+### ![Screenshot 2024-04-11 at 11.01.56 AM.png](./_assets/bd0706de7311.png)
 
 ### 사용 방법
 
@@ -109,21 +109,21 @@ https://docs.aws.amazon.com/general/latest/gr/healthomics-quotas.html
 
 Learn more about HealthOmics from these workshops and tutorials:
 
-<div class="itemizedlist" id="bkmrk-healthomics-workshop" style="margin-bottom: 10px; color: rgb(15, 20, 26); font-family: 'Amazon Ember', Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">- HealthOmics workshop – [HealthOmics end to end workshop<span aria-label="Opens in a new tab" style="transform: scale(0.85) translateY(2px);"><span class="awsui_icon_h11ix_18tz4_189 awsui_size-normal-mapped-height_h11ix_18tz4_248 awsui_size-normal_h11ix_18tz4_244 awsui_name-external_h11ix_18tz4_354" style="display: inline-block; position: relative; vertical-align: top; box-sizing: border-box; inline-size: var(--size-icon-normal-wflv4k, 16px); block-size: var(--line-height-body-m-2zx78l, 22px); padding-block: calc((var(--line-height-body-m-2zx78l, 22px) - var(--size-icon-normal-wflv4k, 16px)) / 2); padding-inline: 0px;"><svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linejoin-round" d="M14 8.01v-6H8M14.02 2 8 8.01M6 2.01H2v12h12v-3.99"></path></svg></span></span>](https://catalog.workshops.aws/amazon-omics-end-to-end/en-US)
+- HealthOmics workshop – [HealthOmics end to end workshop<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linejoin-round" d="M14 8.01v-6H8M14.02 2 8 8.01M6 2.01H2v12h12v-3.99"></path></svg>](https://catalog.workshops.aws/amazon-omics-end-to-end/en-US)
     
     
     - [Migrating Nf-core Workflows Into AWS HealthOmics](https://catalog.us-east-1.prod.workshops.aws/workshops/76d4a4ff-fe6f-436a-a1c2-f7ce44bc5d17/en-US)
-- AWS genomics resources – [Public Amazon ECR repositories<span aria-label="Opens in a new tab" style="transform: scale(0.85) translateY(2px);"><span class="awsui_icon_h11ix_18tz4_189 awsui_size-normal-mapped-height_h11ix_18tz4_248 awsui_size-normal_h11ix_18tz4_244 awsui_name-external_h11ix_18tz4_354" style="display: inline-block; position: relative; vertical-align: top; box-sizing: border-box; inline-size: var(--size-icon-normal-wflv4k, 16px); block-size: var(--line-height-body-m-2zx78l, 22px); padding-block: calc((var(--line-height-body-m-2zx78l, 22px) - var(--size-icon-normal-wflv4k, 16px)) / 2); padding-inline: 0px;"><svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linejoin-round" d="M14 8.01v-6H8M14.02 2 8 8.01M6 2.01H2v12h12v-3.99"></path></svg></span></span>](https://gallery.ecr.aws/aws-genomics?page=1) related to genomics
-- Python tutorials – [Jupyter notebook tutorials<span aria-label="Opens in a new tab" style="transform: scale(0.85) translateY(2px);"><span class="awsui_icon_h11ix_18tz4_189 awsui_size-normal-mapped-height_h11ix_18tz4_248 awsui_size-normal_h11ix_18tz4_244 awsui_name-external_h11ix_18tz4_354" style="display: inline-block; position: relative; vertical-align: top; box-sizing: border-box; inline-size: var(--size-icon-normal-wflv4k, 16px); block-size: var(--line-height-body-m-2zx78l, 22px); padding-block: calc((var(--line-height-body-m-2zx78l, 22px) - var(--size-icon-normal-wflv4k, 16px)) / 2); padding-inline: 0px;"><svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linejoin-round" d="M14 8.01v-6H8M14.02 2 8 8.01M6 2.01H2v12h12v-3.99"></path></svg></span></span>](https://github.com/aws-samples/amazon-omics-tutorials) on GitHub, covering HealthOmics storage, analytics, and workflows
+- AWS genomics resources – [Public Amazon ECR repositories<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linejoin-round" d="M14 8.01v-6H8M14.02 2 8 8.01M6 2.01H2v12h12v-3.99"></path></svg>](https://gallery.ecr.aws/aws-genomics?page=1) related to genomics
+- Python tutorials – [Jupyter notebook tutorials<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linejoin-round" d="M14 8.01v-6H8M14.02 2 8 8.01M6 2.01H2v12h12v-3.99"></path></svg>](https://github.com/aws-samples/amazon-omics-tutorials) on GitHub, covering HealthOmics storage, analytics, and workflows
 
-</div>Become familiar with additional HealthOmics tools that AWS provides:
+Become familiar with additional HealthOmics tools that AWS provides:
 
-<div class="itemizedlist" id="bkmrk-wdl-linter-%E2%80%93%C2%A0healtho" style="margin-bottom: 10px; color: rgb(15, 20, 26); font-family: 'Amazon Ember', Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">- WDL linter – [HealthOmics linter for WDL<span aria-label="Opens in a new tab" style="transform: scale(0.85) translateY(2px);"><span class="awsui_icon_h11ix_18tz4_189 awsui_size-normal-mapped-height_h11ix_18tz4_248 awsui_size-normal_h11ix_18tz4_244 awsui_name-external_h11ix_18tz4_354" style="display: inline-block; position: relative; vertical-align: top; box-sizing: border-box; inline-size: var(--size-icon-normal-wflv4k, 16px); block-size: var(--line-height-body-m-2zx78l, 22px); padding-block: calc((var(--line-height-body-m-2zx78l, 22px) - var(--size-icon-normal-wflv4k, 16px)) / 2); padding-inline: 0px;"><svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linejoin-round" d="M14 8.01v-6H8M14.02 2 8 8.01M6 2.01H2v12h12v-3.99"></path></svg></span></span>](https://gallery.ecr.aws/aws-genomics/healthomics-linter)
-- Nextflow linter – [HealthOmics linter for Nextflow<span aria-label="Opens in a new tab" style="transform: scale(0.85) translateY(2px);"><span class="awsui_icon_h11ix_18tz4_189 awsui_size-normal-mapped-height_h11ix_18tz4_248 awsui_size-normal_h11ix_18tz4_244 awsui_name-external_h11ix_18tz4_354" style="display: inline-block; position: relative; vertical-align: top; box-sizing: border-box; inline-size: var(--size-icon-normal-wflv4k, 16px); block-size: var(--line-height-body-m-2zx78l, 22px); padding-block: calc((var(--line-height-body-m-2zx78l, 22px) - var(--size-icon-normal-wflv4k, 16px)) / 2); padding-inline: 0px;"><svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linejoin-round" d="M14 8.01v-6H8M14.02 2 8 8.01M6 2.01H2v12h12v-3.99"></path></svg></span></span>](https://gallery.ecr.aws/aws-genomics/linter-rules-for-nextflow)
-- HealthOmics Amazon ECR helper tool – [Amazon ECR helper tool for HealthOmics<span aria-label="Opens in a new tab" style="transform: scale(0.85) translateY(2px);"><span class="awsui_icon_h11ix_18tz4_189 awsui_size-normal-mapped-height_h11ix_18tz4_248 awsui_size-normal_h11ix_18tz4_244 awsui_name-external_h11ix_18tz4_354" style="display: inline-block; position: relative; vertical-align: top; box-sizing: border-box; inline-size: var(--size-icon-normal-wflv4k, 16px); block-size: var(--line-height-body-m-2zx78l, 22px); padding-block: calc((var(--line-height-body-m-2zx78l, 22px) - var(--size-icon-normal-wflv4k, 16px)) / 2); padding-inline: 0px;"><svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linejoin-round" d="M14 8.01v-6H8M14.02 2 8 8.01M6 2.01H2v12h12v-3.99"></path></svg></span></span>](https://github.com/aws-samples/amazon-ecr-helper-for-aws-healthomics)
-- HealthOmics tools on GitHub – [Tools for working with HealthOmics<span aria-label="Opens in a new tab" style="transform: scale(0.85) translateY(2px);"><span class="awsui_icon_h11ix_18tz4_189 awsui_size-normal-mapped-height_h11ix_18tz4_248 awsui_size-normal_h11ix_18tz4_244 awsui_name-external_h11ix_18tz4_354" style="display: inline-block; position: relative; vertical-align: top; box-sizing: border-box; inline-size: var(--size-icon-normal-wflv4k, 16px); block-size: var(--line-height-body-m-2zx78l, 22px); padding-block: calc((var(--line-height-body-m-2zx78l, 22px) - var(--size-icon-normal-wflv4k, 16px)) / 2); padding-inline: 0px;"><svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linejoin-round" d="M14 8.01v-6H8M14.02 2 8 8.01M6 2.01H2v12h12v-3.99"></path></svg></span></span>](https://github.com/awslabs/amazon-omics-tools) (Transfer manager, URI parser, Omics rerun, Run analyzer).
+- WDL linter – [HealthOmics linter for WDL<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linejoin-round" d="M14 8.01v-6H8M14.02 2 8 8.01M6 2.01H2v12h12v-3.99"></path></svg>](https://gallery.ecr.aws/aws-genomics/healthomics-linter)
+- Nextflow linter – [HealthOmics linter for Nextflow<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linejoin-round" d="M14 8.01v-6H8M14.02 2 8 8.01M6 2.01H2v12h12v-3.99"></path></svg>](https://gallery.ecr.aws/aws-genomics/linter-rules-for-nextflow)
+- HealthOmics Amazon ECR helper tool – [Amazon ECR helper tool for HealthOmics<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linejoin-round" d="M14 8.01v-6H8M14.02 2 8 8.01M6 2.01H2v12h12v-3.99"></path></svg>](https://github.com/aws-samples/amazon-ecr-helper-for-aws-healthomics)
+- HealthOmics tools on GitHub – [Tools for working with HealthOmics<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linejoin-round" d="M14 8.01v-6H8M14.02 2 8 8.01M6 2.01H2v12h12v-3.99"></path></svg>](https://github.com/awslabs/amazon-omics-tools) (Transfer manager, URI parser, Omics rerun, Run analyzer).
 
-</div>  
+  
 동일 워크플로우를 개선하거나 업데이트할 시 버전별로 관리하시면 좋습니다. (여러개의 워크플로가 아닌 단일 워크플로 내에서 버전으로 관리)  
 https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html
 
@@ -145,7 +145,7 @@ https://docs.aws.amazon.com/omics/latest/dev/task-resources.html
 https://aws.amazon.com/healthomics/pricing/  
 https://calculator.aws/#/
 
-<div class="itemizedlist" id="bkmrk--7" style="margin-bottom: 10px; color: rgb(15, 20, 26); font-family: 'Amazon Ember', Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"></div>### 관련 블로그
+### 관련 블로그
 
 - [Secure Your Genomic Workflows and Data with AWS HealthOmics](https://aws.amazon.com/blogs/industries/secure-your-genomic-workflows-and-data-with-aws-healthomics/)
 - [Category: AWS HealthOmics / AWS for Industries](https://aws.amazon.com/blogs/industries/category/artificial-intelligence/amazon-machine-learning/amazon-omics/)

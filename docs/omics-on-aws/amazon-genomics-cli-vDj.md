@@ -10,11 +10,11 @@ title: "Amazon Genomics CLI - 핸즈온 가이드"
 
 아래와 같이 목적에 맞는 Cloud9 환경을 세팅합니다.
 
-![Screenshot 2024-04-12 at 10.46.06 PM copy.png](_assets/76702f983f26.png)![Screenshot 2024-04-12 at 10.46.19 PM copy.png](_assets/a9e59a0e6755.png)
+![Screenshot 2024-04-12 at 10.46.06 PM copy.png](./_assets/76702f983f26.png)![Screenshot 2024-04-12 at 10.46.19 PM copy.png](./_assets/a9e59a0e6755.png)
 
 만들어진 Cloud9 환경을 접속합니다.
 
-![Screenshot 2024-04-12 at 10.50.46 PM.png](_assets/2d81af55a167.png)
+![Screenshot 2024-04-12 at 10.50.46 PM.png](./_assets/2d81af55a167.png)
 
 #### AGC 설치 ([참고](https://aws.github.io/amazon-genomics-cli/docs/getting-started/installation/))  
 
@@ -22,7 +22,7 @@ title: "Amazon Genomics CLI - 핸즈온 가이드"
  aws s3api get-object --bucket healthai-public-assets-us-east-1 --key amazon-genomics-cli/nightly-build/amazon-genomics-cli.zip amazon-genomics-cli.zip
 ```
 
-![Screenshot 2024-04-12 at 10.54.35 PM.png](_assets/a34ce0513eee.png)
+![Screenshot 2024-04-12 at 10.54.35 PM.png](./_assets/a34ce0513eee.png)
 
 ```bash
 unzip amazon-genomics-cli.zip
@@ -54,7 +54,7 @@ agc account activate
 
 정상적으로 완료되었다면 AWS CloudFormation에서 확인할 수도 있습니다.
 
-![Screenshot 2024-04-12 at 11.15.39 PM.png](_assets/473012c8f043.png)
+![Screenshot 2024-04-12 at 11.15.39 PM.png](./_assets/473012c8f043.png)
 
 이메일을 세팅해줍니다.
 
@@ -78,11 +78,11 @@ Check status
 agc workflow status -r <workflow-instance-id>
 ```
 
-![Screenshot 2024-04-13 at 8.19.45 PM.png](_assets/656e3debdae9.png)
+![Screenshot 2024-04-13 at 8.19.45 PM.png](./_assets/656e3debdae9.png)
 
 AWS Batch 에서도 Job을 확인할 수 있습니다.
 
-![Screenshot 2024-04-13 at 8.20.53 PM.png](_assets/208b0c00ad85.png)
+![Screenshot 2024-04-13 at 8.20.53 PM.png](./_assets/208b0c00ad85.png)
 
 #### 워크플로우 결과 확인  
 
@@ -127,8 +127,8 @@ agc context destroy myContext
 
 This will remove the cloud resources associated with the named context, but will keep any S3 outputs and CloudWatch logs. If you want stop using Amazon Genomics CLI in your AWS account entirely, you need to deactivate it:
 
-<div class="highlight" id="bkmrk--6"><div class="code-toolbar"><div class="toolbar">  
-</div></div></div>This will remove Amazon Genomics CLI’s core infrastructure. If Amazon Genomics CLI created a VPC as part of the activate process, it will be *removed*. If Amazon Genomics CLI created an S3 bucket for you, it will be *retained*.
+  
+This will remove Amazon Genomics CLI’s core infrastructure. If Amazon Genomics CLI created a VPC as part of the activate process, it will be *removed*. If Amazon Genomics CLI created an S3 bucket for you, it will be *retained*.
 
 To uninstall Amazon Genomics CLI from your local machine, run the following command
 
@@ -144,12 +144,12 @@ gatk-best-pratices-project/gatk4-germline-snps-indels 폴더의 워크플로우�
 
 ***Hint: 입력파일 및 Context를 먼저 확인해보세요.***
 
-<details id="bkmrk-%EC%A0%95%EB%8B%B5-cd-%7E%2Fenvironment%2F"><summary>정답</summary>
+
+**▸ 정답**
+
 
 cd ~/environment/amazon-genomics-cli/examples/gatk-best-practices-project/gatk4-germline-snps-indels
 
 agc context deploy -c onDemandCtx
 
 agc workflow run gatk4-germline-snps-indels --context onDemandCtx
-
-</details>

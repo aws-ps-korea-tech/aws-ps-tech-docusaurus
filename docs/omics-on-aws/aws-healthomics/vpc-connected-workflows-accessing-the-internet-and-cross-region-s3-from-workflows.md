@@ -75,7 +75,7 @@ You can see the difference between the two modes in the HealthOmics console Run 
 
 When running in RESTRICTED mode, the **Networking mode** field shows `Restricted`. No Configuration field is displayed, and the workflow runs in HealthOmics' default network environment. Only same-region S3 and ECR are accessible; external internet connectivity is not available.
 
-![restricted-networking-mode.png](_assets/6087fd444998.png)
+![restricted-networking-mode.png](./_assets/6087fd444998.png)
 
 
 ### VPC Mode Run
@@ -84,7 +84,7 @@ When running in VPC mode, the **Networking mode** field shows `Virtual Private C
 
 Both runs used the same workflow (`vpc-connectivity-test-v3`, WDL), with similar execution times (RESTRICTED: 5m 49s, VPC: 5m 21s).
 
-![vpc-mode.png](_assets/0efdcb3e6d8c.png)
+![vpc-mode.png](./_assets/0efdcb3e6d8c.png)
 
 ---
 

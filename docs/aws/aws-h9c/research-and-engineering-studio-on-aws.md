@@ -10,8 +10,8 @@ RES(Research and Engineering Studio on AWS)는 관리자가 안전한 클라우�
 
 [https://aws.amazon.com/blogs/hpc/new-research-and-engineering-studio-on-aws/](https://aws.amazon.com/blogs/hpc/new-research-and-engineering-studio-on-aws/)
 
-![users-shot.png](_assets/a06543979518.png)
+![users-shot.png](./_assets/a06543979518.png)
 
-![CleanShot-2023-11-08-at-10.57.51.png](_assets/61102120d605.png)
+![CleanShot-2023-11-08-at-10.57.51.png](./_assets/61102120d605.png)
 
-![CleanShot-2023-11-08-at-10.59.48.png](_assets/60ba33620cf3.png)![res-architecture.png](_assets/067decfec471.png)
+![CleanShot-2023-11-08-at-10.59.48.png](./_assets/60ba33620cf3.png)![res-architecture.png](./_assets/067decfec471.png)

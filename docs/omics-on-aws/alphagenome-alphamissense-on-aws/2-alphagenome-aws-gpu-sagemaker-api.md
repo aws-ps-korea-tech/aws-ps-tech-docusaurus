@@ -4,7 +4,11 @@ title: "2편 · AlphaGenome을 내 AWS 계정의 GPU에서 직접 돌리기 — 
 
 # 2편 · AlphaGenome을 내 AWS 계정의 GPU에서 직접 돌리기 — 그리고 SageMaker로 API까지
 
-<p class="callout warning"><strong>비공개 초안 (2026-09-22)</strong> — 시리즈 2편(AlphaGenome) 자리입니다. 시리즈 형식 초고를 쓰기 전 단계라 PoC 매뉴얼판 <code>test-alphagenome/docs/blog_alphagenome_on_aws.md</code> (git e9f4d36)을 그대로 올렸습니다. 게재용으로는 개요(<code>docs/blog_series_outline.md</code> §2)에 따라 재작성이 필요합니다: 절차형 구조, TAL1 인핸서 indel 예시, AlphaGenome Atlas 대비 셀프호스팅 근거, 표현 규칙(§6: GPU 제품명·타사 클라우드 언급·'오픈소스/무료' 표현·개인 낭비 내역 제거), Public Model 법무 티켓 결과 반영.</p>
+
+> **⚠️ 주의**
+>
+> 비공개 초안 (2026-09-22) — 시리즈 2편(AlphaGenome) 자리입니다. 시리즈 형식 초고를 쓰기 전 단계라 PoC 매뉴얼판 test-alphagenome/docs/blog_alphagenome_on_aws.md (git e9f4d36)을 그대로 올렸습니다. 게재용으로는 개요(docs/blog_series_outline.md §2)에 따라 재작성이 필요합니다: 절차형 구조, TAL1 인핸서 indel 예시, AlphaGenome Atlas 대비 셀프호스팅 근거, 표현 규칙(§6: GPU 제품명·타사 클라우드 언급·'오픈소스/무료' 표현·개인 낭비 내역 제거), Public Model 법무 티켓 결과 반영.
+
 
 **공개 가중치를 EC2의 L40S 한 장에 올려 유전자 변이 효과를 예측하고, 같은 모델을 실시간 엔드포인트로 서빙하기까지, 처음부터 끝까지 따라하기**
 
@@ -221,7 +225,7 @@ IID=i-0123456789abcdef0
 
 CloudWatch 알람 두 개가 생깁니다. 둘 다 액션은 `arn:aws:automate:us-east-1:ec2:terminate`, 즉 EC2가 스스로 종료합니다.
 
-- `alphagenome-poc-idle-cpu`: 1시간 평균 CPU < 2%가 **12회 연속** (단순 미사용)
+- `alphagenome-poc-idle-cpu`: 1시간 평균 CPU &lt; 2%가 **12회 연속** (단순 미사용)
 - `alphagenome-poc-unresponsive`: 상태 확인 실패가 **12회 연속** (멈춤·무응답)
 
 ### 제가 낸 사고: 알람이 8분 만에 인스턴스를 죽였습니다
@@ -313,7 +317,7 @@ aws s3 cp s3://alphagenome-weights-$(aws sts get-caller-identity --query Account
 
 ### 결과 읽는 법
 
-![EC2에서 예측한 chr22:36201698 A>C의 REF/ALT RNA-seq](_assets/dabc85cd910d.png)
+![EC2에서 예측한 chr22:36201698 A>C의 REF/ALT RNA-seq](./_assets/dabc85cd910d.png)
 
 - 가로축은 22번 염색체 위치입니다. 1Mb를 전부 그리면 아무것도 안 보이므로 변이를 중심으로 32,768bp(2^15) 창을 잘라 그렸습니다. 노란 세로선이 변이 위치입니다.
 - 트랙은 세 개입니다. 위에서부터 횡행결장 total RNA-seq의 **+ 가닥**, **− 가닥**, 그리고 GTEx 횡행결장 polyA RNA-seq(가닥 구분 없음). 요청한 조직(`UBERON:0001157`)에 해당하는 RNA-seq 실험이 학습 데이터에 세 종류 있었다는 뜻입니다.
@@ -419,7 +423,7 @@ model ready in 86.9s
 
 응답 요약은 `tracks=3, ref_mean=0.09565, alt_mean=0.09547, max_abs_diff=0.3857`. EC2 결과(0.09560 / 0.09546 / 0.3809)와 소수 3자리까지 같고, 4자리부터의 차이는 bf16 연산과 GPU 차이입니다. PNG도 함께 돌아옵니다.
 
-![SageMaker 엔드포인트가 돌려준 같은 변이의 예측](_assets/f7addade6f28.png)
+![SageMaker 엔드포인트가 돌려준 같은 변이의 예측](./_assets/f7addade6f28.png)
 
 왕복 2.05초 중 1.61초가 모델이고 나머지가 네트워크와 PNG 인코딩입니다. 첫 호출이 3.74초로 조금 긴 것은 첫 요청 경로의 워밍업입니다.
 

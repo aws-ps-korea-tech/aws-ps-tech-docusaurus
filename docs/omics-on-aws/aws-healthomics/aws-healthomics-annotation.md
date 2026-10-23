@@ -4,7 +4,11 @@ title: "AWS HealthOmics에서 Annotation 작업 수행하기"
 
 # AWS HealthOmics에서 Annotation 작업 수행하기
 
-<p class="callout warning">AWS HealthOmics variant stores and annotation stores are no longer open to new customers. Existing customers can continue to use the service as normal. For more information, see [AWS HealthOmics variant store and annotation store availability change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).</p>
+
+> **⚠️ 주의**
+>
+> AWS HealthOmics variant stores and annotation stores are no longer open to new customers. Existing customers can continue to use the service as normal. For more information, see [AWS HealthOmics variant store and annotation store availability change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
+
 
 AWS HealthOmics의 Analytics 기능을 활용하여 annotation작업을 수행할 수 있습니다.
 
@@ -13,25 +17,25 @@ AWS HealthOmics의 Analytics 기능을 활용하여 annotation작업을 수행�
 - 입력 샘플 VCF
 - Annotation할 정보 소스 VCF (예: ClinVar)
 
-<span style="margin-bottom: 0px;">s3://omics-eventbridge-solutio-healthomicsckaoutput6642-xbtuwqnxt8uw/outputs/9881593/out/output\_vcf/NA12878.hg38.g.vcf.gz</span>
+s3://omics-eventbridge-solutio-healthomicsckaoutput6642-xbtuwqnxt8uw/outputs/9881593/out/output\_vcf/NA12878.hg38.g.vcf.gz
 
-## <span style="margin-bottom: 0px;">Variant stores</span>  
+## Variant stores  
 
 ### 변이 스토어 생성
 
-1. From the AWS HealthOmics Console, navigate to **Analytics** &gt; [Variant stores<span class="awsui_icon-wrapper_4c84z_eu8v7_485" style="white-space: nowrap;"> <span class="awsui_icon_4c84z_eu8v7_485" style="display: inline-block;"><span class="awsui_icon_h11ix_1q8e6_101 awsui_icon-flex-height_h11ix_1q8e6_109 awsui_size-medium_h11ix_1q8e6_172 awsui_variant-normal_h11ix_1q8e6_229 awsui_name-external_h11ix_1q8e6_263" style="display: inline-flex; position: relative; vertical-align: top; align-items: center; box-sizing: border-box; inline-size: var(--size-icon-medium-6sroof,16px); color: currentcolor; height: 24px;"><svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linecap-square" d="M10 2h4v4"></path><path d="m6 10 8-8"></path><path class="stroke-linejoin-round" d="M14 9.048V14H2V2h5"></path></svg></span></span></span>](https://console.aws.amazon.com/omics/home#/variantStore)
+1. From the AWS HealthOmics Console, navigate to **Analytics** &gt; [Variant stores <svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linecap-square" d="M10 2h4v4"></path><path d="m6 10 8-8"></path><path class="stroke-linejoin-round" d="M14 9.048V14H2V2h5"></path></svg>](https://console.aws.amazon.com/omics/home#/variantStore)
 2. Select **Create variant store**
 3. For **Variant store name** provide "my\_variant\_store".
 4. For **Reference genome** select "GRCh38" (this is a pre-provisioned reference, but you can alternatively select the reference you imported in the [Reference Store](https://catalog.workshops.aws/amazon-omics-end-to-end/en-US/020-xp-console/100-omics-storage/reference-stores) part of the workshop)
 5. Finish with **Create variant store**
 
-![Screenshot 2024-06-14 at 10.45.15 PM.png](_assets/53c773355824.png)
+![Screenshot 2024-06-14 at 10.45.15 PM.png](./_assets/53c773355824.png)
 
-### <span style="font-weight: bolder; margin-bottom: 0px;">변이스토어에 샘플 VCF 파일 가져오기</span>
+### 변이스토어에 샘플 VCF 파일 가져오기
 
 Next, you are going to start a VCF import job. To do this:
 
-1. From the AWS HealthOmics Console, navigate to **Analytics** &gt; [Variant stores<span class="awsui_icon-wrapper_4c84z_eu8v7_485" style="white-space: nowrap;"> <span class="awsui_icon_4c84z_eu8v7_485" style="display: inline-block;"><span class="awsui_icon_h11ix_1q8e6_101 awsui_icon-flex-height_h11ix_1q8e6_109 awsui_size-medium_h11ix_1q8e6_172 awsui_variant-normal_h11ix_1q8e6_229 awsui_name-external_h11ix_1q8e6_263" style="display: inline-flex; position: relative; vertical-align: top; align-items: center; box-sizing: border-box; inline-size: var(--size-icon-medium-6sroof,16px); color: currentcolor; height: 24px;"><svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linecap-square" d="M10 2h4v4"></path><path d="m6 10 8-8"></path><path class="stroke-linejoin-round" d="M14 9.048V14H2V2h5"></path></svg></span></span></span>](https://console.aws.amazon.com/omics/home#/variantStore)
+1. From the AWS HealthOmics Console, navigate to **Analytics** &gt; [Variant stores <svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linecap-square" d="M10 2h4v4"></path><path d="m6 10 8-8"></path><path class="stroke-linejoin-round" d="M14 9.048V14H2V2h5"></path></svg>](https://console.aws.amazon.com/omics/home#/variantStore)
 2. Select the **Name** Variant store named **omicsvariantstore1** (or the one you created above as appropriate)
 3. Select **Import variant data**. If this option isn't available select **Actions** &gt; **Import**.
 4. Select **Create and use a new service role**
@@ -43,7 +47,7 @@ Next, you are going to start a VCF import job. To do this:
 s3://omics-eventbridge-solutio-healthomicsckaoutput6642-xbtuwqnxt8uw/outputs/9881593/out/output_vcf/NA12878.hg38.g.vcf.gz
 ```
 
-![Screenshot 2024-06-14 at 10.46.45 PM.png](_assets/c94f73b3558f.png)
+![Screenshot 2024-06-14 at 10.46.45 PM.png](./_assets/c94f73b3558f.png)
 
 **NOTE:** The region will differ based on deployment region.
 
@@ -55,30 +59,30 @@ You should now see something like this:
 
 \- 앞에서 설명한대로 입력하고자하는 VCF 파일의 S3 경로를 작성합니다.
 
-![Screenshot 2024-06-14 at 10.48.13 PM.png](_assets/1803f9f39043.png)
+![Screenshot 2024-06-14 at 10.48.13 PM.png](./_assets/1803f9f39043.png)
 
 콘솔에서 VCF Import작업시 제출되었음을 확인할 수 있습니다.
 
-![Screenshot 2024-06-14 at 10.49.27 PM.png](_assets/4eb57b608ff9.png)
+![Screenshot 2024-06-14 at 10.49.27 PM.png](./_assets/4eb57b608ff9.png)
 
 ## Annotation stores  
 
 ### 주석 스토어 생성
 
-1. From the AWS HealthOmics Console, navigate to **Analytics** &gt; [Annotation stores<span class="awsui_icon-wrapper_4c84z_eu8v7_485" style="white-space: nowrap;"> <span class="awsui_icon_4c84z_eu8v7_485" style="display: inline-block;"><span class="awsui_icon_h11ix_1q8e6_101 awsui_icon-flex-height_h11ix_1q8e6_109 awsui_size-medium_h11ix_1q8e6_172 awsui_variant-normal_h11ix_1q8e6_229 awsui_name-external_h11ix_1q8e6_263" style="display: inline-flex; position: relative; vertical-align: top; align-items: center; box-sizing: border-box; inline-size: var(--size-icon-medium-6sroof,16px); color: currentcolor; height: 24px;"><svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linecap-square" d="M10 2h4v4"></path><path d="m6 10 8-8"></path><path class="stroke-linejoin-round" d="M14 9.048V14H2V2h5"></path></svg></span></span></span>](https://console.aws.amazon.com/omics/home#/annotationStore)
+1. From the AWS HealthOmics Console, navigate to **Analytics** &gt; [Annotation stores <svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linecap-square" d="M10 2h4v4"></path><path d="m6 10 8-8"></path><path class="stroke-linejoin-round" d="M14 9.048V14H2V2h5"></path></svg>](https://console.aws.amazon.com/omics/home#/annotationStore)
 2. Select **Create annotation store**
 3. For **Variant store name** provide "my\_annotation\_store".
 4. For **Data file format** select **VCF file**
 5. For **Reference genome** select "GRCh38" (this is a pre-provisioned reference, but you can alternatively select the reference you imported in the [Reference Store](https://catalog.workshops.aws/amazon-omics-end-to-end/en-US/020-xp-console/100-omics-storage/reference-stores) part of the workshop)
 6. Finish with **Create annotation store**
 
-![Screenshot 2024-06-14 at 10.51.05 PM.png](_assets/b391c0e41944.png)
+![Screenshot 2024-06-14 at 10.51.05 PM.png](./_assets/b391c0e41944.png)
 
 ### 주석 스토어에 VCF 파일 가져오기
 
-Next, you are going to start an annotation import job to import [ClinVar<span class="awsui_icon-wrapper_4c84z_eu8v7_485" style="white-space: nowrap;"> <span class="awsui_icon_4c84z_eu8v7_485" style="display: inline-block;"><span class="awsui_icon_h11ix_1q8e6_101 awsui_icon-flex-height_h11ix_1q8e6_109 awsui_size-medium_h11ix_1q8e6_172 awsui_variant-normal_h11ix_1q8e6_229 awsui_name-external_h11ix_1q8e6_263" style="display: inline-flex; position: relative; vertical-align: top; align-items: center; box-sizing: border-box; inline-size: var(--size-icon-medium-6sroof,16px); color: currentcolor; height: 24px;"><svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linecap-square" d="M10 2h4v4"></path><path d="m6 10 8-8"></path><path class="stroke-linejoin-round" d="M14 9.048V14H2V2h5"></path></svg></span></span></span>](https://www.ncbi.nlm.nih.gov/clinvar/) annotations in VCF format into the pre-provisioned store.
+Next, you are going to start an annotation import job to import [ClinVar <svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linecap-square" d="M10 2h4v4"></path><path d="m6 10 8-8"></path><path class="stroke-linejoin-round" d="M14 9.048V14H2V2h5"></path></svg>](https://www.ncbi.nlm.nih.gov/clinvar/) annotations in VCF format into the pre-provisioned store.
 
-1. From the AWS HealthOmics Console, navigate to **Analytics** &gt; [Annotation stores<span class="awsui_icon-wrapper_4c84z_eu8v7_485" style="white-space: nowrap;"> <span class="awsui_icon_4c84z_eu8v7_485" style="display: inline-block;"><span class="awsui_icon_h11ix_1q8e6_101 awsui_icon-flex-height_h11ix_1q8e6_109 awsui_size-medium_h11ix_1q8e6_172 awsui_variant-normal_h11ix_1q8e6_229 awsui_name-external_h11ix_1q8e6_263" style="display: inline-flex; position: relative; vertical-align: top; align-items: center; box-sizing: border-box; inline-size: var(--size-icon-medium-6sroof,16px); color: currentcolor; height: 24px;"><svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linecap-square" d="M10 2h4v4"></path><path d="m6 10 8-8"></path><path class="stroke-linejoin-round" d="M14 9.048V14H2V2h5"></path></svg></span></span></span>](https://console.aws.amazon.com/omics/home#/annotationStore)
+1. From the AWS HealthOmics Console, navigate to **Analytics** &gt; [Annotation stores <svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linecap-square" d="M10 2h4v4"></path><path d="m6 10 8-8"></path><path class="stroke-linejoin-round" d="M14 9.048V14H2V2h5"></path></svg>](https://console.aws.amazon.com/omics/home#/annotationStore)
 2. Click on the name of the Annotation store named **omicsannotationstore1** (or the one you created above as appropriate)
 3. Under **Store versions** click on the name of the only version listed (there should only be one at this time).
 4. Select **Import VCF data**. If this option isn't available select **Actions** &gt; **Import**.
@@ -95,7 +99,7 @@ s3://aws-genomics-static-<aws-region>/omics-workshop/data/annotations/clinvar.vc
 
 예: [https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf\_GRCh38/](https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/)
 
-<div class="CodeBlock-module_codeBlock__2a1n0 CodeBlock-module_hasCopyAction__zdyx-" id="bkmrk--6" style="margin-bottom: 2rem; margin-top: 2rem; position: relative; color: rgb(22, 25, 31); font-family: 'Amazon Ember', 'Helvetica Neue', Roboto, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><div class="CodeBlock-module_codeBlock__2a1n0 CodeBlock-module_hasCopyAction__zdyx-" style="margin-bottom: 2rem; margin-top: 2rem; position: relative; color: rgb(22, 25, 31); font-family: 'Amazon Ember', 'Helvetica Neue', Roboto, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span class="awsui_root_xjuzf_191w6_832 CodeBlock-module_copyAction__vokS-" style="margin: calc((var(--space-scaled-l-08jb88, 20px) + 1px)*2/2 - 6px); position: absolute; right: 0px; top: 0px; border-collapse: initial; border-spacing: 0px; box-sizing: border-box; caption-side: top; cursor: auto; direction: inherit; empty-cells: show; font-family: var(--font-family-base-4om3hr,'Amazon Ember','Helvetica Neue',Roboto,Arial,sans-serif); font-size: var(--font-size-body-m-pa3mqb,14px); font-stretch: normal; font-style: normal; font-variant: normal; font-weight: 400; hyphens: none; letter-spacing: normal; line-height: var(--line-height-body-m-2zx78l,22px); list-style: outside none disc; tab-size: 8; text-align: start; text-indent: 0px; text-shadow: none; text-transform: none; visibility: visible; white-space: normal; word-spacing: normal; -webkit-font-smoothing: auto; color: inherit;"><span class="awsui_trigger_xjuzf_191w6_868" id="bkmrk--7" style="color: inherit; display: inline-block; max-inline-size: 100%; text-align: inherit;"><button aria-label="Copy content" class="CopyButton-module_styledButton__1Jq7M awsui_button_vjswe_1ivyw_105 awsui_variant-normal_vjswe_1ivyw_156 awsui_button-no-text_vjswe_1ivyw_1095" data-analytics-funnel-value="button:r2s:" data-analytics-performance-mark="8-1718373001716-6708" data-testid="copy-button" style="font-family: var(--font-family-base-4om3hr,'Amazon Ember','Helvetica Neue',Roboto,Arial,sans-serif); font-size: var(--font-size-body-m-pa3mqb,14px); line-height: var(--line-height-body-m-2zx78l,22px); margin: 0px; overflow: visible; text-transform: none; appearance: button; padding-left: 0.7rem !important; padding-right: 0.7rem !important; opacity: 0.5; transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) 0s; border-collapse: initial; border-spacing: 0px; box-sizing: border-box; caption-side: top; color: var(--color-text-button-normal-default-gpe171,#545b64); direction: inherit; empty-cells: show; font-stretch: normal; font-style: normal; font-variant: normal; hyphens: none; list-style: outside none disc; tab-size: 8; text-align: start; text-indent: 0px; text-shadow: none; visibility: visible; white-space: normal; word-spacing: normal; font-weight: var(--font-button-weight-s67y37,700); min-inline-size: 0px; word-break: break-word; -webkit-font-smoothing: var(--font-smoothing-webkit-8fiijr,auto); border-block: var(--border-field-width-yoy972,1px) solid; border-end-end-radius: var(--border-radius-button-8zlwjs,2px); border-end-start-radius: var(--border-radius-button-8zlwjs,2px); border-inline: var(--border-field-width-yoy972,1px) solid; border-start-end-radius: var(--border-radius-button-8zlwjs,2px); border-start-start-radius: var(--border-radius-button-8zlwjs,2px); cursor: pointer; display: inline-block; letter-spacing: var(--font-button-letter-spacing-kukfsk,.25px); padding-block: var(--space-scaled-xxs-t7ij38,4px); padding-inline-start: var(--space-button-icon-only-horizontal-xuxfmj,16px); padding-inline-end: var(--space-button-icon-only-horizontal-xuxfmj,16px); text-decoration: none; background: var(--color-background-button-normal-default-k8i6b0,#fff); border-color: var(--color-border-button-normal-default-bqhrgd,#545b64); position: relative;" title="Copy content" type="submit"><span class="awsui_icon_vjswe_1ivyw_1121 awsui_icon-left_vjswe_1ivyw_1121 awsui_icon_h11ix_1q8e6_101 awsui_size-normal-mapped-height_h11ix_1q8e6_157 awsui_size-normal_h11ix_1q8e6_153 awsui_variant-normal_h11ix_1q8e6_229" style="display: inline-block; position: relative; vertical-align: top; box-sizing: border-box; inline-size: var(--size-icon-normal-wflv4k,16px); block-size: var(--line-height-body-m-2zx78l,22px); padding-block: calc((var(--line-height-body-m-2zx78l, 22px) - var(--size-icon-normal-wflv4k, 16px))/2); padding-inline: 0px; color: currentcolor; inset-inline: 0px; margin-inline: auto;"><svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linejoin-round" d="M2 5h9v9H2z"></path><path class="stroke-linejoin-round" d="M5 5V2h9v9h-3"></path></svg></span></button></span></span><div aria-atomic="true" aria-live="polite" class="awsui_popover-inline-content_xjuzf_191w6_919" data-awsui-referrer-id=":r2r:" style="display: inline;">![Screenshot 2024-06-14 at 10.53.49 PM.png](_assets/1db8f2b29f1d.png)</div></div></div>![Screenshot 2024-06-14 at 10.54.04 PM.png](_assets/e77d3723e02f.png)
+<button aria-label="Copy content" class="CopyButton-module_styledButton__1Jq7M awsui_button_vjswe_1ivyw_105 awsui_variant-normal_vjswe_1ivyw_156 awsui_button-no-text_vjswe_1ivyw_1095" data-analytics-funnel-value="button:r2s:" data-analytics-performance-mark="8-1718373001716-6708" data-testid="copy-button" title="Copy content" type="submit"><svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linejoin-round" d="M2 5h9v9H2z"></path><path class="stroke-linejoin-round" d="M5 5V2h9v9h-3"></path></svg></button>![Screenshot 2024-06-14 at 10.53.49 PM.png](./_assets/1db8f2b29f1d.png)![Screenshot 2024-06-14 at 10.54.04 PM.png](./_assets/e77d3723e02f.png)
 
 ## Querying variants and annotations  
 
@@ -105,7 +109,7 @@ s3://aws-genomics-static-<aws-region>/omics-workshop/data/annotations/clinvar.vc
 - Amazon Athena에서 작업 그룹을 생성하고 쿼리 편집기를 사용하여 변형 및 어노테이션 저장소에 대한 간단한 쿼리 실행하기
 - AWS SDK for Pandas (aka AWS Wrangler)를 사용해 SageMaker 노트북에서 변형 및 어노테이션 저장소에 대해 쿼리 실행하기
 
-![omics-analytics.png](_assets/a31d24705707.png)
+![omics-analytics.png](./_assets/a31d24705707.png)
 
 ### AWS Lake Formation 서비스 셋업  
 
@@ -113,15 +117,15 @@ Lake Formation Data Lake administrators are users and roles with permissions to 
 
 For this workshop, you will need to verify that your current user role is a data lake administrator.
 
-1\. Navigate to the [AWS Lake Formation console<span class="awsui_icon-wrapper_4c84z_eu8v7_485" style="white-space: nowrap;"> <span class="awsui_icon_4c84z_eu8v7_485" style="display: inline-block;"><span class="awsui_icon_h11ix_1q8e6_101 awsui_icon-flex-height_h11ix_1q8e6_109 awsui_size-medium_h11ix_1q8e6_172 awsui_variant-normal_h11ix_1q8e6_229 awsui_name-external_h11ix_1q8e6_263" style="display: inline-flex; position: relative; vertical-align: top; align-items: center; box-sizing: border-box; inline-size: var(--size-icon-medium-6sroof,16px); color: currentcolor; height: 24px;"><svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linecap-square" d="M10 2h4v4"></path><path d="m6 10 8-8"></path><path class="stroke-linejoin-round" d="M14 9.048V14H2V2h5"></path></svg></span></span></span>](https://console.aws.amazon.com/lakeformation/home).
+1\. Navigate to the [AWS Lake Formation console <svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linecap-square" d="M10 2h4v4"></path><path d="m6 10 8-8"></path><path class="stroke-linejoin-round" d="M14 9.048V14H2V2h5"></path></svg>](https://console.aws.amazon.com/lakeformation/home).
 
 2\. If you see the following screen, select **Get started**:
 
-![lakeformation__get-started.png](_assets/cba6a97ac78f.png)
+![lakeformation__get-started.png](./_assets/cba6a97ac78f.png)
 
 3\. From the navigation, go to **Administative roles and tasks**. Verify that `WSParticipantRole` is listed in the **Data lake administrators table**.
 
-<span class="Image-module_imageContainer__3PIQv" style="display: inline-block; font-size: 0px; line-height: normal; transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1) 0s; box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 20px; z-index: 1;"><span class="Image-module_imageWrapper__3HXhZ"><span aria-owns="rmiz-modal-1cb644293f45" data-rmiz="" style="position: relative;"><span data-rmiz-content="found" style="color: rgb(22, 25, 31); font-family: 'Amazon Ember', 'Helvetica Neue', Roboto, Arial, sans-serif; font-size: 0px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; visibility: visible;">![AWS Lakeformation admin](https://static.us-east-1.prod.workshops.aws/public/fa137586-7af3-4277-86de-3c7bf44e9e71/static/screenshots/lakeformation__administrators.png)</span></span></span></span>
+![AWS Lakeformation admin](https://static.us-east-1.prod.workshops.aws/public/fa137586-7af3-4277-86de-3c7bf44e9e71/static/screenshots/lakeformation__administrators.png)
 
 4\. If `WSParticipantRole` is not listed as a data lake administrator, select **Choose administrators** and then choose `WSParticipantRole` under **IAM uesrs and roles**. Then select **Save** to add the role as a Data lake administrator.
 
@@ -132,7 +136,7 @@ Let's create a database that we'll use as a virtual container for our variants a
 
 2\. Select **Create Database**.
 
-3\. For **Name** provide **omicsdb**. <span class="Image-module_imageContainer__3PIQv" style="display: inline-block; font-size: 0px; line-height: normal; transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1) 0s;"><span class="Image-module_imageWrapper__3HXhZ"><span aria-owns="rmiz-modal-fe6fda8baf1c" data-rmiz="" style="position: relative;"><span data-rmiz-content="found" style="color: rgb(22, 25, 31); font-family: 'Amazon Ember', 'Helvetica Neue', Roboto, Arial, sans-serif; font-size: 0px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; visibility: visible;">![HealthOmics Database](https://static.us-east-1.prod.workshops.aws/public/fa137586-7af3-4277-86de-3c7bf44e9e71/static/screenshots/lakeformation__create_database.png)</span></span></span></span>
+3\. For **Name** provide **omicsdb**. ![HealthOmics Database](https://static.us-east-1.prod.workshops.aws/public/fa137586-7af3-4277-86de-3c7bf44e9e71/static/screenshots/lakeformation__create_database.png)
 
 4\. Accept all other defaults and finish with **Create database**.
 
@@ -145,45 +149,45 @@ Resource links connect resources shared by HealthOmics Analytics to new or exist
 
 여기 예는 my\_variant\_store 입니다.
 
-![Screenshot 2024-06-14 at 11.02.20 PM.png](_assets/4ebcd87bb9dd.png)
+![Screenshot 2024-06-14 at 11.02.20 PM.png](./_assets/4ebcd87bb9dd.png)
 
 For **Resource link name**, provide **omicsvariants**.
 
 For **Database**, provide **omicsdb**.
 
-![Screenshot 2024-06-14 at 11.04.32 PM.png](_assets/64c992b658b1.png)
+![Screenshot 2024-06-14 at 11.04.32 PM.png](./_assets/64c992b658b1.png)
 
 주석 테이블에 대해 위의 단계를 반복하여 omicsdb 데이터베이스에 omicsannotations라는 리소스 링크를 만듭니다.
 
-![Screenshot 2024-06-14 at 11.05.25 PM.png](_assets/3723c26aaa6a.png)
+![Screenshot 2024-06-14 at 11.05.25 PM.png](./_assets/3723c26aaa6a.png)
 
-![Screenshot 2024-06-14 at 11.05.45 PM.png](_assets/f34968542a69.png)
+![Screenshot 2024-06-14 at 11.05.45 PM.png](./_assets/f34968542a69.png)
 
 ### Amazon Athena 셋업
 
 #### 쿼리 결과 디렉토리 지정
 
-1. Open the [Amazon Athena console<span class="awsui_icon-wrapper_4c84z_eu8v7_485" style="white-space: nowrap;"> <span class="awsui_icon_4c84z_eu8v7_485" style="display: inline-block;"><span class="awsui_icon_h11ix_1q8e6_101 awsui_icon-flex-height_h11ix_1q8e6_109 awsui_size-medium_h11ix_1q8e6_172 awsui_variant-normal_h11ix_1q8e6_229 awsui_name-external_h11ix_1q8e6_263" style="display: inline-flex; position: relative; vertical-align: top; align-items: center; box-sizing: border-box; inline-size: var(--size-icon-medium-6sroof,16px); color: currentcolor; height: 24px;"><svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linecap-square" d="M10 2h4v4"></path><path d="m6 10 8-8"></path><path class="stroke-linejoin-round" d="M14 9.048V14H2V2h5"></path></svg></span></span></span>](https://console.aws.amazon.com/athena/home).
+1. Open the [Amazon Athena console <svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linecap-square" d="M10 2h4v4"></path><path d="m6 10 8-8"></path><path class="stroke-linejoin-round" d="M14 9.048V14H2V2h5"></path></svg>](https://console.aws.amazon.com/athena/home).
 2. From the navigation, choose **Query editor**.
 3. In the Query editor, choose the **Settings** tab and then choose **Manage**.
-4. Click on **Browse S3**, select the bucket named **omics-output-{REGION}-{ACCOUNT-ID}**, and click **Choose**. This will fill the **Location of query result** with the S3 URI of the workshop output bucket. Append to this URI "/athena/" and select **Save**.
+4. Click on **Browse S3**, select the bucket named **omics-output-\{REGION\}-\{ACCOUNT-ID\}**, and click **Choose**. This will fill the **Location of query result** with the S3 URI of the workshop output bucket. Append to this URI "/athena/" and select **Save**.
 
-![Screenshot 2024-06-14 at 11.07.15 PM.png](_assets/777b5d3008b8.png)
+![Screenshot 2024-06-14 at 11.07.15 PM.png](./_assets/777b5d3008b8.png)
 
 #### 워킹 그룹 생성
 
-1. Open the [Amazon Athena console<span class="awsui_icon-wrapper_4c84z_eu8v7_485" style="white-space: nowrap;"> <span class="awsui_icon_4c84z_eu8v7_485" style="display: inline-block;"><span class="awsui_icon_h11ix_1q8e6_101 awsui_icon-flex-height_h11ix_1q8e6_109 awsui_size-medium_h11ix_1q8e6_172 awsui_variant-normal_h11ix_1q8e6_229 awsui_name-external_h11ix_1q8e6_263" style="display: inline-flex; position: relative; vertical-align: top; align-items: center; box-sizing: border-box; inline-size: var(--size-icon-medium-6sroof,16px); color: currentcolor; height: 24px;"><svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linecap-square" d="M10 2h4v4"></path><path d="m6 10 8-8"></path><path class="stroke-linejoin-round" d="M14 9.048V14H2V2h5"></path></svg></span></span></span>](https://console.aws.amazon.com/athena/home).
+1. Open the [Amazon Athena console <svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linecap-square" d="M10 2h4v4"></path><path d="m6 10 8-8"></path><path class="stroke-linejoin-round" d="M14 9.048V14H2V2h5"></path></svg>](https://console.aws.amazon.com/athena/home).
 2. From the navigation, choose **Workgroups**, and then **Create Workgroup**.
 3. For **Workgroup name** provide **athena3**.
 4. Select **Athena SQL** for the type of engine.
 5. Under **Upgrade query engine** select **Manual**.
 6. Under **Query Engine Version** select **Athena version 3**.
-7. Finish with **Create workgroup**![Screenshot 2024-06-14 at 11.07.56 PM.png](_assets/2d9e6d325eb3.png)
+7. Finish with **Create workgroup**![Screenshot 2024-06-14 at 11.07.56 PM.png](./_assets/2d9e6d325eb3.png)
 
 ### Running queries - Amazon Athena
 Now that we have Athena configured, let's run some queries.
 
-1. Open the [Amazon Athena Query editor<span class="awsui_icon-wrapper_4c84z_eu8v7_485" style="white-space: nowrap;"> <span class="awsui_icon_4c84z_eu8v7_485" style="display: inline-block;"><span class="awsui_icon_h11ix_1q8e6_101 awsui_icon-flex-height_h11ix_1q8e6_109 awsui_size-medium_h11ix_1q8e6_172 awsui_variant-normal_h11ix_1q8e6_229 awsui_name-external_h11ix_1q8e6_263" style="display: inline-flex; position: relative; vertical-align: top; align-items: center; box-sizing: border-box; inline-size: var(--size-icon-medium-6sroof,16px); color: currentcolor; height: 24px;"><svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linecap-square" d="M10 2h4v4"></path><path d="m6 10 8-8"></path><path class="stroke-linejoin-round" d="M14 9.048V14H2V2h5"></path></svg></span></span></span>](https://console.aws.amazon.com/athena/home#/query-editor).
+1. Open the [Amazon Athena Query editor <svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linecap-square" d="M10 2h4v4"></path><path d="m6 10 8-8"></path><path class="stroke-linejoin-round" d="M14 9.048V14H2V2h5"></path></svg>](https://console.aws.amazon.com/athena/home#/query-editor).
 2. Under **Workgroup** select "athena3" (which you created above).
 3. Make sure the **Data Source** is **AwsDataCatalog** and the **Database** is **omicsdb** (which you created previously). Both the **omicsvariants** and **omicsannotations** tables should be listed.
 
@@ -195,12 +199,12 @@ Preview the **omicsvariants** table, by running the following query:
 SELECT * from omicsvariants limit 10
 ```
 
-<div class="CodeBlock-module_codeBlock__2a1n0 CodeBlock-module_hasCopyAction__zdyx-" id="bkmrk--20" style="margin-bottom: 2rem; margin-top: 2rem; position: relative; color: rgb(22, 25, 31); font-family: 'Amazon Ember', 'Helvetica Neue', Roboto, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span class="awsui_root_xjuzf_191w6_832 CodeBlock-module_copyAction__vokS-" style="margin: calc((var(--space-scaled-l-08jb88, 20px) + 1px)*2/2 - 6px); position: absolute; right: 0px; top: 0px; border-collapse: initial; border-spacing: 0px; box-sizing: border-box; caption-side: top; cursor: auto; direction: inherit; empty-cells: show; font-family: var(--font-family-base-4om3hr,'Amazon Ember','Helvetica Neue',Roboto,Arial,sans-serif); font-size: var(--font-size-body-m-pa3mqb,14px); font-stretch: normal; font-style: normal; font-variant: normal; font-weight: 400; hyphens: none; letter-spacing: normal; line-height: var(--line-height-body-m-2zx78l,22px); list-style: outside none disc; tab-size: 8; text-align: start; text-indent: 0px; text-shadow: none; text-transform: none; visibility: visible; white-space: normal; word-spacing: normal; -webkit-font-smoothing: auto; color: inherit;"><span class="awsui_trigger_xjuzf_191w6_868" id="bkmrk--21" style="color: inherit; display: inline-block; max-inline-size: 100%; text-align: inherit;"><button aria-label="Copy content" class="CopyButton-module_styledButton__1Jq7M awsui_button_vjswe_1ivyw_105 awsui_variant-normal_vjswe_1ivyw_156 awsui_button-no-text_vjswe_1ivyw_1095" data-analytics-funnel-value="button:r46:" data-analytics-performance-mark="9-1718374093511-4132" data-testid="copy-button" style="font-family: var(--font-family-base-4om3hr,'Amazon Ember','Helvetica Neue',Roboto,Arial,sans-serif); font-size: var(--font-size-body-m-pa3mqb,14px); line-height: var(--line-height-body-m-2zx78l,22px); margin: 0px; overflow: visible; text-transform: none; appearance: button; padding-left: 0.7rem !important; padding-right: 0.7rem !important; opacity: 0.5; transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) 0s; border-collapse: initial; border-spacing: 0px; box-sizing: border-box; caption-side: top; color: var(--color-text-button-normal-default-gpe171,#545b64); direction: inherit; empty-cells: show; font-stretch: normal; font-style: normal; font-variant: normal; hyphens: none; list-style: outside none disc; tab-size: 8; text-align: start; text-indent: 0px; text-shadow: none; visibility: visible; white-space: normal; word-spacing: normal; font-weight: var(--font-button-weight-s67y37,700); min-inline-size: 0px; word-break: break-word; -webkit-font-smoothing: var(--font-smoothing-webkit-8fiijr,auto); border-block: var(--border-field-width-yoy972,1px) solid; border-end-end-radius: var(--border-radius-button-8zlwjs,2px); border-end-start-radius: var(--border-radius-button-8zlwjs,2px); border-inline: var(--border-field-width-yoy972,1px) solid; border-start-end-radius: var(--border-radius-button-8zlwjs,2px); border-start-start-radius: var(--border-radius-button-8zlwjs,2px); cursor: pointer; display: inline-block; letter-spacing: var(--font-button-letter-spacing-kukfsk,.25px); padding-block: var(--space-scaled-xxs-t7ij38,4px); padding-inline-start: var(--space-button-icon-only-horizontal-xuxfmj,16px); padding-inline-end: var(--space-button-icon-only-horizontal-xuxfmj,16px); text-decoration: none; background: var(--color-background-button-normal-default-k8i6b0,#fff); border-color: var(--color-border-button-normal-default-bqhrgd,#545b64); position: relative;" title="Copy content" type="submit"><span class="awsui_icon_vjswe_1ivyw_1121 awsui_icon-left_vjswe_1ivyw_1121 awsui_icon_h11ix_1q8e6_101 awsui_size-normal-mapped-height_h11ix_1q8e6_157 awsui_size-normal_h11ix_1q8e6_153 awsui_variant-normal_h11ix_1q8e6_229" style="display: inline-block; position: relative; vertical-align: top; box-sizing: border-box; inline-size: var(--size-icon-normal-wflv4k,16px); block-size: var(--line-height-body-m-2zx78l,22px); padding-block: calc((var(--line-height-body-m-2zx78l, 22px) - var(--size-icon-normal-wflv4k, 16px))/2); padding-inline: 0px; color: currentcolor; inset-inline: 0px; margin-inline: auto;"><svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linejoin-round" d="M2 5h9v9H2z"></path><path class="stroke-linejoin-round" d="M5 5V2h9v9h-3"></path></svg></span></button></span></span></div>1. Copy the above query and paste it into the **Query Editor** under the **Query 1** tab.
+<button aria-label="Copy content" class="CopyButton-module_styledButton__1Jq7M awsui_button_vjswe_1ivyw_105 awsui_variant-normal_vjswe_1ivyw_156 awsui_button-no-text_vjswe_1ivyw_1095" data-analytics-funnel-value="button:r46:" data-analytics-performance-mark="9-1718374093511-4132" data-testid="copy-button" title="Copy content" type="submit"><svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linejoin-round" d="M2 5h9v9H2z"></path><path class="stroke-linejoin-round" d="M5 5V2h9v9h-3"></path></svg></button>1. Copy the above query and paste it into the **Query Editor** under the **Query 1** tab.
 2. Select **Run** to execute the query.
 
 Results should return in a few seconds and look like:
 
-![Screenshot 2024-06-14 at 11.09.08 PM.png](_assets/5fd532aaeb3d.png)
+![Screenshot 2024-06-14 at 11.09.08 PM.png](./_assets/5fd532aaeb3d.png)
 
 #### 복잡한 쿼리
 
@@ -228,7 +232,7 @@ INNER JOIN omicsannotations as clinvar ON
 
 ```
 
-![Screenshot 2024-06-14 at 11.27.02 PM.png](_assets/b9ba829b2304.png)
+![Screenshot 2024-06-14 at 11.27.02 PM.png](./_assets/b9ba829b2304.png)
 
 또다른 예 (본인의 상황에 맞게 수정해야할 것입니다.)
 
@@ -261,5 +265,3 @@ WHERE clinvar.attributes['CLNSIG']='Likely_pathogenic'
     - [https://academic.oup.com/nar/article/51/1/e3/6775383](https://academic.oup.com/nar/article/51/1/e3/6775383)
     - [https://github.com/brentp/echtvar/wiki/why](https://github.com/brentp/echtvar/wiki/why)
 - https://github.com/brentp/vcfanno
-
-<div id="bkmrk--27"></div><div id="bkmrk--28"></div>

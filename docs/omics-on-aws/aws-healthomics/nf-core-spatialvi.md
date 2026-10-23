@@ -4,17 +4,33 @@ title: "Nf-core 워크플로우 마이그레이션 하기 (spatialvi)"
 
 # Nf-core 워크플로우 마이그레이션 하기 (spatialvi)
 
-<p class="callout info">2025년 5월 22일 현재 dev 버전 branch에서 테스트 되었습니다.</p>
 
-<p class="callout info">연구 목적이며 반드시 실제 샘플과 시나리오상에서 개별적으로 결과데이터와 파이프라인 검증을 필요로 할 것입니다.</p>
+> **ℹ️ 정보**
+>
+> 2025년 5월 22일 현재 dev 버전 branch에서 테스트 되었습니다.
 
-<p class="callout warning">2025년 5/30일 경 nf-schema 지원을 위한 HealthOmics 업데이트가 예정되어 있습니다. 그전에는 nf-schema를 기존의구 플러그인인 nf-validation으로 변경해야 합니다. 워크플로우 내 코드 수정은 다음을 참고하여 모두 교체해주세요. ([링크](https://github.com/nf-core/spatialvi/compare/dev...hmkim:spatialvi:aho_dev))</p>
+
+
+> **ℹ️ 정보**
+>
+> 연구 목적이며 반드시 실제 샘플과 시나리오상에서 개별적으로 결과데이터와 파이프라인 검증을 필요로 할 것입니다.
+
+
+
+> **⚠️ 주의**
+>
+> 2025년 5/30일 경 nf-schema 지원을 위한 HealthOmics 업데이트가 예정되어 있습니다. 그전에는 nf-schema를 기존의구 플러그인인 nf-validation으로 변경해야 합니다. 워크플로우 내 코드 수정은 다음을 참고하여 모두 교체해주세요. ([링크](https://github.com/nf-core/spatialvi/compare/dev...hmkim:spatialvi:aho_dev))
+
 
 ## 마이그레이션을 위한 환경 구성
 
 ### Step1 - Ec2 기반 환경 구성
 
-<p class="callout info">Ec2기반이 아닌 CloudShell 기반으로도 세팅할 수 있습니다. ([참고](https://catalog.us-east-1.prod.workshops.aws/workshops/76d4a4ff-fe6f-436a-a1c2-f7ce44bc5d17/en-US/introduction/setting-up-environment/cloudshell-environment)) 선호하는 환경에서 작업하세요.</p>
+
+> **ℹ️ 정보**
+>
+> Ec2기반이 아닌 CloudShell 기반으로도 세팅할 수 있습니다. ([참고](https://catalog.us-east-1.prod.workshops.aws/workshops/76d4a4ff-fe6f-436a-a1c2-f7ce44bc5d17/en-US/introduction/setting-up-environment/cloudshell-environment)) 선호하는 환경에서 작업하세요.
+
 
 - t2.medium
 - Amazon linux 2023 AMI
@@ -22,13 +38,13 @@ title: "Nf-core 워크플로우 마이그레이션 하기 (spatialvi)"
 
 #### Specify instance type options
 
-![image.png](_assets/0806eb566b98.png)
+![image.png](./_assets/0806eb566b98.png)
 
 #### Generate key pairs
 
 If you don't already have a key pair then select create keypair
 
-![image.png](_assets/f604a15af6b1.png)
+![image.png](./_assets/f604a15af6b1.png)
 
 Give the key pair a name and select the key pair type and format.
 
@@ -36,41 +52,45 @@ Give the key pair a name and select the key pair type and format.
 
 Ensure that you have access to the instance via SSH.
 
-![image.png](_assets/73a8b3f0fde1.png)
+![image.png](./_assets/73a8b3f0fde1.png)
 
 #### Storage
 
 Create a root volume of 20GB
 
-![image.png](_assets/c264947c4bb3.png)
+![image.png](./_assets/c264947c4bb3.png)
 
 #### Instance Profile
 
-<p class="callout warning">We will create an IAM instance profile to allow administrator permissions for the EC2 instance, for the purpose of this workshop. However, in general, AWS security best practices recommendation is that you create an instance profile with least privilege. This configuration is not recommended in your own account, you should discuss organizational best-practices with your IT team to configure appropriate permissions.</p>
+
+> **⚠️ 주의**
+>
+> We will create an IAM instance profile to allow administrator permissions for the EC2 instance, for the purpose of this workshop. However, in general, AWS security best practices recommendation is that you create an instance profile with least privilege. This configuration is not recommended in your own account, you should discuss organizational best-practices with your IT team to configure appropriate permissions.
+
 
 Advanced Details 토글
 
-![image.png](_assets/d6eda2029f3a.png)
+![image.png](./_assets/d6eda2029f3a.png)
 
 IAM Instance profile에서 Create new IAM profile 선택
 
-![image.png](_assets/d361de9c6d50.png)
+![image.png](./_assets/d361de9c6d50.png)
 
 **AWS service, EC2 선택**
 
-![image.png](_assets/8fbe849ab334.png)
+![image.png](./_assets/8fbe849ab334.png)
 
 **Add Permissions 화면에서 AdministratorAccess 추가(선택)**
 
-![image.png](_assets/4e21f7d14ac3.png)
+![image.png](./_assets/4e21f7d14ac3.png)
 
 새로운 role name을 지정 (여기서는 EC2adminAccess라고 작성했음)
 
-![image.png](_assets/be4fe7f9830f.png)
+![image.png](./_assets/be4fe7f9830f.png)
 
 **이제 EC2 instance 실행 화면으로 돌아가서 앞에서 만든 EC2adminAccess 선택**
 
-![image.png](_assets/69bca36191ed.png)
+![image.png](./_assets/69bca36191ed.png)
 
 #### User Data
 **맨 아래의 User data 섹션에 내용 추가**
@@ -96,18 +116,18 @@ npm install -g aws-cdk
 sudo yum -y install git
 ```
 
-![image.png](_assets/a1c206750432.png)
+![image.png](./_assets/a1c206750432.png)
 
 Launch instance 눌러서 인스턴스 실행
 
-![image.png](_assets/47d4c92006c6.png)
+![image.png](./_assets/47d4c92006c6.png)
 
 ### Step 2 - workflow migration code를 세팅하기
 **SSH 접속, 앞에서 만든 console로 접속합니다.**
 
-![image.png](_assets/c6754cc7eb7d.png)
+![image.png](./_assets/c6754cc7eb7d.png)
 
-![image.png](_assets/23dafcc76985.png)
+![image.png](./_assets/23dafcc76985.png)
 
 Use SSH to access the instance, you will need to ensure the key you created earlier is in the .ssh folder in your home directory and has the correct permissions(chmod 400). You will **need replace** ec2-user@10.11.12.123 with the IP address of your instance. This can be found in the EC2 management console.
 
@@ -156,7 +176,7 @@ npm install
 cdk deploy --all
 ```
 
-<div class="awsui_root_18wu0_fxrr2_920 awsui_box_18wu0_fxrr2_172 awsui_color-default_18wu0_fxrr2_172 awsui_font-size-default_18wu0_fxrr2_188 awsui_font-weight-default_18wu0_fxrr2_228" id="bkmrk--15"><div class="MarkdownRenderer-module_markdown__35_09"><div class="CodeBlock-module_codeBlock__2a1n0 CodeBlock-module_hasCopyAction__zdyx-"><span class="awsui_root_xjuzf_13bmg_1091 CodeBlock-module_copyAction__vokS-"><span class="awsui_trigger_xjuzf_13bmg_1131" id="bkmrk--16"><button aria-label="Copy content" class="CopyButton-module_styledButton__1Jq7M awsui_button_vjswe_1379u_157 awsui_variant-normal_vjswe_1379u_205 awsui_button-no-text_vjswe_1379u_556" data-analytics-funnel-value="button:r7g:" data-analytics-performance-mark="32-1747876049491-1634" data-testid="copy-button" title="Copy content" type="submit"><span class="awsui_icon_vjswe_1379u_585 awsui_icon-left_vjswe_1379u_585 awsui_icon_h11ix_npnzo_189 awsui_size-normal-mapped-height_h11ix_npnzo_248 awsui_size-normal_h11ix_npnzo_244 awsui_variant-normal_h11ix_npnzo_320"><svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linejoin-round" d="M15 5H5v10h10V5Z"></path><path class="stroke-linejoin-round" d="M13 1H1v11"></path></svg></span></button></span></span></div></div></div>## 프로젝트 셋업
+<button aria-label="Copy content" class="CopyButton-module_styledButton__1Jq7M awsui_button_vjswe_1379u_157 awsui_variant-normal_vjswe_1379u_205 awsui_button-no-text_vjswe_1379u_556" data-analytics-funnel-value="button:r7g:" data-analytics-performance-mark="32-1747876049491-1634" data-testid="copy-button" title="Copy content" type="submit"><svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="stroke-linejoin-round" d="M15 5H5v10h10V5Z"></path><path class="stroke-linejoin-round" d="M13 1H1v11"></path></svg></button>## 프로젝트 셋업
 
 이제 원하는 nf-core의 워크플로우를 HealthOmics private workflow에 마이그레이션을 하기 위해 다음 과정이 필요합니다.
 
@@ -192,7 +212,7 @@ cp  /home/workshop/amazon-ecr-helper-for-aws-healthomics/lib/lambda/parse-image-
 
 준비된 namespace.config파일의 내용은 다음과 같습니다.
 
-![image.png](_assets/243af52a4067.png)
+![image.png](./_assets/243af52a4067.png)
 
 This file will be used as one of the inputs for the `inspect_nf.py` script. This script parses the entire nextflow workflow project and identifies all public docker images across all the tools and generates a manifest which will be passed as an input to the migration tool.
 
@@ -212,9 +232,13 @@ python3 aws-healthomics-tutorials/utils/scripts/inspect_nf.py \
 
 `spatialvi_dev_docker_images_manifest.json` 파일은 예를들어 다음과 같은 모습이어야 합니다:
 
-![image.png](_assets/3e52d0589ae0.png)
+![image.png](./_assets/3e52d0589ae0.png)
 
-<p class="callout warning">해당 파일의 내용을 다음과 같이 수정합니다. (기존의 container 주소가 더이상 작동하지 않는 것이 많아서 임의로 공개된 것을 찾아 수정하였습니다, 예를들어 [spaceranger에 대한 컨테이너 주소 quay.io/nf-core/spaceranger:3.1.3](https://github.com/nf-core/spatialvi/blob/caeb4ff3768e6cba7a45f4a92220e9e9bf4efa28/modules/nf-core/spaceranger/count/main.nf#L5) 가 작동하지 않아서 dockerhub의 공개 Image로부터 검색하여 대응시켰습니다. [https://hub.docker.com/search?q=spaceranger](https://hub.docker.com/search?q=spaceranger)</p>
+
+> **⚠️ 주의**
+>
+> 해당 파일의 내용을 다음과 같이 수정합니다. (기존의 container 주소가 더이상 작동하지 않는 것이 많아서 임의로 공개된 것을 찾아 수정하였습니다, 예를들어 [spaceranger에 대한 컨테이너 주소 quay.io/nf-core/spaceranger:3.1.3](https://github.com/nf-core/spatialvi/blob/caeb4ff3768e6cba7a45f4a92220e9e9bf4efa28/modules/nf-core/spaceranger/count/main.nf#L5) 가 작동하지 않아서 dockerhub의 공개 Image로부터 검색하여 대응시켰습니다. [https://hub.docker.com/search?q=spaceranger](https://hub.docker.com/search?q=spaceranger)
+
 
 ```json
 {
@@ -230,7 +254,7 @@ python3 aws-healthomics-tutorials/utils/scripts/inspect_nf.py \
 
 The omics.config output file is also generated, which needs to be added to the nextflow workflow project. The purpose of this config is to inform nextflow to use the ECR docker image locations instead of the ones specified in the nextflow project code. The omics.config should look like this:
 
-![image.png](_assets/ca2c07d7ad6c.png)
+![image.png](./_assets/ca2c07d7ad6c.png)
 
 `omics.config` 내용 중 process에 정의된 내용도 아래와 같이 변경합니다.
 
@@ -258,9 +282,9 @@ aws stepfunctions start-execution \
 
 [step function 콘솔](https://console.aws.amazon.com/states/home)에서 state machines중에 `omx-container-puller`를 확인하여 Execution이 완료되었는지 확인합니다.
 
-![Screenshot 2025-04-15 at 3.52.46 PM.png](_assets/8233abbf1258.png)
+![Screenshot 2025-04-15 at 3.52.46 PM.png](./_assets/8233abbf1258.png)
 
-![image.png](_assets/dca0664376de.png)
+![image.png](./_assets/dca0664376de.png)
 
 #### nf-core project 코드 업데이트
 
@@ -340,7 +364,9 @@ echo $workflow_id
 
 아래는 테스트 샘플의 파라미터 예시입니다. ([참고](https://github.com/nf-core/scrnaseq/blob/e0ddddbff9d8b8c2421c67ff07449a06f9ca02d2/conf/test.config#L26))
 
-<details id="bkmrk-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A4%80%EB%B9%84-%EC%B0%B8%EA%B3%A0-%EC%98%88%EC%A0%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%8A%94-%EB%8B%A4%EC%9D%8C"><summary>데이터 준비 참고</summary>
+
+**▸ 데이터 준비 참고**
+
 
 예제 데이터는 다음과 같이 다운로드 해볼 수 있습니다.
 
@@ -358,7 +384,7 @@ aws s3 mv probe_set.csv s3://${yourbucket}/spatialvi/
 aws s3 mv homo_sapiens_chr22_reference.tar.gz s3://${yourbucket}/spatialvi/
 ```
 
-</details>**sample sheet 만들기**
+**sample sheet 만들기**
 
 ```bash
 cat << EOF > samplesheet_spaceranger.csv
@@ -375,7 +401,11 @@ aws s3 cp samplesheet_spaceranger.csv s3://${yourbucket}/spatialvi/samplesheet_s
 
 **입력 json 만들기 (위 sample sheet경로가 아래 내용중 input에 값으로 들어가게됨)**
 
-<p class="callout info">마찬가지로 probe\_set.csv, homo\_sapiens\_chr22\_reference.tar.gz도 모두 버킷에 준비해야합니다.</p>
+
+> **ℹ️ 정보**
+>
+> 마찬가지로 probe\_set.csv, homo\_sapiens\_chr22\_reference.tar.gz도 모두 버킷에 준비해야합니다.
+
 
 ```bash
 cat > input.json <<EOF
@@ -389,11 +419,15 @@ cat > input.json <<EOF
 EOF
 ```
 
-<span style="color: rgb(34, 34, 34); font-family: 'Amazon Ember', 'Noto Sans KR', sans-serif; font-size: 1.666em; font-weight: 400;">Policy 준비</span>
+Policy 준비
 
 ##### Prepare IAM service role to run AWS HealthOmics workflow
 
-<p class="callout warning">your-bucket-name, your-account-id, your-region을 모두 본인 환경에 맞게 수정하여 사용하세요.</p>
+
+> **⚠️ 주의**
+>
+> your-bucket-name, your-account-id, your-region을 모두 본인 환경에 맞게 수정하여 사용하세요.
+
 
 `omics_workflow_policy.json` 만들기
 
