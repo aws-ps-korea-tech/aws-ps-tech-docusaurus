@@ -6,7 +6,7 @@ const {themes} = require('prism-react-renderer');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'AWS Korea Public Sector SA Team',
-  tagline: 'AWS Professional Services Technical Documentation',
+  tagline: 'AWS Korea Public Sector SA Team Technical Documentation',
   favicon: 'img/favicon.png',
 
   // Platform-dependent: GH Pages uses /docusaurus/, CF Pages/Netlify use root.
