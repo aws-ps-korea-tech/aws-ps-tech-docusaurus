@@ -10,12 +10,12 @@ const config = {
   favicon: 'img/favicon.png',
 
   // Platform-dependent: GH Pages uses /docusaurus/, CF Pages/Netlify use root.
-  // Set DEPLOY_BASE_URL=/docusaurus/ + DEPLOY_URL for GH Pages (CI); unset = root.
+  // Set DEPLOY_BASE_URL=/aws-ps-tech-docusaurus/ + DEPLOY_URL for GH Pages (CI); unset = root.
   url: process.env.DEPLOY_URL || 'https://aws-ps-tech-docusaurus.netlify.app',
   baseUrl: process.env.DEPLOY_BASE_URL || '/',
 
   organizationName: 'aws-ps-korea-tech',
-  projectName: 'docusaurus',
+  projectName: 'aws-ps-tech-docusaurus',
 
   onBrokenLinks: 'warn',
   markdown: {
@@ -38,7 +38,7 @@ const config = {
           routeBasePath: '/',
           numberPrefixParser: false,
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/aws-ps-korea-tech/docusaurus/tree/main/',
+          editUrl: 'https://github.com/aws-ps-korea-tech/aws-ps-tech-docusaurus/tree/main/',
         },
         blog: false,
         theme: {
@@ -93,7 +93,7 @@ const config = {
             label: "AI·의사결정",
           },
           {
-            href: 'https://github.com/aws-ps-korea-tech/docusaurus',
+            href: 'https://github.com/aws-ps-korea-tech/aws-ps-tech-docusaurus',
             label: 'GitHub',
             position: 'right',
           },
@@ -129,7 +129,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/aws-ps-korea-tech/docusaurus',
+                href: 'https://github.com/aws-ps-korea-tech/aws-ps-tech-docusaurus',
               },
             ],
           },

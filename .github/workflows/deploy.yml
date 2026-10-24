@@ -33,7 +33,7 @@ jobs:
         run: npm run build
         env:
           DEPLOY_URL: https://aws-ps-korea-tech.github.io
-          DEPLOY_BASE_URL: /docusaurus/
+          DEPLOY_BASE_URL: /aws-ps-tech-docusaurus/
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
         with:
