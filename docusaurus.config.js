@@ -48,6 +48,26 @@ const config = {
     ],
   ],
 
+  // Offline, in-browser full-text search. No Algolia account or network calls —
+  // the index is built at compile time and shipped as static assets, which suits
+  // a static deploy (Netlify/CF Pages/S3). Korean + English tokenization so CJK
+  // page titles and bodies are searchable.
+  themes: [
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      /** @type {import('@easyops-cn/docusaurus-search-local').PluginOptions} */
+      ({
+        hashed: true,
+        language: ['en', 'ko'],
+        indexDocs: true,
+        indexBlog: false,
+        docsRouteBasePath: '/',
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+      }),
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
