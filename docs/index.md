@@ -1,12 +1,12 @@
 ---
 slug: /
-title: AWS PS Tech Korea 문서
+title: AWS Korea Public Sector SA Team
 sidebar_position: 0
 ---
 
-# AWS PS Tech Korea 문서
+# AWS Korea Public Sector SA Team
 
-AWS Professional Services Korea 기술 문서입니다. 상단 메뉴에서 분야를 고르세요.
+AWS Korea Public Sector SA Team 기술 문서입니다. 상단 메뉴에서 분야를 고르세요.
 
 ## 시작하기
 
