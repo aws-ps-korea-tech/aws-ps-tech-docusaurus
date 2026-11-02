@@ -90,33 +90,9 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'start',
+            sidebarId: 'docs',
             position: 'left',
-            label: "시작하기·계정",
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'omics',
-            position: 'left',
-            label: "유전체·오믹스",
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'hpc',
-            position: 'left',
-            label: "HPC·배치·BLAST",
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'ai',
-            position: 'left',
-            label: "AI·ML",
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'regulatory',
-            position: 'left',
-            label: "규제·거버넌스",
+            label: "문서",
           },
           {
             href: 'https://github.com/aws-ps-korea-tech/aws-ps-tech-docusaurus',
