@@ -59,8 +59,8 @@ export KEY_NAME={본인의 KeyName}
 
 aws ec2 run-instances --image-id "${AMI_ID}" --instance-type "${INSTANCE_TYPE}" --key-name "${KEY_NAME}" \
     --user-data file://install_rstudio.txt \
-    --block-device-mappings '{"DeviceName":"/dev/sda1","Ebs":{"Encrypted":false,"DeleteOnTermination":true,"Iops":3000,"SnapshotId":"snap-0dbe62bb8f1f21357","VolumeSize":100,"VolumeType":"gp3","Throughput":125}}' \
-    --network-interfaces '{"AssociatePublicIpAddress":true,"DeviceIndex":0,"Groups":["sg-0d2f7724e68ddff15","sg-0e2c103f2a28a9be7"]}' \
+    --block-device-mappings '{"DeviceName":"/dev/sda1","Ebs":{"Encrypted":false,"DeleteOnTermination":true,"Iops":3000,"SnapshotId":"<RSTUDIO_SNAPSHOT_ID>","VolumeSize":100,"VolumeType":"gp3","Throughput":125}}' \
+    --network-interfaces '{"AssociatePublicIpAddress":true,"DeviceIndex":0,"Groups":["<RSTUDIO_SECURITY_GROUP_ID>","<ADMIN_SECURITY_GROUP_ID>"]}' \
     --credit-specification '{"CpuCredits":"unlimited"}' --tag-specifications '{"ResourceType":"instance","Tags":[{"Key":"Name","Value":"rstudio server"}]}' \
     --metadata-options '{"HttpEndpoint":"enabled","HttpPutResponseHopLimit":2,"HttpTokens":"required"}' \
     --private-dns-name-options '{"HostnameType":"ip-name","EnableResourceNameDnsARecord":true,"EnableResourceNameDnsAAAARecord":false}' \

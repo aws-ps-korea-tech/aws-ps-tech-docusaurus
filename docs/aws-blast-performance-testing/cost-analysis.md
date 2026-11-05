@@ -16,7 +16,7 @@ title: "비용 분석 (Cost Analysis)"
 
 | Parameter | Value |
 |-----------|-------|
-| File System ID | fs-0d2d032d1cca25f3f |
+| File System ID | fs-EFS_FILE_SYSTEM_ID |
 | Name | blast-perf-test-efs-nt-db |
 | Total Size | **254.32 GB** (273,049,319,424 bytes) |
 | Storage Class | Standard |
@@ -69,7 +69,7 @@ Daily: $91.56 / 30 = $3.05/day
 
 | Parameter | Value |
 |-----------|-------|
-| Bucket Name | blast-perf-test-queries-664263524008 |
+| Bucket Name | blast-perf-test-queries-AWS_ACCOUNT_ID |
 | Total Size | **236.05 MB** (247,421,178 bytes) |
 | Storage Class | Standard |
 | Number of Objects | 10 |

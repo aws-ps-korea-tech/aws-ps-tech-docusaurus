@@ -28,7 +28,7 @@ title: "실습용 윈도우 EC2 인스턴스 자동화"
 
 ```
 aws ec2 run-instances \
-  --image-id ami-04df9ee4d3dfde202 \
+  --image-id <WINDOWS_AMI_ID> \
   --instance-type m5.large \
   --key-name your-key-pair-name \
   --security-group-ids sg-your-security-group-id \

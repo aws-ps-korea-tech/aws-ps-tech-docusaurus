@@ -98,7 +98,7 @@ EBS Snapshot 기반 아키텍처(r6i.24xlarge + EBS gp3)로 성공적으로 마�
 │  │   ┌───────────────────┐    ┌─────────────────────────────────────────┐   │ │
 │  │   │   EBS Snapshot    │    │           EBS gp3 Volume                 │   │ │
 │  │   │                   │───▶│                                          │   │ │
-│  │   │ snap-0da0e59a...  │    │  /mnt/blastdb/nt/core_nt (254 GB)        │   │ │
+│  │   │ snap-EXAMPLE...  │    │  /mnt/blastdb/nt/core_nt (254 GB)        │   │ │
 │  │   │ $12.70/월         │    │  16,000 IOPS                             │   │ │
 │  │   │                   │    │  1,000 MB/s throughput                   │   │ │
 │  │   └───────────────────┘    │  추가 읽기 비용: $0                       │   │ │
@@ -117,7 +117,7 @@ EBS Snapshot 기반 아키텍처(r6i.24xlarge + EBS gp3)로 성공적으로 마�
 ## 생성된 AWS 리소스
 
 ### EBS Snapshot
-- **Snapshot ID**: `snap-0da0e59a29928ee10`
+- **Snapshot ID**: `snap-<SNAPSHOT_ID>`
 - **크기**: 300 GB (BLAST NT Core DB 254GB)
 - **설명**: BLAST NT Core Database - core_nt
 
@@ -125,8 +125,8 @@ EBS Snapshot 기반 아키텍처(r6i.24xlarge + EBS gp3)로 성공적으로 마�
 
 | 템플릿 | ID | 인스턴스 유형 | 스토리지 |
 |--------|-----|--------------|---------|
-| blast-ebs-r6i-template | lt-022797b039e191875 | r6i.24xlarge | EBS gp3 (16K IOPS, 1000 MB/s) |
-| blast-ebs-r6id-nvme-template | lt-09ff4ebeaf85069d3 | r6id.24xlarge | NVMe + EBS |
+| blast-ebs-r6i-template | lt-R6I-LAUNCH-TEMPLATE-ID | r6i.24xlarge | EBS gp3 (16K IOPS, 1000 MB/s) |
+| blast-ebs-r6id-nvme-template | lt-R6ID-LAUNCH-TEMPLATE-ID | r6id.24xlarge | NVMe + EBS |
 
 ### AWS Batch 리소스
 

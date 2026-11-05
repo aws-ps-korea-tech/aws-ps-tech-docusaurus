@@ -32,8 +32,8 @@ title: "EFS vs FSx for Lustre 비교 분석 (실제 테스트 결과 포함)"
 | 구성요소 | 상세 |
 |----------|------|
 | **EC2 인스턴스** | r6i.24xlarge / r7i.24xlarge (96 vCPU, 768 GB RAM) |
-| **EFS** | fs-0d2d032d1cca25f3f, Elastic 처리량 모드 |
-| **FSx Lustre** | fs-0d75b85b2d9519a04, Scratch 2, 1.2 TB, S3 통합 |
+| **EFS** | fs-EFS_FILE_SYSTEM_ID, Elastic 처리량 모드 |
+| **FSx Lustre** | fs-FSX_FILE_SYSTEM_ID, Scratch 2, 1.2 TB, S3 통합 |
 | **BLAST 데이터베이스** | core_nt (NCBI NT Core, ~254 GB) |
 | **AWS Batch** | 64 vCPU, 512 GB Memory Job Definition |
 
@@ -79,8 +79,8 @@ title: "EFS vs FSx for Lustre 비교 분석 (실제 테스트 결과 포함)"
 
 ### 인프라 구성
 
-- **FSx Lustre**: fs-0d75b85b2d9519a04, Scratch 2, 1.2 TB
-- **S3 Data Repository**: s3://blast-nt-lustre-apne2-664263524008/nt/
+- **FSx Lustre**: fs-FSX_FILE_SYSTEM_ID, Scratch 2, 1.2 TB
+- **S3 Data Repository**: s3://blast-nt-lustre-apne2-AWS_ACCOUNT_ID/nt/
 - **마운트 경로**: /blast-lustre-data (Launch Template v5)
 - **데이터베이스**: core_nt (254 GB, 78개 청크 파일)
 

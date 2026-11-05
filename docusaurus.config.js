@@ -1,16 +1,15 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
 
 const {themes} = require('prism-react-renderer');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'AWS Korea Public Sector SA Team',
-  tagline: 'AWS Korea Public Sector SA Team Technical Documentation',
+  title: 'AWS 공공부문 기술 가이드',
+  tagline: '공공부문 고객과 파트너를 위한 AWS 기술 가이드, 실습 및 아키텍처 참고 자료',
   favicon: 'img/favicon.png',
 
-  // Platform-dependent: GH Pages uses /docusaurus/, CF Pages/Netlify use root.
-  // Set DEPLOY_BASE_URL=/aws-ps-tech-docusaurus/ + DEPLOY_URL for GH Pages (CI); unset = root.
+  // Platform-dependent: GitHub Pages uses a repository base path, while
+  // Cloudflare Pages and Netlify serve from the site root.
   url: process.env.DEPLOY_URL || 'https://aws-ps-tech-docusaurus.netlify.app',
   baseUrl: process.env.DEPLOY_BASE_URL || '/',
 
@@ -24,6 +23,9 @@ const config = {
     },
   },
 
+  // Korean remains the default and only generated locale until reviewed
+  // translations are separated from the mixed-language source tree. Reviewed
+  // English documents are curated at /english/ in the meantime.
   i18n: {
     defaultLocale: 'ko',
     locales: ['ko'],
@@ -38,7 +40,17 @@ const config = {
           routeBasePath: '/',
           numberPrefixParser: false,
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/aws-ps-korea-tech/aws-ps-tech-docusaurus/tree/main/',
+          editUrl: 'https://github.com/aws-ps-korea-tech/aws-ps-tech-docusaurus/edit/main/',
+          // These sources require publication review. Excluding them keeps them
+          // off the generated website; because the repository is public, truly
+          // private material must also be removed from the repository itself.
+          exclude: [
+            '**/draft-*/**',
+            'decision-models-on-aws/**',
+            'gxp-on-aws/gxp-on-aws.md',
+            'aws/ec2/rstudio.md',
+            'omics-on-aws/alphagenome-alphamissense-on-aws/**',
+          ],
         },
         blog: false,
         theme: {
@@ -48,10 +60,7 @@ const config = {
     ],
   ],
 
-  // Offline, in-browser full-text search. No Algolia account or network calls —
-  // the index is built at compile time and shipped as static assets, which suits
-  // a static deploy (Netlify/CF Pages/S3). Korean + English tokenization so CJK
-  // page titles and bodies are searchable.
+  // Build the Korean and English full-text index into the static site.
   themes: [
     [
       require.resolve('@easyops-cn/docusaurus-search-local'),
@@ -75,24 +84,53 @@ const config = {
       announcementBar: {
         id: 'disclaimer',
         content:
-          '⚠️ 이 사이트의 게시물은 최신 정보를 반영하지 않을 수 있으며, <strong>AWS 공식 콘텐츠가 아닙니다.</strong> 최신 정보는 <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com">AWS 공식 문서</a>를 참고하세요.',
+          '이 사이트는 AWS 공식 설명서를 대체하지 않습니다. 최신 서비스 정보는 <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com">AWS 공식 문서</a>를 확인하세요.',
         backgroundColor: '#fff3cd',
         textColor: '#664d03',
         isCloseable: false,
       },
       navbar: {
-        title: 'AWS Korea Public Sector SA Team',
+        title: 'AWS 공공부문 기술 가이드',
         logo: {
-          alt: 'AWS',
+          alt: 'AWS 공공부문 기술 가이드',
           src: 'img/logo-light-mode.png',
           srcDark: 'img/logo-dark-mode.png',
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'docs',
+            to: '/getting-started/',
+            label: '시작하기',
             position: 'left',
-            label: "문서",
+          },
+          {
+            label: '분야별 가이드',
+            position: 'left',
+            items: [
+              {label: '정부·공공기관', to: '/sectors/government-public/'},
+              {label: '교육·연구', to: '/sectors/education-research/'},
+              {label: '헬스케어·생명과학', to: '/sectors/healthcare-life-sciences/'},
+            ],
+          },
+          {
+            label: '기술 주제',
+            position: 'left',
+            items: [
+              {label: 'AI·머신러닝', to: '/topics/ai-ml/'},
+              {label: '데이터·스토리지·전송', to: '/topics/data-storage-transfer/'},
+              {label: '컴퓨팅·고성능 컴퓨팅', to: '/topics/compute-hpc/'},
+              {label: '워크플로·자동화', to: '/topics/workflows-automation/'},
+              {label: '보안·규제 준수', to: '/topics/security-compliance/'},
+            ],
+          },
+          {
+            to: '/partners/',
+            label: '파트너',
+            position: 'left',
+          },
+          {
+            to: '/english/',
+            label: 'English',
+            position: 'right',
           },
           {
             href: 'https://github.com/aws-ps-korea-tech/aws-ps-tech-docusaurus',
@@ -105,30 +143,28 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: '분야별 가이드',
             items: [
-              {
-                label: 'AWS Services',
-                to: '/s3/amazon-s3/s3-select',
-              },
+              {label: '정부·공공기관', to: '/sectors/government-public/'},
+              {label: '교육·연구', to: '/sectors/education-research/'},
+              {label: '헬스케어·생명과학', to: '/sectors/healthcare-life-sciences/'},
             ],
           },
           {
-            title: 'Community',
+            title: '자료',
             items: [
-              {
-                label: 'AWS',
-                href: 'https://aws.amazon.com',
-              },
-              {
-                label: 'Privacy Policy',
-                href: 'https://aws.amazon.com/ko/privacy/',
-              },
+              {label: '시작하기', to: '/getting-started/'},
+              {label: '파트너', to: '/partners/'},
+              {label: '전체 문서', to: '/docs/'},
+              {label: 'English', to: '/english/'},
             ],
           },
           {
-            title: 'More',
+            title: '관련 링크',
             items: [
+              {label: 'AWS', href: 'https://aws.amazon.com/'},
+              {label: 'AWS 공식 문서', href: 'https://docs.aws.amazon.com/'},
+              {label: '개인정보 처리방침', href: 'https://aws.amazon.com/ko/privacy/'},
               {
                 label: 'GitHub',
                 href: 'https://github.com/aws-ps-korea-tech/aws-ps-tech-docusaurus',
