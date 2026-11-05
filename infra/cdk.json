@@ -1,0 +1,18 @@
+{
+  "app": "npx ts-node --prefer-ts-exts bin/app.ts",
+  "watch": {
+    "include": ["**"],
+    "exclude": ["README.md", "cdk*.json", "**/*.d.ts", "node_modules", "test"]
+  },
+  "context": {
+    "githubOwner": "aws-ps-korea-tech",
+    "githubRepo": "aws-ps-tech-docusaurus",
+    "githubBranch": "main",
+    "codeConnectionArn": "",
+    "siteFreePlan": true,
+    "awspstechCutover": false,
+    "@aws-cdk/aws-s3:createDefaultLoggingPolicy": true,
+    "@aws-cdk/aws-codepipeline:crossAccountKeysDefaultValueToFalse": true,
+    "@aws-cdk/aws-codepipeline:defaultPipelineTypeToV2": true
+  }
+}
