@@ -117,7 +117,7 @@ EBS Snapshot 기반 아키텍처(r6i.24xlarge + EBS gp3)로 성공적으로 마�
 ## 생성된 AWS 리소스
 
 ### EBS Snapshot
-- **Snapshot ID**: `SNAPSHOT_ID`
+- **Snapshot ID**: `snap-<SNAPSHOT_ID>`
 - **크기**: 300 GB (BLAST NT Core DB 254GB)
 - **설명**: BLAST NT Core Database - core_nt
 

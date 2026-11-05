@@ -1,5 +1,6 @@
 ---
 title: "AWS 계정 안전하게 지키기"
+slug: account-security
 ---
 
 # AWS 계정 안전하게 지키기

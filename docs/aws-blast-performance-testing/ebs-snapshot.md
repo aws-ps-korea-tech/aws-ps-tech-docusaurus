@@ -122,7 +122,7 @@ EBS gp3 네이티브 속도: 1,000 MB/s
 ```bash
 aws ec2 enable-fast-snapshot-restores \
     --availability-zones ap-northeast-2a ap-northeast-2c \
-    --source-snapshot-ids SNAPSHOT_ID
+    --source-snapshot-ids <SNAPSHOT_ID>
 ```
 
 **FSR 비용 (ap-northeast-2):**

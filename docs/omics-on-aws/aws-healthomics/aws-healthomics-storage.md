@@ -27,7 +27,7 @@ Omics URI 즉, omics://로 시작하는 주소로 언제든지 참조 유전체 
 
 [2024년 4월 15일부](https://aws.amazon.com/about-aws/whats-new/2024/04/aws-healthomics-reading-sequence-stores-s3-apis/)로 시퀀스에 등록한 시퀀스에 접근하기 위해서 S3:// alias URI로 접근할 수 있습니다. 이 덕분에 도메인별 메타데이터, 비용 절감, 확장성의 이점을 누리면서 HealthOmics 데이터 저장소를 생물정보학 에코시스템에 보다 쉽게 통합할 수 있습니다. Mountpoint for S3 와 같은 서비스를 활용할 수도 있습니다.
 
-**예)** **s3://**SEQUENCE_STORE_ALIAS/AWS_ACCOUNT_ID/sequenceStore/SEQUENCE_STORE_ID/
+**예)** `s3://<SEQUENCE_STORE_ALIAS>/<AWS_ACCOUNT_ID>/sequenceStore/<SEQUENCE_STORE_ID>/`
 
 ## 참고
 

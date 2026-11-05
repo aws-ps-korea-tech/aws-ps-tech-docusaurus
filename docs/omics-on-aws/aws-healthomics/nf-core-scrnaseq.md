@@ -164,7 +164,7 @@ wget https://github.com/nf-core/test-datasets/raw/scrnaseq/reference/gencode.vM1
 이제 현재 디렉토리에 다운로드 된 파일들을 버킷에 업로드할 수 있습니다.
 
 ```bash
-aws s3 sync . s3://YOUR_BUCKET_NAME/workflow_migration_workshop/nfcore-scrnaseq-v4.0.0/
+aws s3 sync . s3://<YOUR_BUCKET_NAME>/workflow_migration_workshop/nfcore-scrnaseq-v4.0.0/
 ```
 
 **sample sheet 만들기**
