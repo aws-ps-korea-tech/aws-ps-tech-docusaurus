@@ -59,9 +59,11 @@ export class PipelineStack extends Stack {
           build: {
             commands: [
               'npm run build',
-              // Docusaurus 3.9 can emit NUL bytes inside sidebar labels; strip them.
-              `python3 -c "import glob;[open(f,'wb').write(open(f,'rb').read().replace(b'\\x00',b'')) for f in glob.glob('build/**/*.html',recursive=True)]"`,
-              'test -f build/index.html && test -f build/404.html',
+              // Docusaurus 3.9 can emit NUL bytes inside sidebar labels; strip them
+              // (read the whole file before reopening it for writing).
+              'node infra/scripts/strip-nul.js build',
+              // Refuse to publish an empty or broken build.
+              'node infra/scripts/check-build.js build',
             ],
           },
           post_build: {
