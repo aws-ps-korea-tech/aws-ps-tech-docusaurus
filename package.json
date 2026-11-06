@@ -6,6 +6,12 @@
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
+    "validate": "node scripts/validate.mjs",
+    "validate:docs": "node scripts/validate-docs.mjs",
+    "validate:i18n": "node scripts/validate-i18n.mjs",
+    "validate:public": "node scripts/check-public-content.mjs",
+    "test:validators": "node --test scripts/__tests__/*.test.mjs",
+    "check": "npm run test:validators && npm run validate && npm run build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -24,7 +30,9 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.9.2",
     "@docusaurus/tsconfig": "^3.9.2",
-    "@docusaurus/types": "^3.9.2"
+    "@docusaurus/types": "^3.9.2",
+    "ajv": "^8.17.1",
+    "gray-matter": "^4.0.3"
   },
   "browserslist": {
     "production": [

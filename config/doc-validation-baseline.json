@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "description": "Known file-specific validation exceptions for untouched legacy documents. Do not add wildcard paths or wildcard rules.",
+  "exceptions": {}
+}
