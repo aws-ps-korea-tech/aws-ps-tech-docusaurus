@@ -46,6 +46,8 @@ const config = {
   projectName: 'technical-documents',
 
   onBrokenLinks: 'throw',
+  onBrokenAnchors: 'throw',
+  onDuplicateRoutes: 'throw',
   markdown: {
     hooks: {
       onBrokenMarkdownLinks: 'throw',
