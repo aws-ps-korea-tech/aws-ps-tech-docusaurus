@@ -172,7 +172,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Amazon Web Services, Inc. or its affiliates. All rights reserved.`,
+        copyright: `Copyright © ${new Date().getFullYear()} AWS Korea Public Sector SA Team`,
       },
       prism: {
         theme: themes.github,
