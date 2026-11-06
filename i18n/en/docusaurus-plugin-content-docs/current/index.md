@@ -15,7 +15,7 @@ customProps:
   sourceLocale: ko
   publicationStatus: published
   translationStatus: current
-  translatedFrom: 164e2336960537ea7eada7d071fe3b0e18384ecb
+  translatedFrom: 69b4e7e7f7f874052f51c67cd195e14d48a469c7
   sectors:
     - government-public
     - education-research
