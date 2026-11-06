@@ -1,12 +1,40 @@
 ---
 title: "Getting Started with AI Antibody Design on Amazon Bio Discovery: A Guide for Life Science Researchers"
+description: "A console-based introduction to designing antibody candidates with Amazon Bio Discovery"
+slug: /amazon-bio-discovery-ai
+keywords:
+  - Amazon Bio Discovery
+  - antibody design
+tags:
+  - amazon-bio-discovery
+  - life-sciences
+customProps:
+  contentId: amazon-bio-discovery-antibody-design
+  locale: en
+  sourceLocale: ko
+  publicationStatus: published
+  translationStatus: current
+  translatedFrom: 69b4e7e7f7f874052f51c67cd195e14d48a469c7
+  sectors:
+    - healthcare-life-sciences
+  audiences:
+    - customer
+    - partner
+    - researcher
+  contentType: getting-started
+  level: beginner
+  awsServices:
+    - Amazon Bio Discovery
+  maintainers:
+    - hmkim
+  lastReviewed: "2026-11-06"
 ---
 
 # Getting Started with AI Antibody Design on Amazon Bio Discovery: A Guide for Life Science Researchers
 
-> This article is written for life science researchers who are not yet familiar with the cloud. Every technical term is explained in plain language, and the entire AI antibody design workflow is carried out with clicks in the web console, without writing any code. A Korean version is available at [Amazon Bio Discovery로 AI 항체 설계 시작하기](/amazon-bio-discovery-ai/).
+> This article is written for life science researchers who are not yet familiar with the cloud. Every technical term is explained in plain language, and the entire AI antibody design workflow is carried out with clicks in the web console, without writing any code.
 
-## Overview
+## Overview {#overview}
 
 Antibody drug discovery typically repeats a cycle: design candidates, synthesize and test them in the laboratory, and refine the design based on the results. In the traditional approach, one cycle takes months.
 
@@ -14,13 +42,13 @@ Amazon Bio Discovery (ABD) is an application that integrates this iterative proc
 
 ---
 
-## 1. What is Amazon Bio Discovery?
+## 1. What is Amazon Bio Discovery? {#what-is-amazon-bio-discovery}
 
 ABD is an AI-powered application for biological research. It provides access to dozens of AI models trained on biological data (biological foundation models, or bioFMs) to generate and evaluate molecular candidates such as antibodies.
 
 At the core of ABD is the Lab-in-the-Loop approach: candidates designed by AI are validated in the wet lab, and the results are fed back into the AI to improve the next round of design. Computational design (in silico) and laboratory validation (wet lab) are connected in a single continuous cycle. Researchers do not install models or manage servers; they upload inputs and run experiments in the web console.
 
-### Real-world applications
+### Real-world applications {#real-world-applications}
 
 ABD has already been applied in research settings.
 
@@ -31,7 +59,7 @@ The HER2 exercise in this article is a scaled-down version of the same pipeline 
 
 ---
 
-## 2. Before You Start: Two Ways to Sign Up
+## 2. Before You Start: Two Ways to Sign Up {#before-you-start-two-ways-to-sign-up}
 
 ABD can be started in two ways, depending on your environment.
 
@@ -43,7 +71,7 @@ ABD can be started in two ways, depending on your environment.
 
 ---
 
-## 3. ABD Concepts and Structure
+## 3. ABD Concepts and Structure {#abd-concepts-and-structure}
 
 ABD organizes work around a few components of its own. A cooking analogy helps to keep them straight.
 
@@ -58,7 +86,7 @@ ABD organizes work around a few components of its own. A cooking analogy helps t
 
 The overall flow is as follows. You create a **Project**; inside it you create an **Experiment**, choosing the **Recipe** to use (a configuration that combines several **Models** as **Modules**), specifying the input data and parameters, and running it; then you send the results to the **Wet Lab** for validation. When the Recipe is prepared depends on which path you take. **With a Hosted Recipe**, there is no Recipe to build: you select it directly while creating the Experiment. **With a custom Recipe**, you first compose and save the Recipe in the Recipes menu (canvas) after creating the Project, and then select that Recipe when creating the Experiment. The exercise in this article follows the Hosted Recipe path.
 
-### Hosted Recipes and custom Recipes
+### Hosted Recipes and custom Recipes {#hosted-recipes-and-custom-recipes}
 
 Recipes come in two forms.
 
@@ -71,7 +99,7 @@ Recipes come in two forms.
 
 A Hosted Recipe abstracts a validated combination of models: you do not need to decide which models to use in which order, and you simply provide inputs (such as a target structure) to a pipeline AWS has configured. The exercise in this article uses a Hosted Recipe.
 
-### Representative Hosted Recipes in the console
+### Representative Hosted Recipes in the console {#representative-hosted-recipes-in-the-console}
 
 As of this writing (October 2026), the representative generative Hosted Recipes in the console are as follows.
 
@@ -92,7 +120,7 @@ In addition, Score and prediction modules such as binding affinity, structure pr
 
 ---
 
-## 4. Hands-on: Designing 10 HER2 Antibody Candidates
+## 4. Hands-on: Designing 10 HER2 Antibody Candidates {#hands-on-designing-10-her2-antibody-candidates}
 
 ![Concept diagram of HER2 overexpression and antibody binding](./_assets/86600c2b2f27.png)
 
@@ -107,7 +135,7 @@ The exercise proceeds in the following order, matching the actual screen flow of
 5. Review Experiment results
 6. Send to Wet Lab
 
-### 4-1. Initial setup (organization path)
+### 4-1. Initial setup (organization path) {#4-1-initial-setup-organization-path}
 
 When you open Amazon Bio Discovery in the console, the initial setup screen appears, and you proceed through four steps.
 
@@ -120,7 +148,7 @@ When you open Amazon Bio Discovery in the console, the initial setup screen appe
 
 \{/* SCREENSHOT-01: Application home right after sign-in */\}
 
-### 4-2. Create a Project
+### 4-2. Create a Project {#4-2-create-a-project}
 
 First create a Project, the space that holds your work. From Home or the Projects menu, choose Create project and enter a name (for example, HER2 Antibody Design) and a description. Use one Project per research topic.
 
@@ -138,7 +166,7 @@ As the on-screen guidance states, an Experiment is the unit in which you "choose
 
 > **Note. A custom Recipe must be created first.** If you need a Recipe that combines modules of your own choosing, compose and save it on the canvas in the Recipes menu before choosing Create experiment. The Recipe selection list in the Experiment wizard shows both Hosted Recipes and the custom Recipes you have saved.
 
-### 4-3. Prepare test data (download public data)
+### 4-3. Prepare test data (download public data) {#4-3-prepare-test-data-download-public-data}
 
 This exercise needs two protein structure files in PDB format.
 
@@ -155,7 +183,7 @@ Both files can be prepared directly from a public database. Preparing them yours
 
 **2) Build the target file.** Keep only the residues of domain IV from chain C and save them as `her2_domain4.pdb`. Domain boundaries follow the domain assignment in the 1N8Z paper (domain IV is the C-terminal part of the extracellular domain, roughly residue 489 onward); confirm the exact range in the RCSB entry's structure description and the paper. In PyMOL, for example:
 
-```
+```text
 fetch 1N8Z
 select target, chain C and resi 489-607
 save her2_domain4.pdb, target
@@ -163,7 +191,7 @@ save her2_domain4.pdb, target
 
 **3) Build the antibody framework file.** Keep only the variable domains (Fv: VL from the light chain, VH from the heavy chain) from chains A and B and save them as `trastuzumab_fv.pdb`. The first roughly 110–120 residues of each Fab chain, excluding the constant domains (CL, CH1), are the variable domains.
 
-```
+```text
 select fv, (chain A and resi 1-107) or (chain B and resi 1-120)
 save trastuzumab_fv.pdb, fv
 ```
@@ -176,7 +204,7 @@ save trastuzumab_fv.pdb, fv
 
 Files can be uploaded directly while creating the Experiment, or uploaded in advance to the Project's Files tab so they can be reused across experiments.
 
-### 4-4. Create an Experiment: select a Recipe, upload data, set parameters, run
+### 4-4. Create an Experiment: select a Recipe, upload data, set parameters, run {#4-4-create-an-experiment-select-a-recipe-upload-data-set-parameters-run}
 
 Choose the Create experiment button on the Project overview to open the Experiment creation wizard, and proceed in this order.
 
@@ -205,7 +233,7 @@ If you have saved a custom Recipe in the Recipes menu (one composed by connectin
 \{/* SCREENSHOT-07: Estimated EU and run confirmation */\}
 \{/* SCREENSHOT-08: Experiments tab showing running/completed status */\}
 
-### 4-5. Review Experiment results
+### 4-5. Review Experiment results {#4-5-review-experiment-results}
 
 When the run completes, the results screen lets you review candidates from three perspectives.
 
@@ -220,7 +248,7 @@ Filtering on the left by conditions such as binding affinity and foldability sho
 
 > **The role of AI agents.** ABD presents the reasoning behind its numbers. A setup-assistance agent recommends hotspot residues on the target surface that favor binding, taking surface accessibility, hydrophobicity, and other factors into account, and explains its reasoning. A candidate-selection agent optimizes several properties simultaneously, assesses potential liabilities, and presents pre-selected candidates together with the rationale for the selection. This lets you understand why a candidate was chosen rather than merely reading the results.
 
-### 4-6. Send to Wet Lab
+### 4-6. Send to Wet Lab {#4-6-send-to-wet-lab}
 
 After selecting candidates through in silico analysis, you can choose the promising ones and request real experiments with Send to Wet Lab.
 
@@ -234,7 +262,7 @@ The entire process—antibody candidate design (in silico), laboratory validatio
 
 ---
 
-## 5. Key Features
+## 5. Key Features {#key-features}
 
 Amazon Bio Discovery integrates design, experiment, and model improvement into one application. The key features confirmed in this exercise are as follows.
 
@@ -248,7 +276,7 @@ Amazon Bio Discovery integrates design, experiment, and model improvement into o
 
 ---
 
-## 6. Using Built-in Models and Training with Your Own Models and Data
+## 6. Using Built-in Models and Training with Your Own Models and Data {#using-built-in-models-and-training-with-your-own-models-and-data}
 
 ABD provides more than 40 built-in AI models (bioFMs). As research deepens, the need arises to use your own data and your own models. ABD offers three approaches for this, all of which are currently pre-GA (Beta or Gated Beta).
 
@@ -273,7 +301,7 @@ ABD provides more than 40 built-in AI models (bioFMs). As research deepens, the 
 
 ---
 
-## 7. Billing: Experiment Units (EUs)
+## 7. Billing: Experiment Units (EUs) {#billing-experiment-units-eus}
 
 ABD bills by the amount of experimentation actually performed, not by the number of seats ("Pay for science, not seats"), and the unit is the EU (Experiment Unit).
 
@@ -292,7 +320,7 @@ The Academic plan provides 5 EUs per month free of charge and requires a verifie
 
 ---
 
-## 8. Data and Model Security
+## 8. Data and Model Security {#data-and-model-security}
 
 Data security is the first thing pharmaceutical and biotech researchers check.
 
@@ -303,7 +331,7 @@ Organizations for which intellectual property protection is critical are advised
 
 ---
 
-## 9. Additional Resources
+## 9. Additional Resources {#additional-resources}
 
 - **AWS Skill Builder introductory course**: [Getting Started with Amazon Bio Discovery](https://skillbuilder.aws/learn/BQKQUC8A8M). A free digital course covering the Project, Recipe, and Module concepts in this article and the design, analysis, and wet lab flow through videos and exercises. Taking it before using the console is recommended.
 - **Official launch blog**: [Introducing Amazon Bio Discovery (AWS, 2026-04-14)](https://aws.amazon.com/blogs/industries/introducing-amazon-bio-discovery/). The primary source covering the background of the launch, the four-step workflow, and the MSK case.
@@ -314,13 +342,13 @@ Organizations for which intellectual property protection is critical are advised
 
 ---
 
-## Conclusion
+## Conclusion {#conclusion}
 
 Amazon Bio Discovery integrates in silico design and wet lab validation into a single cycle, enabling an antibody design pipeline without code. This article walked through the complete process of designing ten candidates for the HER2 target in about two hours and 1 EU, through to ordering experiments. It can serve as a starting point for seeing how an AI-based research platform connects to real research, and individual researchers can begin with the free 5 EU trial without a credit card.
 
 ---
 
-## Frequently Asked Questions (FAQ)
+## Frequently Asked Questions (FAQ) {#frequently-asked-questions-faq}
 
 **Q. What is Amazon Bio Discovery?**
 A. An AWS application for biological research that designs and evaluates antibody and protein candidates with AI models. It combines more than 40 AI models into Recipes to run experiments and supports the Lab-in-the-Loop approach, which connects results back to wet lab experiments and model improvement.

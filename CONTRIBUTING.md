@@ -178,6 +178,16 @@ npm run validate
 npm run build
 ```
 
+`npm run build`는 한국어와 영어 사이트를 함께 생성합니다. 한 언어만 빠르게 확인하려면 다음 명령을 사용합니다.
+
+```bash
+npm run build:ko
+```
+
+```bash
+npm run build:en
+```
+
 ## 기존 문서
 
 새 문서는 모든 규칙을 처음부터 적용합니다. 기존 문서는 수정할 때 새 기준으로 전환합니다. 수정하지 않은 기존 위반은 `config/doc-validation-baseline.json`에 파일과 규칙을 구체적으로 기록하며, 넓은 디렉터리 예외나 모든 규칙을 허용하는 예외는 사용하지 않습니다.

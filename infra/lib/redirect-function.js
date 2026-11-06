@@ -3,8 +3,9 @@
  * Generates the CloudFront Functions (cloudfront-js-2.0) viewer-request code for the
  * documentation site from Docusaurus `static/_redirects`.
  *
- *  - /books/... (old BookStack URLs) -> 301 to the new path, percent-encoded Location
- *  - every other request             -> append index.html to directory-style URLs,
+ *  - /books/... (old BookStack URLs) -> compact 301 redirect table
+ *  - other entries in static/_redirects -> direct 301 redirect table
+ *  - every other request               -> append index.html to directory-style URLs,
  *                                       because the S3 (OAC) origin has no index documents
  *
  * The same module is used by the CDK stack (initial function code) and by the CodeBuild
@@ -23,18 +24,25 @@ function encodePath(p) {
 
 function buildTable(redirectsText) {
   const table = {};
+  const direct = {};
   let count = 0;
   for (const line of redirectsText.split('\n')) {
     const parts = line.trim().split(/\s+/);
     if (parts.length !== 3) continue;
     const [src, dst] = parts;
-    if (src !== '/books' && !src.startsWith('/books/')) continue;
-    const key = src.replace(/\/+$/, '');
+    const key = src.replace(/\/+$/, '') || '/';
+    const target = encodePath(dst);
+    if (src !== '/books' && !src.startsWith('/books/')) {
+      if (direct[key] === undefined) {
+        direct[key] = target;
+        count++;
+      }
+      continue;
+    }
     const rest = key.slice('/books/'.length);
     const slash = rest.indexOf('/');
     const book = slash < 0 ? rest : rest.slice(0, slash);
     const sub = slash < 0 ? '' : rest.slice(slash + 1);
-    const target = encodePath(dst);
     table[book] = table[book] || {};
     if (table[book][sub] !== undefined) continue; // trailing-slash duplicate
     count++;
@@ -42,14 +50,15 @@ function buildTable(redirectsText) {
     const short = sub.startsWith('page/') && target === `/${book}/${encodePath(sub.slice(5))}/`;
     table[book][sub] = short ? 1 : target;
   }
-  return { table, count };
+  return { table, direct, count };
 }
 
 function generate(redirectsText) {
-  const { table, count } = buildTable(redirectsText);
-  const code = `var R=${JSON.stringify(table)};
+  const { table, direct, count } = buildTable(redirectsText);
+  const code = `var R=${JSON.stringify(table)},D=${JSON.stringify(direct)};
 function handler(event){
-var q=event.request,u=q.uri;
+var q=event.request,u=q.uri,k=u.replace(/\\/+$/,'')||'/',x=D[k];
+if(x)return{statusCode:301,statusDescription:'Moved Permanently',headers:{location:{value:x},'cache-control':{value:'max-age=86400'}}};
 if(u==='/books'||u.indexOf('/books/')===0){
 var r=u.replace(/\\/+$/,'').slice(7).split('/'),b=R[r[0]];
 if(b){var s=r.slice(1).join('/'),d=b[s];

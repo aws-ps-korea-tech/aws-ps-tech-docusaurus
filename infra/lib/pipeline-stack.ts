@@ -24,7 +24,7 @@ export interface PipelineStackProps extends StackProps {
 
 /**
  * main merge -> CodePipeline (V2) -> CodeBuild:
- *   npm ci + docusaurus build -> strip NUL bytes from HTML (Docusaurus 3.9 sidebar labels)
+ *   npm ci + Korean/English Docusaurus builds -> strip NUL bytes from HTML
  *   -> republish the CloudFront Function if static/_redirects changed
  *   -> sync to S3 -> invalidate CloudFront.
  */

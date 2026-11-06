@@ -1,5 +1,34 @@
 ---
 title: "How Task Concurrency Limits Increase Storage Costs in AWS HealthOmics Workflow Runs"
+description: "An experiment measuring how task concurrency limits affect AWS HealthOmics run duration and storage cost"
+slug: /omics-on-aws/aws-healthomics-ksh
+keywords:
+  - AWS HealthOmics
+  - workflow storage cost
+tags:
+  - aws-healthomics
+  - cost-analysis
+customProps:
+  contentId: healthomics-concurrency-storage-cost
+  locale: en
+  sourceLocale: ko
+  publicationStatus: published
+  translationStatus: current
+  translatedFrom: 69b4e7e7f7f874052f51c67cd195e14d48a469c7
+  sectors:
+    - healthcare-life-sciences
+    - education-research
+  audiences:
+    - customer
+    - partner
+    - researcher
+  contentType: performance-cost
+  level: intermediate
+  awsServices:
+    - AWS HealthOmics
+  maintainers:
+    - hmkim
+  lastReviewed: "2026-11-06"
 ---
 
 # How Task Concurrency Limits Increase Storage Costs in AWS HealthOmics Workflow Runs
@@ -8,38 +37,38 @@ When running genomic workflows on AWS HealthOmics, you might use **Run Groups** 
 
 We ran a controlled experiment to measure this effect and verify the underlying billing mechanics.
 
-## TL;DR
+## TL;DR {#tl-dr}
 
 - Throttling a 50-task workflow from full parallelism down to 2 concurrent tasks increased run duration by **5.67x**
 - Storage cost increased by **5.67x** ($0.049 → $0.278), tracking duration exactly
 - Compute cost stayed flat ($0.220 → $0.217, just -1.2%)
 - Total cost increased by **84%** ($0.269 → $0.496)
 
-## Background: How HealthOmics Billing Works
+## Background: How HealthOmics Billing Works {#background-how-healthomics-billing-works}
 
 HealthOmics run costs have two independent components with fundamentally different billing models:
 
-### Compute Cost (per task)
+### Compute Cost (per task) {#compute-cost-per-task}
 
 Each task is billed based on its **actual execution time** (start to stop), with a 60-second minimum, at the per-second rate of the assigned instance type. Whether tasks run in parallel or sequentially, each task still executes for the same duration — so **total compute cost is the same regardless of concurrency**.
 
-```
+```text
 compute_cost = Σ max(task_runtime_seconds, 60) × instance_rate_per_second
 ```
 
-### Storage Cost (per run)
+### Storage Cost (per run) {#storage-cost-per-run}
 
 Run storage is provisioned when the run enters the "Running" state and persists until the run transitions to "Stopping". For STATIC storage, you pay for the **full provisioned capacity** (minimum 1,200 GiB) for the **entire wall-clock duration**:
 
-```
+```text
 storage_cost = $0.0001918/GB-hour × provisioned_GiB × run_duration_hours
 ```
 
 This means: **anything that extends run duration — including concurrency throttling — directly increases storage cost.**
 
-## Experiment Design
+## Experiment Design {#experiment-design}
 
-### Workflow
+### Workflow {#workflow}
 
 We created a custom WDL workflow with 50 scatter tasks. Each task:
 - Requests 2 CPUs and 4 GB memory (maps to `omics.c.large`)
@@ -135,7 +164,7 @@ task AggregateResults {
 }
 ```
 
-### Two Runs, One Variable
+### Two Runs, One Variable {#two-runs-one-variable}
 
 We executed two identical runs with the only difference being the concurrency constraint:
 
@@ -149,15 +178,15 @@ We executed two identical runs with the only difference being the concurrency co
 
 With `maxCpus=4` and each task requesting 2 CPUs, Run B could only execute 2 tasks simultaneously. Both runs started within 10 seconds of each other.
 
-## Results
+## Results {#results}
 
-### Duration
+### Duration {#duration}
 
 | | Run A (High) | Run B (Low) | Ratio |
 |---|---|---|---|
 | **Total Duration** | 12 min 48 sec (768.6s) | 1 hr 12 min 35 sec (4,355.0s) | **5.67x** |
 
-### Cost Breakdown
+### Cost Breakdown {#cost-breakdown}
 
 | Cost Component | Run A (High) | Run B (Low) | Ratio |
 |---|---|---|---|
@@ -165,7 +194,7 @@ With `maxCpus=4` and each task requesting 2 CPUs, Run B could only execute 2 tas
 | **Storage Cost** | $0.0491 | $0.2784 | **5.67x** (+467%) |
 | **Total Cost** | $0.2690 | $0.4955 | **1.84x** (+84%) |
 
-### Storage as Percentage of Total
+### Storage as Percentage of Total {#storage-as-percentage-of-total}
 
 | | Run A (High) | Run B (Low) |
 |---|---|---|
@@ -174,11 +203,11 @@ With `maxCpus=4` and each task requesting 2 CPUs, Run B could only execute 2 tas
 
 At low concurrency, storage became the **dominant cost component** — flipping from less than one-fifth to more than half of total cost.
 
-## Verifying the Math
+## Verifying the Math {#verifying-the-math}
 
 We verified the reported costs against the billing formulas using actual task start/stop timestamps from the run manifests.
 
-### Compute Cost Verification
+### Compute Cost Verification {#compute-cost-verification}
 
 Each `ComputeTask` (2 CPUs, 4 GiB) maps to an `omics.c.large` instance at **$0.1148/hour** ($0.00003188/second).
 
@@ -194,9 +223,9 @@ The total billed seconds differ by only -1.3% between runs. Run B tasks ran marg
 
 **Conclusion:** Compute cost depends on the sum of individual task execution times, not on overall run duration. Parallelism does not change this sum.
 
-### Storage Cost Verification
+### Storage Cost Verification {#storage-cost-verification}
 
-```
+```text
 Storage cost = $0.0001918/GB-hr × 1,200 GiB × run_duration_hours
 ```
 
@@ -208,7 +237,7 @@ Storage cost = $0.0001918/GB-hr × 1,200 GiB × run_duration_hours
 
 Both match to the penny. Storage cost tracks wall-clock duration exactly.
 
-### Pricing Rates Used
+### Pricing Rates Used {#pricing-rates-used}
 
 | Component | Rate | Source |
 |---|---|---|
@@ -217,24 +246,24 @@ Both match to the penny. Storage cost tracks wall-clock duration exactly.
 | DYNAMIC Run Storage | $0.0004110/GB-hour | AWS HealthOmics Pricing (us-east-1) |
 | Minimum task billing | 60 seconds | AWS HealthOmics Pricing |
 
-## Task Execution Patterns
+## Task Execution Patterns {#task-execution-patterns}
 
-### Run A: All Tasks in Parallel
+### Run A: All Tasks in Parallel {#run-a-all-tasks-in-parallel}
 
 All 50 `ComputeTask` instances launched within a ~70-second window and completed within ~4 minutes. The `AggregateResults` task ran immediately after.
 
-```
+```text
 Time (min from start)   0    1    2    3    4    5    6    7
                         |----|----|----|----|----|----|----| 
 Task 00-49              [========================================]  (all 50 parallel)
 AggregateResults                                          [==]
 ```
 
-### Run B: Serialized in Batches of 2
+### Run B: Serialized in Batches of 2 {#run-b-serialized-in-batches-of-2}
 
 Tasks executed in 25 sequential batches, each taking ~2.5 minutes (135s execution + ~20s scheduling overhead). Total task execution spanned ~58 minutes.
 
-```
+```text
 Time (min from start)   0    5    10   15   20  ...  55   60   65
                         |----|----|----|----|---- ... |----|----|----|
 Batch 1  (T43,T39)     [====]
@@ -245,11 +274,11 @@ Batch 25 (T31)                                       [====]
 AggregateResults                                            [=]
 ```
 
-## Generalized Formula
+## Generalized Formula {#generalized-formula}
 
 From the verified results, we can derive a general model for storage cost overhead:
 
-```
+```text
 Hourly storage burn rate (STATIC 1,200 GiB):
   $0.0001918/GB-hr × 1,200 GiB = $0.2302/hour
 
@@ -264,7 +293,7 @@ The actual multiplier in our test (5.67x) was less than the theoretical maximum 
 - Run B had ~20s of scheduling gaps between each batch
 - These overheads compress the ratio compared to the naive `N / C_max` estimate
 
-## Recommendations
+## Recommendations {#recommendations}
 
 1. **Ensure sufficient concurrency headroom.** Set your Run Group's `maxCpus` high enough to avoid serializing scatter tasks. The HealthOmics default limits (3,000 concurrent CPUs, 10 concurrent tasks per run) are generally adequate, but custom Run Groups with low `maxCpus` can trigger this issue.
 
@@ -274,7 +303,7 @@ The actual multiplier in our test (5.67x) was less than the theoretical maximum 
 
 4. **Use the Run Analyzer for diagnostics.** The HealthOmics Run Analyzer (available via [aws-healthomics-tools](https://github.com/awslabs/aws-healthomics-tools)) provides detailed cost breakdowns including the storage vs compute split, making concurrency-related cost inflation easy to identify.
 
-## Conclusion
+## Conclusion {#conclusion}
 
 Our experiment confirms that **task concurrency limits directly increase HealthOmics run storage costs** by extending run duration, while compute costs remain constant. The storage cost scales linearly with wall-clock duration: a 5.67x longer run resulted in a 5.67x higher storage cost and an 84% increase in total cost.
 
