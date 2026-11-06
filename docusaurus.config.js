@@ -2,6 +2,35 @@
 
 const {themes} = require('prism-react-renderer');
 
+// Pinned CloudWatch RUM web client (aws-rum-web) served from the AWS CDN.
+const RUM_CLIENT_VERSION = '3.2.1';
+
+function rumHeadTags() {
+  const {RUM_APP_MONITOR_ID: id, RUM_IDENTITY_POOL_ID: pool, RUM_REGION: region} = process.env;
+  if (!id || !pool || !region) return [];
+  const config = {
+    sessionSampleRate: 1,
+    identityPoolId: pool,
+    endpoint: `https://dataplane.rum.${region}.amazonaws.com`,
+    telemetries: ['performance', 'errors', 'http'],
+    allowCookies: false,
+    enableXRay: false,
+  };
+  const args = [
+    'cwr', id, '1.0.0', region,
+    `https://client.rum.us-east-1.amazonaws.com/${RUM_CLIENT_VERSION}/cwr.js`, config,
+  ].map((a) => JSON.stringify(a)).join(',');
+  return [{
+    tagName: 'script',
+    attributes: {},
+    innerHTML:
+      '(function(n,i,v,r,s,c,x,z){x=window.AwsRumClient={q:[],n:n,i:i,v:v,r:r,c:c};' +
+      'window[n]=function(c,p){x.q.push({c:c,p:p});};z=document.createElement("script");' +
+      'z.async=true;z.src=s;document.head.insertBefore(z,document.head.getElementsByTagName("script")[0]);})' +
+      `(${args});`,
+  }];
+}
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'AWS 공공부문 기술 가이드',
@@ -30,6 +59,11 @@ const config = {
     defaultLocale: 'ko',
     locales: ['ko'],
   },
+
+  // CloudWatch RUM (page performance, JavaScript and HTTP errors; no cookies).
+  // Only added when the CodeBuild deploy sets the RUM_* variables, so Netlify,
+  // pull request and local builds send nothing.
+  headTags: rumHeadTags(),
 
   presets: [
     [
