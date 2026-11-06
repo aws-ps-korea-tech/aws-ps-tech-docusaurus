@@ -348,3 +348,46 @@ test('ignores Markdown headings inside longer code fences', (t) => {
   const result = runValidator(root, 'validate-i18n.mjs');
   assert.equal(result.status, 0, result.stdout + result.stderr);
 });
+
+test('reports a slug collision between a legacy document and a new one', (t) => {
+  const root = createProject();
+  t.after(() => fs.rmSync(root, {recursive: true, force: true}));
+  fs.writeFileSync(path.join(root, 'docs', 'new.md'), validFrontMatter());
+  fs.writeFileSync(
+    path.join(root, 'docs', 'legacy.md'),
+    '---\ntitle: Legacy\nslug: /guides/valid-public-guide\n---\n\nLegacy body.\n',
+  );
+
+  const result = runValidator(root, 'validate-docs.mjs');
+  assert.notEqual(result.status, 0);
+  assert.match(result.stdout, /ERROR docs\/new\.md:\d+ \[DUPLICATE_SLUG\]/);
+});
+
+test('does not treat the same relative slug in different directories as a collision', (t) => {
+  const root = createProject();
+  t.after(() => fs.rmSync(root, {recursive: true, force: true}));
+  for (const directory of ['a', 'b']) {
+    fs.mkdirSync(path.join(root, 'docs', directory), {recursive: true});
+    fs.writeFileSync(
+      path.join(root, 'docs', directory, 'index.md'),
+      `---\ntitle: Legacy ${directory}\nslug: overview\n---\n\nBody.\n`,
+    );
+  }
+
+  const result = runValidator(root, 'validate-docs.mjs');
+  assert.equal(result.status, 0, result.stdout + result.stderr);
+  assert.doesNotMatch(result.stdout, /DUPLICATE_SLUG/);
+});
+
+test('treats an AWS access key in an untouched legacy file as an error', (t) => {
+  const root = createProject();
+  t.after(() => fs.rmSync(root, {recursive: true, force: true}));
+  fs.writeFileSync(
+    path.join(root, 'docs', 'legacy.md'),
+    `---\ntitle: Legacy\n---\n\nKey: ${['AKIA', 'IOSFODNN7EXAMPLE'].join('')}\n`,
+  );
+
+  const result = runValidator(root, 'check-public-content.mjs');
+  assert.notEqual(result.status, 0);
+  assert.match(result.stdout, /ERROR docs\/legacy\.md:\d+ \[AWS_ACCESS_KEY\]/);
+});

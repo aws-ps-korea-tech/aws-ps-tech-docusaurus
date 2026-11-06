@@ -75,6 +75,22 @@ function validateSlug(document) {
   }
 }
 
+// Docusaurus resolves a slug without a leading "/" relative to the document's
+// directory, so only the resolved route can collide with another document.
+function resolveRoute(document) {
+  const slug = document.data.slug;
+  const joined = slug.startsWith('/')
+    ? slug
+    : path.posix.join('/', path.posix.dirname(document.relativeDocPath), slug);
+  const normalized = path.posix.normalize(joined);
+  return normalized.length > 1 ? normalized.replace(/\/+$/, '') : normalized;
+}
+
+function isBuiltIntoSite(document) {
+  const status = document.data?.customProps?.publicationStatus;
+  return document.data.draft !== true && !['draft', 'review'].includes(status);
+}
+
 function validatePublicationStatus(document) {
   const status = document.data?.customProps?.publicationStatus;
   if (['draft', 'review'].includes(status) && document.data.draft !== true) {
@@ -244,17 +260,21 @@ for (const document of documents) {
     }
   }
 
-  if (document.data.slug && isPublished(document)) {
-    const slugKey = `${props.locale ?? 'legacy'}:${document.data.slug}`;
+  // Legacy documents have no publicationStatus, but Docusaurus still routes them
+  // unless they are excluded from the build, so compare every routable slug.
+  if (typeof document.data.slug === 'string' && isBuiltIntoSite(document)) {
+    const locale = props.locale ?? document.rootLocale ?? 'ko';
+    const slugKey = `${locale}:${resolveRoute(document)}`;
     const existing = slugs.get(slugKey);
     if (existing) {
-      addDocumentIssue(
-        document,
-        'DUPLICATE_SLUG',
-        `slug '${document.data.slug}'가 ${existing}와 중복됩니다.`,
-      );
+      const message = (other) =>
+        `slug '${document.data.slug}'가 ${other.projectPath}와 중복됩니다.`;
+      addDocumentIssue(document, 'DUPLICATE_SLUG', message(existing));
+      // Report on the earlier document too, so a legacy/new collision is blocking
+      // when the new (strict) document is the one that appears first.
+      addDocumentIssue(existing, 'DUPLICATE_SLUG', message(document));
     } else {
-      slugs.set(slugKey, document.projectPath);
+      slugs.set(slugKey, document);
     }
   }
 
