@@ -55,7 +55,6 @@ const sidebars = {
       ],
     },
     {type: 'doc', id: 'partners/index', label: '파트너 안내'},
-    {type: 'doc', id: 'english/index', label: 'English resources'},
     {
       type: 'category',
       label: '전체 문서',

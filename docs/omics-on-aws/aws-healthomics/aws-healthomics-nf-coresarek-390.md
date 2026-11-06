@@ -1,5 +1,34 @@
 ---
 title: "AWS HealthOmics에서 nf-core/sarek 3.9.0 실행하기"
+description: "nf-core/sarek 워크플로를 AWS HealthOmics에 등록하고 실행한 현장 기술 가이드"
+slug: /omics-on-aws/aws-healthomics/aws-healthomics-nf-coresarek-390
+keywords:
+  - AWS HealthOmics
+  - nf-core sarek
+tags:
+  - aws-healthomics
+  - nf-core
+customProps:
+  contentId: healthomics-nf-core-sarek-3-9
+  locale: ko
+  sourceLocale: ko
+  publicationStatus: published
+  translationStatus: source
+  sectors:
+    - healthcare-life-sciences
+    - education-research
+  audiences:
+    - customer
+    - partner
+    - researcher
+  contentType: field-note
+  level: advanced
+  awsServices:
+    - AWS HealthOmics
+    - Amazon ECR
+  maintainers:
+    - hmkim
+  lastReviewed: "2026-11-06"
 ---
 
 # AWS HealthOmics에서 nf-core/sarek 3.9.0 실행하기
@@ -24,7 +53,7 @@ ID, private 엔드포인트는 플레이스홀더로 대체되었습니다:
 
 ---
 
-## TL;DR — 실제로 필요한 것
+## TL;DR — 실제로 필요한 것 {#tl-dr-what-it-actually-takes}
 
 sarek 3.9.0은 `nextflowVersion = '!>=25.10.2'`를 고정하므로 HealthOmics는 **Nextflow 26.04.0**
 엔진에서 실행됩니다. 깔끔한 실행을 위해서는 파이프라인 문서만으로는 파악하기 어려운 다섯 가지
@@ -45,7 +74,7 @@ sarek은 컨테이너의 절반가량을 이곳에서 가져오므로, 해당 �
 
 ---
 
-## 0. 사전 요구사항
+## 0. 사전 요구사항 {#prerequisites}
 
 | 요구사항 | 비고 |
 |---|---|
@@ -57,7 +86,7 @@ sarek은 컨테이너의 절반가량을 이곳에서 가져오므로, 해당 �
 | **VPC 네트워킹 구성** (`<VPC_CONFIG_NAME>`, ACTIVE) | private 서브넷 + NAT (GitHub에 호스팅된 테스트 데이터를 가져오기 위한 인터넷 출구 필요) |
 | `AWSServiceRoleForHealthOmics` SLR | 최초 omics 사용 시 자동 생성 |
 
-### 0.1 실행 역할 권한
+### 0.1 실행 역할 권한 {#run-role-permissions}
 
 HealthOmics가 실행 시 assume하는 역할에는 다음 권한이 필요합니다:
 
@@ -70,7 +99,7 @@ HealthOmics가 실행 시 assume하는 역할에는 다음 권한이 필요합�
 > *리소스 정책*을 통해 컨테이너 이미지를 pull합니다 — 실행 역할만으로는 충분하지 않습니다.
 > 이 차이가 블로커 #2(§4)의 근본 원인입니다.
 
-### 0.2 HealthOmics MCP 서버 구성
+### 0.2 HealthOmics MCP 서버 구성 {#configure-the-healthomics-mcp-server}
 
 MCP 서버는 에이전트 기반 워크플로우를 위해 HealthOmics API를 래핑합니다. 온보딩 시
 다음과 같은 소규모 설정 파일이 생성됩니다:
@@ -94,7 +123,7 @@ MCP 서버는 `uvx awslabs.aws-healthomics-mcp-server@latest`로 실행됩니다
 
 ---
 
-## 1. HealthOmics를 시작하기 전에 파이프라인 이해하기
+## 1. HealthOmics를 시작하기 전에 파이프라인 이해하기 {#understand-the-pipeline-before-you-touch-healthomics}
 
 sarek 3.9.0에 관한 몇 가지 사실이 이후의 모든 결정에 영향을 미칩니다. 기억에 의존하지 말고
 소스에서 직접 확인하세요:
@@ -132,28 +161,28 @@ curl -sSL https://raw.githubusercontent.com/nf-core/sarek/3.9.0/nextflow.config 
 
 ---
 
-## 2. 컨테이너 전략 (가장 어려운 부분)
+## 2. 컨테이너 전략 (가장 어려운 부분) {#container-strategy-the-hard-part}
 
 HealthOmics는 **동일 계정 및 리전의 private ECR**에서만 태스크 컨테이너를 pull합니다. sarek의
 컨테이너는 업스트림에 있으므로, 두 가지 방법으로 연결합니다.
 
-### 2.1 quay.io/biocontainers → ECR pull-through cache
+### 2.1 quay.io/biocontainers → ECR pull-through cache {#quay-io-biocontainers-ecr-pull-through-cache}
 
 MCP 도구는 캐시 규칙을 생성하고 *동시에* HealthOmics 권한(레지스트리 정책 + 레포지토리 생성
 템플릿)을 한 번의 호출로 설정합니다:
 
-```
+```text
 CreatePullThroughCacheForHealthOmics(upstream_registry="quay", ecr_repository_prefix="quay")
 ```
 
 이후 모든 `quay.io/biocontainers/foo:tag`는 `<ECR>/quay/biocontainers/foo:tag`에서 접근할 수
 있으며, 캐시가 자동 생성한 레포지토리는 생성 템플릿에서 omics pull 정책을 **자동 상속**합니다.
 
-### 2.2 community.wave.seqera.io → ECR에 수동 미러링
+### 2.2 community.wave.seqera.io → ECR에 수동 미러링 {#community-wave-seqera-io-manual-mirror-into-ecr}
 
 ECR pull-through cache는 `community.wave.seqera.io`를 **거부합니다**:
 
-```
+```text
 UnsupportedUpstreamRegistryException: The upstream registry URL
 community.wave.seqera.io is invalid.
 ```
@@ -189,7 +218,7 @@ done < /tmp/wave_images.txt
 
 미러링된 23개의 레포지토리(일부는 여러 태그 포함)는 다음과 같습니다:
 
-```
+```text
 wave/library/ascat_cancerit-allelecount        wave/library/manta_python
 wave/library/bbmap_pigz                        wave/library/multiqc
 wave/library/bcftools                          wave/library/muse
@@ -209,7 +238,7 @@ wave/library/gatk4_gcnvkernel_htslib_samtools
 > HealthOmics는 Docker/OCI 이미지를 실행하며 MULTIQC 모듈의 Docker 경로는 다른 태그를 사용합니다.
 > SIF 태그는 건너뛰세요.
 
-### 2.3 미러링된 레포지토리에 `omics.amazonaws.com` pull 접근 권한 부여 (블로커 #2)
+### 2.3 미러링된 레포지토리에 `omics.amazonaws.com` pull 접근 권한 부여 (블로커 #2) {#grant-omics-amazonaws-com-pull-access-to-the-mirrored-repos-blocker-2}
 
 이 부분이 미묘합니다. `aws ecr create-repository`로 생성한 레포지토리에는 **레포지토리 정책이
 없으므로**, 이미지가 존재하고 실행 역할에 ECR 권한이 있더라도 HealthOmics 서비스 주체가 pull하지
@@ -228,7 +257,7 @@ for R in $(aws ecr describe-repositories --region <REGION> \
 done
 ```
 
-### 2.4 컨테이너 레지스트리 맵
+### 2.4 컨테이너 레지스트리 맵 {#the-container-registry-map}
 
 워크플로우는 HealthOmics에게 업스트림 이미지 참조를 ECR로 재작성하는 방법을 알려주는 맵이
 필요합니다:
@@ -257,7 +286,7 @@ done
 
 ---
 
-## 3. HealthOmics 호환성 설정
+## 3. HealthOmics 호환성 설정 {#healthomics-compatibility-config}
 
 두 가지 파이프라인 동작이 HealthOmics와 호환되지 않으며, 워크플로우에 포함된 소규모 추가 설정
 파일로 해결하는 것이 가장 좋습니다. `conf/healthomics.config`를 생성합니다:
@@ -312,7 +341,7 @@ printf "\n// AWS HealthOmics resource floors + container overrides\nincludeConfi
 
 ---
 
-## 4. 워크플로우 등록
+## 4. 워크플로우 등록 {#register-the-workflow}
 
 파이프라인(`conf/healthomics.config` 포함)을 패키징하고 등록합니다. CodeConnection을 통해 Git
 레포지토리에서 직접 등록하거나 S3 zip에서 등록할 수 있습니다. 이 가이드는 S3-zip 방식을 사용합니다
@@ -334,13 +363,13 @@ aws s3 cp /tmp/sarek-3.9.0.zip s3://<OUTPUT_BUCKET>/workflow-defs/sarek-3.9.0.zi
 `GetAHOWorkflow`로 워크플로우가 `ACTIVE` 상태에 도달하는지 확인합니다 — 이는 정의가 26.04.0에서
 파싱되고 레지스트리 맵이 수락되었음을 검증합니다.
 
-### 4.1 파라미터 템플릿 — `-profile` 사용 시 `input`/`outdir`을 optional로 설정
+### 4.1 파라미터 템플릿 — `-profile` 사용 시 `input`/`outdir`을 optional로 설정 {#parameter-template-make-input-outdir-optional-if-you-use-profile}
 
 HealthOmics는 **required** 파라미터 템플릿 항목을 `StartRun` 시점에, Nextflow 실행 *이전*에
 강제 확인합니다 — 프로파일이 값을 제공할 예정이더라도 마찬가지입니다. `input`이 required이고
 `-profile test`에 의존한다면 StartRun이 실패합니다:
 
-```
+```text
 ValidationException: Missing workflow parameters: input
 ```
 
@@ -361,9 +390,9 @@ ValidationException: Missing workflow parameters: input
 
 ---
 
-## 5. 파이프라인 실행
+## 5. 파이프라인 실행 {#run-the-pipeline}
 
-### 5.1 깔끔한 방법 — `engineSettings.profile`
+### 5.1 깔끔한 방법 — `engineSettings.profile` {#the-clean-way-enginesettings-profile}
 
 HealthOmics는 `engineSettings.profile`을 Nextflow에 `-profile`로 전달합니다. 이를 통해 sarek의
 `conf/test.config`가 샘플시트, 게놈, 도구, 참조 기본 경로를 제공하므로 프로파일이 *설정하지
@@ -392,7 +421,7 @@ aws omics start-run --region <REGION> \
   기본 `snpeff_cache`/`vep_cache` `s3://annotation-cache/...` 접두사를 stat 확인하여 블로커 #1을
   유발합니다. (테스트는 `tools = strelka`를 사용하므로 annotation cache가 필요하지 않습니다.)
 
-### 5.2 명시적 방법 — `test.config` 파라미터를 직접 복제
+### 5.2 명시적 방법 — `test.config` 파라미터를 직접 복제 {#the-explicit-way-replicate-test-config-params-by-hand}
 
 프로파일에 의존하지 않으려 하거나(또는 템플릿에서 `input`을 required로 유지하는 경우), 테스트
 프로파일 값을 직접 전달합니다. 더 장황하지만 동일한 결과입니다:
@@ -416,7 +445,7 @@ aws omics start-run --region <REGION> \
 열)를 미러링하며 FASTQ URL은 공개 `nf-core/test-datasets` 레포지토리를 가리킵니다. HTTPS URL이므로
 실행에는 여전히 VPC 네트워킹이 필요합니다.
 
-### 5.3 모니터링
+### 5.3 모니터링 {#monitor}
 
 ```bash
 aws omics get-run --id <RUN_ID> --region <REGION> \
@@ -433,7 +462,7 @@ manifest 로그의 `statusMessage`와 첫 번째 비-SDK 스택 프레임이 실
 
 ---
 
-## 6. 검증된 결과
+## 6. 검증된 결과 {#verified-results}
 
 두 실행 방식 모두 `COMPLETED`로 깔끔하게 완료됩니다:
 
@@ -456,7 +485,7 @@ manifest 로그의 `statusMessage`와 첫 번째 비-SDK 스택 프레임이 실
 
 ---
 
-## 7. AWS 문서와의 교차 검증
+## 7. AWS 문서와의 교차 검증 {#cross-checked-against-the-aws-documentation}
 
 AWS 가이드 [*Nextflow workflow definition specifics*](https://docs.aws.amazon.com/omics/latest/dev/workflow-definition-nextflow.html)는
 핵심 결정 사항을 뒷받침하며 알아둘 만한 운영 메모를 몇 가지 추가합니다:
@@ -490,7 +519,7 @@ AWS Nextflow 페이지가 **문서화하지 않은 한 가지** — 그리고 �
 
 ---
 
-## 8. HealthOmics에서 모든 nf-core 파이프라인에 재사용 가능한 체크리스트
+## 8. HealthOmics에서 모든 nf-core 파이프라인에 재사용 가능한 체크리스트 {#reusable-checklist-for-any-nf-core-pipeline-on-healthomics}
 
 1. **엔진 맞추기.** `manifest.nextflowVersion`을 확인합니다. 강제 고정으로 인해 26.04.0(엄격한
    v2 파서)이 요구될 수 있습니다. 설정이 v2 호환인지 아니면 `syntaxVersion=v1`이 필요한지
@@ -510,7 +539,7 @@ AWS Nextflow 페이지가 **문서화하지 않은 한 가지** — 그리고 �
 
 ---
 
-## 9. 참고 자료
+## 9. 참고 자료 {#references}
 
 - [nf-core/sarek 3.9.0](https://nf-co.re/sarek/3.9.0)
 - [HealthOmics — Nextflow workflow definition specifics](https://docs.aws.amazon.com/omics/latest/dev/workflow-definition-nextflow.html)

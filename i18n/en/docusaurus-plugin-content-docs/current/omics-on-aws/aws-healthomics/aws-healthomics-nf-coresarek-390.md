@@ -1,5 +1,35 @@
 ---
 title: "Running nf-core/sarek 3.9.0 on AWS HealthOmics"
+description: "A field guide to registering and running nf-core/sarek on AWS HealthOmics"
+slug: /omics-on-aws/aws-healthomics/aws-healthomics-nf-coresarek-390
+keywords:
+  - AWS HealthOmics
+  - nf-core sarek
+tags:
+  - aws-healthomics
+  - nf-core
+customProps:
+  contentId: healthomics-nf-core-sarek-3-9
+  locale: en
+  sourceLocale: ko
+  publicationStatus: published
+  translationStatus: current
+  translatedFrom: 164e2336960537ea7eada7d071fe3b0e18384ecb
+  sectors:
+    - healthcare-life-sciences
+    - education-research
+  audiences:
+    - customer
+    - partner
+    - researcher
+  contentType: field-note
+  level: advanced
+  awsServices:
+    - AWS HealthOmics
+    - Amazon ECR
+  maintainers:
+    - hmkim
+  lastReviewed: "2026-11-06"
 ---
 
 # Running nf-core/sarek 3.9.0 on AWS HealthOmics
@@ -25,7 +55,7 @@ IDs, and private endpoints are replaced with placeholders:
 
 ---
 
-## TL;DR — What it actually takes
+## TL;DR — What it actually takes {#tl-dr-what-it-actually-takes}
 
 sarek 3.9.0 pins `nextflowVersion = '!>=25.10.2'`, so HealthOmics runs it on the **Nextflow 26.04.0**
 engine. Getting a clean run required solving five independent problems, none of which is obvious
@@ -47,7 +77,7 @@ CRAMs, and a full MultiQC report.
 
 ---
 
-## 0. Prerequisites
+## 0. Prerequisites {#prerequisites}
 
 | Requirement | Notes |
 |---|---|
@@ -59,7 +89,7 @@ CRAMs, and a full MultiQC report.
 | **VPC networking configuration** (`<VPC_CONFIG_NAME>`, ACTIVE) | private subnets + NAT, for internet egress to fetch GitHub-hosted test data |
 | `AWSServiceRoleForHealthOmics` SLR | auto-created on first omics use |
 
-### 0.1 Run-role permissions
+### 0.1 Run-role permissions {#run-role-permissions}
 
 The role HealthOmics assumes for the run needs:
 
@@ -71,7 +101,7 @@ The role HealthOmics assumes for the run needs:
 > Note: HealthOmics pulls container images **as the service principal**, using each ECR repo's
 > *resource policy* — not only via the run role. This distinction is the root of blocker #2 (§4).
 
-### 0.2 Configure the HealthOmics MCP server
+### 0.2 Configure the HealthOmics MCP server {#configure-the-healthomics-mcp-server}
 
 The MCP server wraps the HealthOmics API for agent-driven workflows. Onboarding writes a small
 config:
@@ -94,7 +124,7 @@ for workflow creation (`CreateAHOWorkflow`, `CreateAHOWorkflowVersion`), runs (`
 
 ---
 
-## 1. Understand the pipeline before you touch HealthOmics
+## 1. Understand the pipeline before you touch HealthOmics {#understand-the-pipeline-before-you-touch-healthomics}
 
 A few facts about sarek 3.9.0 drive every decision below. Read them from the source, not from memory:
 
@@ -131,28 +161,28 @@ Key takeaways:
 
 ---
 
-## 2. Container strategy (the hard part)
+## 2. Container strategy (the hard part) {#container-strategy-the-hard-part}
 
 HealthOmics only pulls task containers from **private ECR in the same account and Region**. sarek's
 containers live upstream, so you bridge them two ways.
 
-### 2.1 quay.io/biocontainers → ECR pull-through cache
+### 2.1 quay.io/biocontainers → ECR pull-through cache {#quay-io-biocontainers-ecr-pull-through-cache}
 
 The MCP tool creates the cache rule *and* wires up the HealthOmics permissions (registry policy +
 repository-creation template) in one call:
 
-```
+```text
 CreatePullThroughCacheForHealthOmics(upstream_registry="quay", ecr_repository_prefix="quay")
 ```
 
 After this, any `quay.io/biocontainers/foo:tag` is reachable at `<ECR>/quay/biocontainers/foo:tag`,
 and repos auto-created by the cache **inherit** the omics pull policy from the creation template.
 
-### 2.2 community.wave.seqera.io → manual mirror into ECR
+### 2.2 community.wave.seqera.io → manual mirror into ECR {#community-wave-seqera-io-manual-mirror-into-ecr}
 
 ECR pull-through cache **rejects** `community.wave.seqera.io`:
 
-```
+```text
 UnsupportedUpstreamRegistryException: The upstream registry URL
 community.wave.seqera.io is invalid.
 ```
@@ -187,7 +217,7 @@ done < /tmp/wave_images.txt
 
 The 23 mirrored repositories (some hold multiple tags) are:
 
-```
+```text
 wave/library/ascat_cancerit-allelecount        wave/library/manta_python
 wave/library/bbmap_pigz                        wave/library/multiqc
 wave/library/bcftools                          wave/library/muse
@@ -206,7 +236,7 @@ wave/library/gatk4_gcnvkernel_htslib_samtools
 > (`application/vnd.sylabs.sif.config.v1+json`). That's expected: HealthOmics runs Docker/OCI
 > images, and the MULTIQC module's Docker path uses a different tag. Skip the SIF tags.
 
-### 2.3 Grant `omics.amazonaws.com` pull access to the mirrored repos (blocker #2)
+### 2.3 Grant `omics.amazonaws.com` pull access to the mirrored repos (blocker #2) {#grant-omics-amazonaws-com-pull-access-to-the-mirrored-repos-blocker-2}
 
 This is the subtle one. Repos you create with `aws ecr create-repository` have **no repository
 policy**, so the HealthOmics service principal cannot pull them — the run fails with
@@ -225,7 +255,7 @@ for R in $(aws ecr describe-repositories --region <REGION> \
 done
 ```
 
-### 2.4 The container registry map
+### 2.4 The container registry map {#the-container-registry-map}
 
 The workflow needs a map telling HealthOmics how to rewrite upstream image references to your ECR:
 
@@ -253,7 +283,7 @@ Validate the ECR side any time with `ValidateHealthOmicsECRConfig`.
 
 ---
 
-## 3. HealthOmics compatibility config
+## 3. HealthOmics compatibility config {#healthomics-compatibility-config}
 
 Two pipeline behaviors are incompatible with HealthOmics and are best fixed with a small extra
 config file bundled into the workflow. Create `conf/healthomics.config`:
@@ -307,7 +337,7 @@ printf "\n// AWS HealthOmics resource floors + container overrides\nincludeConfi
 
 ---
 
-## 4. Register the workflow
+## 4. Register the workflow {#register-the-workflow}
 
 Package the pipeline (now including `conf/healthomics.config`) and register it. You can register
 directly from a Git repository via a CodeConnection, or from an S3 zip. This guide uses the S3-zip
@@ -330,13 +360,13 @@ Then create the workflow with the MCP tool `CreateAHOWorkflow`, passing:
 Confirm the workflow reaches `ACTIVE` with `GetAHOWorkflow` — this validates that the definition
 parses on 26.04.0 and the registry map is accepted.
 
-### 4.1 Parameter template — make `input`/`outdir` optional if you use `-profile`
+### 4.1 Parameter template — make `input`/`outdir` optional if you use `-profile` {#parameter-template-make-input-outdir-optional-if-you-use-profile}
 
 HealthOmics enforces **required** parameter-template entries at `StartRun` time, *before* Nextflow
 runs — even if a profile would supply them. If `input` is required and you rely on `-profile test`
 to provide it, StartRun fails:
 
-```
+```text
 ValidationException: Missing workflow parameters: input
 ```
 
@@ -357,9 +387,9 @@ minimal template:
 
 ---
 
-## 5. Run the pipeline
+## 5. Run the pipeline {#run-the-pipeline}
 
-### 5.1 The clean way — `engineSettings.profile`
+### 5.1 The clean way — `engineSettings.profile` {#the-clean-way-enginesettings-profile}
 
 HealthOmics forwards `engineSettings.profile` to Nextflow as `-profile`. This lets sarek's own
 `conf/test.config` supply the samplesheet, genome, tools, and reference base paths — so you pass
@@ -388,7 +418,7 @@ Two params still must be explicit (explicit run parameters override profile valu
   otherwise stat-checks the default `snpeff_cache`/`vep_cache` `s3://annotation-cache/...` prefixes
   and trips blocker #1. (The test uses `tools = strelka`, so no annotation cache is needed.)
 
-### 5.2 The explicit way — replicate `test.config` params by hand
+### 5.2 The explicit way — replicate `test.config` params by hand {#the-explicit-way-replicate-test-config-params-by-hand}
 
 If you prefer not to depend on the profile (or your template keeps `input` required), pass the
 test-profile values directly. This is more verbose but equivalent:
@@ -412,7 +442,7 @@ Here the samplesheet mirrors `tests/csv/3.0/fastq_single.csv` (columns
 `patient,sex,status,sample,lane,fastq_1,fastq_2`) with FASTQ URLs pointing at the public
 `nf-core/test-datasets` repo. Because those are HTTPS URLs, the run still needs VPC networking.
 
-### 5.3 Monitor
+### 5.3 Monitor {#monitor}
 
 ```bash
 aws omics get-run --id <RUN_ID> --region <REGION> \
@@ -428,7 +458,7 @@ gives the real cause. `failureReason` is generic (`WORKFLOW_RUN_FAILED`); the ma
 
 ---
 
-## 6. Verified results
+## 6. Verified results {#verified-results}
 
 Both run styles reach a clean `COMPLETED`:
 
@@ -451,7 +481,7 @@ Tasks that ran successfully span the whole pipeline: `BWAMEM1_INDEX`, interval p
 
 ---
 
-## 7. Cross-checked against the AWS documentation
+## 7. Cross-checked against the AWS documentation {#cross-checked-against-the-aws-documentation}
 
 The AWS guide [*Nextflow workflow definition specifics*](https://docs.aws.amazon.com/omics/latest/dev/workflow-definition-nextflow.html)
 corroborates the key decisions and adds a few operational notes worth knowing:
@@ -484,7 +514,7 @@ launches containers. Those (§2.2 and §3/blocker #4) were established empirical
 
 ---
 
-## 8. Reusable checklist for any nf-core pipeline on HealthOmics
+## 8. Reusable checklist for any nf-core pipeline on HealthOmics {#reusable-checklist-for-any-nf-core-pipeline-on-healthomics}
 
 1. **Match the engine.** Read `manifest.nextflowVersion`; a hard pin can force 26.04.0 (strict v2
    parser). Check whether the config is v2-clean or needs `syntaxVersion=v1`.
@@ -503,7 +533,7 @@ launches containers. Those (§2.2 and §3/blocker #4) were established empirical
 
 ---
 
-## 9. References
+## 9. References {#references}
 
 - [nf-core/sarek 3.9.0](https://nf-co.re/sarek/3.9.0)
 - [HealthOmics — Nextflow workflow definition specifics](https://docs.aws.amazon.com/omics/latest/dev/workflow-definition-nextflow.html)

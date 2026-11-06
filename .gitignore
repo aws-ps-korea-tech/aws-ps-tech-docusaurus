@@ -1,6 +1,7 @@
 node_modules/
 build/
 .docusaurus/
+.locale-build/
 .cache-loader/
 .DS_Store
 .env.local

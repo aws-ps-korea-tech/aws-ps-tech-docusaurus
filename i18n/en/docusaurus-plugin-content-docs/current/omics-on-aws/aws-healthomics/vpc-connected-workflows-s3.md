@@ -1,10 +1,40 @@
 ---
 title: "VPC-Connected Workflows: Accessing the Internet and Cross-Region S3 from Workflows"
+description: "Architecture and test results for connecting AWS HealthOmics workflows to a customer-managed VPC"
+slug: /omics-on-aws/aws-healthomics/vpc-connected-workflows-s3
+keywords:
+  - AWS HealthOmics
+  - VPC-connected workflows
+tags:
+  - aws-healthomics
+  - networking
+customProps:
+  contentId: healthomics-vpc-connected-workflows
+  locale: en
+  sourceLocale: ko
+  publicationStatus: published
+  translationStatus: current
+  translatedFrom: 164e2336960537ea7eada7d071fe3b0e18384ecb
+  sectors:
+    - healthcare-life-sciences
+  audiences:
+    - customer
+    - partner
+    - researcher
+  contentType: architecture
+  level: advanced
+  awsServices:
+    - AWS HealthOmics
+    - Amazon VPC
+    - Amazon S3
+  maintainers:
+    - hmkim
+  lastReviewed: "2026-11-06"
 ---
 
 # VPC-Connected Workflows: Accessing the Internet and Cross-Region S3 from Workflows
 
-## Overview
+## Overview {#overview}
 
 In March 2026, AWS HealthOmics introduced **VPC-Connected Workflows**. This feature allows HealthOmics workflows to route network traffic through a customer-managed VPC, removing the network restrictions of the default RESTRICTED mode.
 
@@ -12,7 +42,7 @@ This post covers how the feature works, real-world test results, and how to set 
 
 ---
 
-## Limitations of RESTRICTED Mode
+## Limitations of RESTRICTED Mode {#limitations-of-restricted-mode}
 
 The default networking mode for HealthOmics workflows is **RESTRICTED**. In this mode, workflow tasks can only access S3 and ECR within the same region — all other network communication is blocked.
 
@@ -26,11 +56,11 @@ For cross-region S3 specifically, RESTRICTED mode validates S3 bucket regions at
 
 ---
 
-## VPC Mode: How It Works
+## VPC Mode: How It Works {#vpc-mode-how-it-works}
 
 In VPC mode, HealthOmics creates ENIs (Elastic Network Interfaces) for workflow tasks in the customer's VPC private subnets. Traffic flows through the VPC's NAT gateway to reach the internet or AWS services in other regions.
 
-```
+```text
 ┌──────────────────────────────────────────────────────┐
 │  VPC (10.0.0.0/16)                                   │
 │                                                      │
@@ -67,18 +97,18 @@ In VPC mode, HealthOmics creates ENIs (Elastic Network Interfaces) for workflow 
 
 ---
 
-## Viewing in the Console
+## Viewing in the Console {#viewing-in-the-console}
 
 You can see the difference between the two modes in the HealthOmics console Run summary.
 
-### RESTRICTED Mode Run
+### RESTRICTED Mode Run {#restricted-mode-run}
 
 When running in RESTRICTED mode, the **Networking mode** field shows `Restricted`. No Configuration field is displayed, and the workflow runs in HealthOmics' default network environment. Only same-region S3 and ECR are accessible; external internet connectivity is not available.
 
 ![restricted-networking-mode.png](./_assets/6087fd444998.png)
 
 
-### VPC Mode Run
+### VPC Mode Run {#vpc-mode-run}
 
 When running in VPC mode, the **Networking mode** field shows `Virtual Private Cloud (VPC)`, with an additional **Configuration** field below it. This displays the linked VPC Configuration name (e.g., `tutorial-vpc-config`) as a clickable link, leading to the Configuration details (VPC ID, subnets, security groups, etc.).
 
@@ -88,11 +118,11 @@ Both runs used the same workflow (`vpc-connectivity-test-v3`, WDL), with similar
 
 ---
 
-## Test Results
+## Test Results {#test-results}
 
 We ran the same WDL workflow in both RESTRICTED and VPC modes in the ap-northeast-2 (Seoul) region to compare connectivity.
 
-### Test Cases
+### Test Cases {#test-cases}
 
 **Category A — Internet Access**:
 - A1: `curl https://checkip.amazonaws.com` (outbound HTTPS + NAT public IP verification)
@@ -103,7 +133,7 @@ We ran the same WDL workflow in both RESTRICTED and VPC modes in the ap-northeas
 - B1: `aws s3 cp` (cross-region file download)
 - B2: `aws s3 ls` (cross-region bucket listing)
 
-### Results Comparison
+### Results Comparison {#results-comparison}
 
 | Test | RESTRICTED Mode | VPC Mode |
 |------|----------------|----------|
@@ -119,7 +149,7 @@ In VPC mode, all 5 tests pass.
 
 ---
 
-## Infrastructure Setup with CDK
+## Infrastructure Setup with CDK {#infrastructure-setup-with-cdk}
 
 To use VPC mode, you need to create a VPC meeting HealthOmics requirements and a HealthOmics Configuration. The **HealthOmicsVpc CDK L3 Construct** simplifies this process.
 
@@ -132,7 +162,7 @@ This CDK Construct creates everything with a single `cdk deploy`:
 - **VPC Flow Logs**: Automatically sent to CloudWatch Logs
 - **HealthOmics Configuration**: Automatically created and lifecycle-managed via Custom Resource
 
-### Usage Example
+### Usage Example {#usage-example}
 
 ```typescript
 import { HealthOmicsVpc } from './lib';
@@ -144,7 +174,7 @@ new HealthOmicsVpc(stack, 'HealthOmicsVpc', {
 });
 ```
 
-### Deployment Steps
+### Deployment Steps {#deployment-steps}
 
 ```bash
 # Set environment variables
@@ -162,9 +192,9 @@ Once the Configuration reaches `ACTIVE` status (up to 15 minutes), you can run w
 
 ---
 
-## Running Workflows
+## Running Workflows {#running-workflows}
 
-### RESTRICTED Mode (Default)
+### RESTRICTED Mode (Default) {#restricted-mode-default}
 
 ```bash
 aws omics start-run \
@@ -174,7 +204,7 @@ aws omics start-run \
     --parameters '{"output_s3_uri": "s3://my-bucket/report.json"}'
 ```
 
-### VPC Mode
+### VPC Mode {#vpc-mode}
 
 ```bash
 aws omics start-run \
@@ -193,9 +223,9 @@ The only difference is the addition of `--networking-mode VPC` and `--configurat
 
 ---
 
-## Things to Know
+## Things to Know {#things-to-know}
 
-### Container Image Configuration
+### Container Image Configuration {#container-image-configuration}
 
 HealthOmics supports container images hosted in **Amazon ECR private repositories**. The ECR repository must be in the **same region** as the workflow, and only x86_64 architecture is supported (ARM containers are not supported). On ARM-based local machines such as Apple Mac, use `docker build --platform amd64` to build images.
 
@@ -235,30 +265,30 @@ aws ecr set-repository-policy \
 - A shared filesystem is mounted at `/tmp`, so any data or tooling built into the container image at this location will be overridden.
 - The workflow definition is available via a read-only mount at `/mnt/workflow`.
 
-### S3 Parameter Validation
+### S3 Parameter Validation {#s3-parameter-validation}
 
 HealthOmics validates S3 URIs in workflow parameters at `StartRun` call time:
 - Referenced S3 objects must **exist** (for output paths, create a placeholder)
 - In RESTRICTED mode, S3 buckets must be in the **same region**
 
-### Configuration Details
+### Configuration Details {#configuration-details}
 
 - Configuration creation takes **up to 15 minutes** to transition from `CREATING` to `ACTIVE` status.
 - Workflow runs use a **snapshot of the configuration as it existed when the run started**. You can safely modify or delete configurations during run execution without affecting active runs.
 - You cannot delete a configuration that is currently in use by active workflow runs.
 
-### ENI Considerations
+### ENI Considerations {#eni-considerations}
 
 - ENIs created by HealthOmics in your VPC are tagged with `Service: HealthOmics` and `eniType: CUSTOMER`.
 - **Do not modify or delete ENIs created by HealthOmics.** This can cause service delays or disruptions to your workflow runs.
 - The default ENI limit is 5,000 per region. Monitor your ENI usage in the EC2 console as the number of required ENIs varies by workload.
 
-### Performance Impact
+### Performance Impact {#performance-impact}
 
 - VPC mode adds approximately 30–60 seconds to startup time due to ENI provisioning. There is no significant difference in workflow task execution time itself.
 - Network throughput **starts at 10 Gbps and scales to 100 Gbps over time**. For immediate high-throughput needs, plan ahead and request pre-warming.
 
-### Cost Considerations
+### Cost Considerations {#cost-considerations}
 
 | Resource | Cost | Notes |
 |----------|------|-------|
@@ -268,7 +298,7 @@ HealthOmics validates S3 URIs in workflow parameters at `StartRun` call time:
 
 For testing or development, use development mode (1 NAT gateway) and **clean up resources immediately after testing** to avoid unnecessary costs. For AWS service access, use **VPC endpoints** instead of NAT Gateway to reduce data processing costs.
 
-### VPC Networking Quotas
+### VPC Networking Quotas {#vpc-networking-quotas}
 
 | Resource | Default Limit | Adjustable |
 |----------|--------------|------------|
@@ -278,7 +308,7 @@ For testing or development, use development mode (1 NAT gateway) and **clean up 
 | Max subnets per Availability Zone | 1 | No |
 | ENIs per region (customer VPC) | 5,000 | Yes |
 
-### Supported Regions
+### Supported Regions {#supported-regions}
 
 | Region | AZ Count |
 |--------|----------|
@@ -293,11 +323,11 @@ For testing or development, use development mode (1 NAT gateway) and **clean up 
 
 ---
 
-## Summary
+## Summary {#summary}
 
 VPC-Connected Workflows significantly expand the network accessibility of HealthOmics workflows. This feature is particularly useful for bioinformatics pipelines that require access to external databases, API calls, or cross-region data. Using the CDK L3 Construct, you can complete the complex VPC infrastructure setup with a single command.
 
-### References
+### References {#references}
 
 Please see our [What’s New post](https://aws.amazon.com/about-aws/whats-new/2026/03/aws-healthomics-vpc-connected-workflows/) and [Documentation](https://docs.aws.amazon.com/omics/latest/dev/workflows-vpc-networking.html) and let us know if you have any questions!
 

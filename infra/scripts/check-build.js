@@ -5,7 +5,15 @@ const path = require('path');
 
 const root = process.argv[2] || 'build';
 const errors = [];
-for (const page of ['index.html', '404.html']) {
+for (const page of [
+  'index.html',
+  '404.html',
+  'en/index.html',
+  'en/404.html',
+  'en/docs/index.html',
+  'en/amazon-bio-discovery-ai/index.html',
+  'en/omics-on-aws/aws-healthomics/aws-healthomics-nf-coresarek-390/index.html',
+]) {
   const p = path.join(root, page);
   if (!fs.existsSync(p)) { errors.push(`${page} missing`); continue; }
   const data = fs.readFileSync(p);

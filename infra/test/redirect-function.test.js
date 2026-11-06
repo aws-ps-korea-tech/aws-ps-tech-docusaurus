@@ -1,5 +1,5 @@
 'use strict';
-// Runs every /books/... line of static/_redirects (with and without trailing slash)
+// Runs every redirect in static/_redirects (with and without trailing slash)
 // through the generated function and checks the 301 target, plus index.html rewrites.
 const fs = require('fs');
 const path = require('path');
@@ -14,7 +14,7 @@ let ok = 0;
 const fail = [];
 for (const line of redirects.split('\n')) {
   const p = line.trim().split(/\s+/);
-  if (p.length !== 3 || !(p[0] === '/books' || p[0].startsWith('/books/'))) continue;
+  if (p.length !== 3) continue;
   const expected = encodeURI(decodeURI(p[1]));
   const res = handler(ev(p[0]));
   if (res.statusCode === 301 && res.headers.location.value === expected) ok++;

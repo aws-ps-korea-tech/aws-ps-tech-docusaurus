@@ -1,12 +1,39 @@
 ---
 title: "Amazon Bio Discovery로 AI 항체 설계 시작하기: 생명과학 연구자를 위한 안내"
+description: "웹 콘솔에서 Amazon Bio Discovery로 항체 후보를 설계하는 입문 가이드"
+slug: /amazon-bio-discovery-ai
+keywords:
+  - Amazon Bio Discovery
+  - antibody design
+tags:
+  - amazon-bio-discovery
+  - life-sciences
+customProps:
+  contentId: amazon-bio-discovery-antibody-design
+  locale: ko
+  sourceLocale: ko
+  publicationStatus: published
+  translationStatus: source
+  sectors:
+    - healthcare-life-sciences
+  audiences:
+    - customer
+    - partner
+    - researcher
+  contentType: getting-started
+  level: beginner
+  awsServices:
+    - Amazon Bio Discovery
+  maintainers:
+    - hmkim
+  lastReviewed: "2026-11-06"
 ---
 
 # Amazon Bio Discovery로 AI 항체 설계 시작하기: 생명과학 연구자를 위한 안내
 
-> 이 글은 클라우드가 익숙하지 않은 생명과학 연구자도 처음부터 끝까지 따라올 수 있도록 전문 용어를 풀어 설명합니다. 코드를 작성하지 않고 웹 콘솔의 클릭만으로 AI 항체 설계 과정을 살펴봅니다. 영문 버전은 [Getting Started with AI Antibody Design on Amazon Bio Discovery](/amazon-bio-discovery-ai/getting-started-with-ai-antibody-design-on-amazon-bio-discovery-a-guide-for-life-science-researchers/)에서 볼 수 있습니다.
+> 이 글은 클라우드가 익숙하지 않은 생명과학 연구자도 처음부터 끝까지 따라올 수 있도록 전문 용어를 풀어 설명합니다. 코드를 작성하지 않고 웹 콘솔의 클릭만으로 AI 항체 설계 과정을 살펴봅니다.
 
-## 개요
+## 개요 {#overview}
 
 항체 신약 개발은 일반적으로 후보를 설계하고, 실험실에서 합성·검증한 뒤, 그 결과로 설계를 다시 다듬는 과정을 반복합니다. 전통적인 방식에서는 이 한 주기에 수개월이 걸립니다.
 
@@ -14,13 +41,13 @@ Amazon Bio Discovery(이하 ABD)는 이 반복 과정을 AI와 클라우드로 �
 
 ---
 
-## 1. Amazon Bio Discovery란?
+## 1. Amazon Bio Discovery란? {#what-is-amazon-bio-discovery}
 
 ABD는 AI 기반 바이오 연구 애플리케이션입니다. 생물학 데이터로 학습한 수십 종의 AI 모델(biological foundation model, 이하 bioFM)에 접근해 항체와 같은 분자 후보를 생성(generate)하고 평가(evaluate)할 수 있습니다.
 
 ABD의 핵심은 Lab-in-the-Loop 방식입니다. AI가 설계한 후보를 실험실(wet lab)에서 검증하고, 그 결과를 다시 AI에 반영해 다음 설계를 개선하는 반복 구조로, 컴퓨터 상의 설계(in silico)와 실험실 검증(wet lab)이 하나의 연속된 주기로 이어집니다. 연구자는 모델을 직접 설치하거나 서버를 관리하지 않고, 웹 콘솔에서 입력을 올리고 실행하면 됩니다.
 
-### 적용 사례
+### 적용 사례 {#real-world-applications}
 
 ABD는 다음과 같이 실제 연구에 적용되었습니다.
 
@@ -31,7 +58,7 @@ ABD는 다음과 같이 실제 연구에 적용되었습니다.
 
 ---
 
-## 2. 시작하기 전에: 두 가지 가입 방법
+## 2. 시작하기 전에: 두 가지 가입 방법 {#before-you-start-two-ways-to-sign-up}
 
 ABD는 사용 환경에 따라 두 가지 경로로 시작할 수 있습니다.
 
@@ -43,7 +70,7 @@ ABD는 사용 환경에 따라 두 가지 경로로 시작할 수 있습니다.
 
 ---
 
-## 3. ABD의 개념과 구조
+## 3. ABD의 개념과 구조 {#abd-concepts-and-structure}
 
 ABD는 몇 가지 고유한 구성 요소로 작업을 조직합니다. 이해를 돕기 위해 요리 과정에 빗대어 정리하면 다음과 같습니다.
 
@@ -58,7 +85,7 @@ ABD는 몇 가지 고유한 구성 요소로 작업을 조직합니다. 이해�
 
 전체 흐름은 다음과 같이 이어집니다. **Project**를 만들고, 그 안에서 **Experiment**를 생성하면서 사용할 **Recipe**(여러 **Model**을 **Module** 단위로 조합한 설정)를 선택하고 입력 데이터와 파라미터를 지정해 실행한 뒤, 결과를 **Wet Lab**으로 보내 검증합니다. Recipe를 준비하는 시점은 두 경로가 다릅니다. **Hosted Recipe를 쓰는 경우**에는 Recipe를 별도로 만들 필요 없이 Experiment 생성 과정에서 바로 선택합니다. **사용자 정의 Recipe를 쓰는 경우**에는 Project를 만든 뒤 Recipes 메뉴(캔버스)에서 Recipe를 먼저 구성하고, 그다음 Experiment 생성 단계에서 그 Recipe를 선택합니다. 이 글의 실습은 Hosted Recipe 경로를 따릅니다.
 
-### Hosted Recipe와 사용자 정의 Recipe
+### Hosted Recipe와 사용자 정의 Recipe {#hosted-recipes-and-custom-recipes}
 
 Recipe는 두 가지 형태로 제공됩니다.
 
@@ -71,7 +98,7 @@ Recipe는 두 가지 형태로 제공됩니다.
 
 Hosted Recipe는 검증된 모델 조합을 추상화한 것으로, 사용자가 어떤 모델을 어떤 순서로 사용할지 결정하지 않아도 AWS가 구성한 파이프라인에 입력(타겟 구조 등)만 넣어 실행할 수 있습니다. 이 글의 실습도 Hosted Recipe를 사용합니다.
 
-### 콘솔에서 제공되는 대표 Hosted Recipe
+### 콘솔에서 제공되는 대표 Hosted Recipe {#representative-hosted-recipes-in-the-console}
 
 작성 시점(2026년 10월) 콘솔 기준으로 대표적인 생성형 Hosted Recipe는 다음과 같습니다.
 
@@ -92,7 +119,7 @@ Hosted Recipe는 검증된 모델 조합을 추상화한 것으로, 사용자가
 
 ---
 
-## 4. 실습: HER2 항체 후보 10개 설계
+## 4. 실습: HER2 항체 후보 10개 설계 {#hands-on-designing-10-her2-antibody-candidates}
 
 ![HER2 과발현과 항체 결합 개념도](./_assets/0a5d94974c7e.png)
 
@@ -107,7 +134,7 @@ Hosted Recipe는 검증된 모델 조합을 추상화한 것으로, 사용자가
 5. Experiment 결과 확인
 6. Wet Lab 의뢰
 
-### 4-1. 초기 설정(조직 경로)
+### 4-1. 초기 설정(조직 경로) {#4-1-initial-setup-organization-path}
 
 콘솔에서 Amazon Bio Discovery에 접속하면 초기 설정 화면이 나타나며, 다음 네 단계로 진행합니다.
 
@@ -120,7 +147,7 @@ Hosted Recipe는 검증된 모델 조합을 추상화한 것으로, 사용자가
 
 \{/* SCREENSHOT-01: 애플리케이션 홈(로그인 직후) 화면 */\}
 
-### 4-2. Project 생성
+### 4-2. Project 생성 {#4-2-create-a-project}
 
 작업을 담을 공간인 Project를 먼저 생성합니다. 홈 또는 Projects 메뉴에서 Create project를 선택하고 이름(예: HER2 Antibody Design)과 설명을 입력합니다. 하나의 연구 주제를 하나의 Project로 구성합니다.
 
@@ -138,7 +165,7 @@ Project가 생성되면 "Project … was successfully created" 메시지와 함�
 
 > **참고. 사용자 정의 Recipe를 쓰려면 Recipe를 먼저 만듭니다.** 모듈을 직접 조합한 Recipe가 필요한 경우에는 Create experiment 전에 Recipes 메뉴에서 캔버스로 Recipe를 먼저 구성해 저장해야 합니다. Experiment 생성 화면의 Recipe 선택 목록에는 Hosted Recipe와 이렇게 미리 저장한 사용자 정의 Recipe가 함께 표시됩니다.
 
-### 4-3. 테스트 데이터 준비(공개 데이터 다운로드)
+### 4-3. 테스트 데이터 준비(공개 데이터 다운로드) {#4-3-prepare-test-data-download-public-data}
 
 이번 실습에는 두 개의 단백질 구조 파일(PDB 형식)이 필요합니다.
 
@@ -155,7 +182,7 @@ Project가 생성되면 "Project … was successfully created" 메시지와 함�
 
 **2) 타겟 파일 만들기.** Chain C에서 domain IV에 해당하는 잔기만 남겨 `her2_domain4.pdb`로 저장합니다. 도메인 경계는 1N8Z 논문의 도메인 구분을 따르며(domain IV는 세포외 도메인의 C-말단 쪽, 대략 489번 이후 잔기), 정확한 범위는 RCSB 항목의 구조 설명과 논문을 확인합니다. 예를 들어 PyMOL에서는 다음과 같이 처리합니다.
 
-```
+```text
 fetch 1N8Z
 select target, chain C and resi 489-607
 save her2_domain4.pdb, target
@@ -163,7 +190,7 @@ save her2_domain4.pdb, target
 
 **3) 항체 프레임워크 파일 만들기.** Chain A와 B에서 가변 영역(Fv: 경쇄 VL, 중쇄 VH)만 남겨 `trastuzumab_fv.pdb`로 저장합니다. Fab에서 불변 영역(CL, CH1)을 제외한 앞쪽 약 110–120개 잔기가 가변 영역입니다.
 
-```
+```text
 select fv, (chain A and resi 1-107) or (chain B and resi 1-120)
 save trastuzumab_fv.pdb, fv
 ```
@@ -176,7 +203,7 @@ save trastuzumab_fv.pdb, fv
 
 파일은 Experiment 생성 단계에서 직접 업로드할 수 있으며, Project의 Files 탭에 미리 올려 두면 여러 실험에서 재사용할 수 있습니다.
 
-### 4-4. Experiment 생성: Recipe 선택, 데이터 업로드, 파라미터 설정, 실행
+### 4-4. Experiment 생성: Recipe 선택, 데이터 업로드, 파라미터 설정, 실행 {#4-4-create-an-experiment-select-a-recipe-upload-data-set-parameters-run}
 
 Project 개요의 Create experiment 버튼을 선택하면 Experiment 생성 마법사가 열립니다. 다음 순서로 진행합니다.
 
@@ -205,7 +232,7 @@ Recipes 메뉴에서 미리 저장해 둔 사용자 정의 Recipe(캔버스에�
 \{/* SCREENSHOT-07: 예상 EU 표시 및 실행 확인 화면 */\}
 \{/* SCREENSHOT-08: Experiments 탭에서 실행 중/완료 상태 목록 */\}
 
-### 4-5. Experiment 결과 확인
+### 4-5. Experiment 결과 확인 {#4-5-review-experiment-results}
 
 실행이 완료되면 결과 화면에서 세 가지 관점으로 후보를 검토할 수 있습니다.
 
@@ -220,7 +247,7 @@ Recipes 메뉴에서 미리 저장해 둔 사용자 정의 Recipe(캔버스에�
 
 > **AI 에이전트의 역할.** ABD는 결과 수치와 함께 판단 근거를 제시합니다. 설정 보조 에이전트는 타겟 표면에서 결합에 유리한 hotspot 잔기를 표면 접근성·소수성 등을 고려해 추천하고 그 근거를 제공합니다. 후보 선별 에이전트는 여러 속성을 동시에 최적화하고 잠재적 결함(liability)을 평가한 뒤, 사전 선별된 후보와 선택 근거를 함께 제시합니다. 이를 통해 결과를 단순히 확인하는 데 그치지 않고 선택의 이유를 함께 파악할 수 있습니다.
 
-### 4-6. Wet Lab 의뢰
+### 4-6. Wet Lab 의뢰 {#4-6-send-to-wet-lab}
 
 in silico 분석으로 후보를 선별한 뒤, 유망한 후보를 선택해 Send to Wet Lab으로 실제 실험을 의뢰할 수 있습니다.
 
@@ -233,7 +260,7 @@ in silico 분석으로 후보를 선별한 뒤, 유망한 후보를 선택해 Se
 이로써 항체 후보 설계(in silico), 실험실 검증(wet lab), 모델 개선으로 이어지는 전체 과정을 하나의 애플리케이션에서 수행할 수 있습니다.
 
 ---
-## 5. 주요 특징
+## 5. 주요 특징 {#key-features}
 
 Amazon Bio Discovery는 설계부터 실험, 모델 개선까지의 과정을 하나의 애플리케이션으로 통합합니다. 이번 실습에서 확인한 주요 특징은 다음과 같습니다.
 
@@ -247,7 +274,7 @@ Amazon Bio Discovery는 설계부터 실험, 모델 개선까지의 과정을 �
 
 ---
 
-## 6. 기본 모델 활용과 사용자 모델·데이터 학습
+## 6. 기본 모델 활용과 사용자 모델·데이터 학습 {#using-built-in-models-and-training-with-your-own-models-and-data}
 
 ABD는 40종 이상의 기본 AI 모델(bioFM)을 제공하며, 연구가 심화되면 사용자 데이터와 사용자 모델을 활용하려는 요구가 발생합니다. ABD는 이를 위한 세 가지 방식을 제공하며, 세 가지 모두 현재 정식 출시 전 단계(Beta 또는 Gated Beta)입니다.
 
@@ -272,7 +299,7 @@ ABD는 40종 이상의 기본 AI 모델(bioFM)을 제공하며, 연구가 심화
 
 ---
 
-## 7. 과금 방식: Experiment Unit(EU)
+## 7. 과금 방식: Experiment Unit(EU) {#billing-experiment-units-eus}
 
 ABD는 좌석(seat) 수가 아니라 실제 수행한 실험량을 기준으로 과금하며("Pay for science, not seats"), 그 단위가 EU(Experiment Unit)입니다.
 
@@ -291,7 +318,7 @@ ABD는 좌석(seat) 수가 아니라 실제 수행한 실험량을 기준으로 
 
 ---
 
-## 8. 데이터 및 모델 보안
+## 8. 데이터 및 모델 보안 {#data-and-model-security}
 
 데이터 보안은 제약·바이오 연구자가 가장 먼저 확인하는 사항입니다.
 
@@ -302,7 +329,7 @@ ABD는 좌석(seat) 수가 아니라 실제 수행한 실험량을 기준으로 
 
 ---
 
-## 9. 추가 자료
+## 9. 추가 자료 {#additional-resources}
 
 - **AWS Skill Builder 입문 과정**: [Getting Started with Amazon Bio Discovery](https://skillbuilder.aws/learn/BQKQUC8A8M). 무료 디지털 과정으로, 이 글에서 다룬 Project·Recipe·Module 개념과 설계·분석·wet lab 흐름을 영상과 실습으로 학습할 수 있습니다. 콘솔을 사용하기 전에 먼저 수강하는 것을 권장합니다.
 - **공식 소개 블로그**: [Introducing Amazon Bio Discovery(AWS, 2026-04-14)](https://aws.amazon.com/blogs/industries/introducing-amazon-bio-discovery/). 서비스 출시 배경, 4단계 워크플로, MSK 사례가 정리된 1차 자료입니다.
@@ -312,13 +339,13 @@ ABD는 좌석(seat) 수가 아니라 실제 수행한 실험량을 기준으로 
 
 ---
 
-## 맺음말
+## 맺음말 {#conclusion}
 
 Amazon Bio Discovery는 in silico 설계와 wet lab 검증을 하나의 주기로 통합해 코드 없이 항체 설계 파이프라인을 수행할 수 있도록 지원합니다. 이 글에서는 HER2 타겟으로 후보 10개를 약 2시간, 1 EU에 설계하고 실험 의뢰까지 이어지는 전체 과정을 살펴보았습니다. AI 기반 연구 플랫폼이 실제 연구 과정에 어떻게 연결되는지 확인하는 출발점으로 활용할 수 있으며, 개인 연구자는 신용카드 없이 5 EU 무료 체험으로 시작할 수 있습니다.
 
 ---
 
-## 자주 묻는 질문(FAQ)
+## 자주 묻는 질문(FAQ) {#frequently-asked-questions-faq}
 
 **Q. Amazon Bio Discovery는 무엇인가요?**
 A. AI 모델로 항체·단백질 후보를 설계·평가하는 AWS의 바이오 연구 애플리케이션입니다. 40종 이상의 AI 모델을 Recipe로 조합해 실험을 실행하고, 결과를 wet lab 실험과 모델 개선으로 다시 연결하는 Lab-in-the-Loop 방식을 지원합니다.

@@ -8,8 +8,8 @@
 /books/amazon-bio-discovery-ai/  /amazon-bio-discovery-ai/  301
 /books/amazon-bio-discovery-ai/page/amazon-bio-discovery-ai  /amazon-bio-discovery-ai/  301
 /books/amazon-bio-discovery-ai/page/amazon-bio-discovery-ai/  /amazon-bio-discovery-ai/  301
-/books/amazon-bio-discovery-ai/page/getting-started-with-ai-antibody-design-on-amazon-bio-discovery-a-guide-for-life-science-researchers  /amazon-bio-discovery-ai/getting-started-with-ai-antibody-design-on-amazon-bio-discovery-a-guide-for-life-science-researchers/  301
-/books/amazon-bio-discovery-ai/page/getting-started-with-ai-antibody-design-on-amazon-bio-discovery-a-guide-for-life-science-researchers/  /amazon-bio-discovery-ai/getting-started-with-ai-antibody-design-on-amazon-bio-discovery-a-guide-for-life-science-researchers/  301
+/books/amazon-bio-discovery-ai/page/getting-started-with-ai-antibody-design-on-amazon-bio-discovery-a-guide-for-life-science-researchers  /en/amazon-bio-discovery-ai/  301
+/books/amazon-bio-discovery-ai/page/getting-started-with-ai-antibody-design-on-amazon-bio-discovery-a-guide-for-life-science-researchers/  /en/amazon-bio-discovery-ai/  301
 /books/amazon-s3  /s3/amazon-s3/  301
 /books/amazon-s3/  /s3/amazon-s3/  301
 /books/amazon-s3/page/01161  /s3/amazon-s3/예제-데이터/  301
@@ -184,8 +184,8 @@
 /books/omics-on-aws/page/faq/  /omics-on-aws/hpp-production-workflows/faq/  301
 /books/omics-on-aws/page/hail-with-amazon-emr-notebook  /omics-on-aws/hail-on-aws/hail-with-amazon-emr-notebook/  301
 /books/omics-on-aws/page/hail-with-amazon-emr-notebook/  /omics-on-aws/hail-on-aws/hail-with-amazon-emr-notebook/  301
-/books/omics-on-aws/page/how-task-concurrency-limits-increase-storage-costs-in-aws-healthomics-workflow-runs  /omics-on-aws/how-task-concurrency-limits-increase-storage-costs-in-aws-healthomics-workflow-runs/  301
-/books/omics-on-aws/page/how-task-concurrency-limits-increase-storage-costs-in-aws-healthomics-workflow-runs/  /omics-on-aws/how-task-concurrency-limits-increase-storage-costs-in-aws-healthomics-workflow-runs/  301
+/books/omics-on-aws/page/how-task-concurrency-limits-increase-storage-costs-in-aws-healthomics-workflow-runs  /en/omics-on-aws/aws-healthomics-ksh/  301
+/books/omics-on-aws/page/how-task-concurrency-limits-increase-storage-costs-in-aws-healthomics-workflow-runs/  /en/omics-on-aws/aws-healthomics-ksh/  301
 /books/omics-on-aws/page/iam  /omics-on-aws/hpp-production-workflows/iam/  301
 /books/omics-on-aws/page/iam/  /omics-on-aws/hpp-production-workflows/iam/  301
 /books/omics-on-aws/page/lessons-learned-warp-exomegermlinesinglesample-aws-healthomics  /omics-on-aws/aws-healthomics/lessons-learned-warp-exomegermlinesinglesample-aws-healthomics/  301
@@ -202,17 +202,29 @@
 /books/omics-on-aws/page/quickstart-hail-korean/  /omics-on-aws/hail-on-aws/quickstart-hail-korean/  301
 /books/omics-on-aws/page/run-analzyer  /omics-on-aws/aws-healthomics/run-analzyer/  301
 /books/omics-on-aws/page/run-analzyer/  /omics-on-aws/aws-healthomics/run-analzyer/  301
-/books/omics-on-aws/page/running-nf-coresarek-390-on-aws-healthomics  /omics-on-aws/aws-healthomics/running-nf-coresarek-390-on-aws-healthomics/  301
-/books/omics-on-aws/page/running-nf-coresarek-390-on-aws-healthomics/  /omics-on-aws/aws-healthomics/running-nf-coresarek-390-on-aws-healthomics/  301
+/books/omics-on-aws/page/running-nf-coresarek-390-on-aws-healthomics  /en/omics-on-aws/aws-healthomics/aws-healthomics-nf-coresarek-390/  301
+/books/omics-on-aws/page/running-nf-coresarek-390-on-aws-healthomics/  /en/omics-on-aws/aws-healthomics/aws-healthomics-nf-coresarek-390/  301
 /books/omics-on-aws/page/store-multimodal-data-with-purpose-built-health-ai-services  /omics-on-aws/multi-modal-analysis/store-multimodal-data-with-purpose-built-health-ai-services/  301
 /books/omics-on-aws/page/store-multimodal-data-with-purpose-built-health-ai-services/  /omics-on-aws/multi-modal-analysis/store-multimodal-data-with-purpose-built-health-ai-services/  301
 /books/omics-on-aws/page/tco  /omics-on-aws/hpp-production-workflows/tco/  301
 /books/omics-on-aws/page/tco/  /omics-on-aws/hpp-production-workflows/tco/  301
-/books/omics-on-aws/page/vpc-connected-workflows-accessing-the-internet-and-cross-region-s3-from-workflows  /omics-on-aws/aws-healthomics/vpc-connected-workflows-accessing-the-internet-and-cross-region-s3-from-workflows/  301
-/books/omics-on-aws/page/vpc-connected-workflows-accessing-the-internet-and-cross-region-s3-from-workflows/  /omics-on-aws/aws-healthomics/vpc-connected-workflows-accessing-the-internet-and-cross-region-s3-from-workflows/  301
+/books/omics-on-aws/page/vpc-connected-workflows-accessing-the-internet-and-cross-region-s3-from-workflows  /en/omics-on-aws/aws-healthomics/vpc-connected-workflows-s3/  301
+/books/omics-on-aws/page/vpc-connected-workflows-accessing-the-internet-and-cross-region-s3-from-workflows/  /en/omics-on-aws/aws-healthomics/vpc-connected-workflows-s3/  301
 /books/omics-on-aws/page/vpc-connected-workflows-s3  /omics-on-aws/aws-healthomics/vpc-connected-workflows-s3/  301
 /books/omics-on-aws/page/vpc-connected-workflows-s3/  /omics-on-aws/aws-healthomics/vpc-connected-workflows-s3/  301
 /books/omics-on-aws/page/wdl-hifi-human-wgs-wdl  /omics-on-aws/aws-healthomics/wdl-hifi-human-wgs-wdl/  301
 /books/omics-on-aws/page/wdl-hifi-human-wgs-wdl/  /omics-on-aws/aws-healthomics/wdl-hifi-human-wgs-wdl/  301
 /shelves/s3  /  301
 /shelves/s3/  /  301
+
+# English locale migration
+/english  /en/  301
+/english/  /en/  301
+/amazon-bio-discovery-ai/getting-started-with-ai-antibody-design-on-amazon-bio-discovery-a-guide-for-life-science-researchers  /en/amazon-bio-discovery-ai/  301
+/amazon-bio-discovery-ai/getting-started-with-ai-antibody-design-on-amazon-bio-discovery-a-guide-for-life-science-researchers/  /en/amazon-bio-discovery-ai/  301
+/omics-on-aws/aws-healthomics/running-nf-coresarek-390-on-aws-healthomics  /en/omics-on-aws/aws-healthomics/aws-healthomics-nf-coresarek-390/  301
+/omics-on-aws/aws-healthomics/running-nf-coresarek-390-on-aws-healthomics/  /en/omics-on-aws/aws-healthomics/aws-healthomics-nf-coresarek-390/  301
+/omics-on-aws/aws-healthomics/vpc-connected-workflows-accessing-the-internet-and-cross-region-s3-from-workflows  /en/omics-on-aws/aws-healthomics/vpc-connected-workflows-s3/  301
+/omics-on-aws/aws-healthomics/vpc-connected-workflows-accessing-the-internet-and-cross-region-s3-from-workflows/  /en/omics-on-aws/aws-healthomics/vpc-connected-workflows-s3/  301
+/omics-on-aws/how-task-concurrency-limits-increase-storage-costs-in-aws-healthomics-workflow-runs  /en/omics-on-aws/aws-healthomics-ksh/  301
+/omics-on-aws/how-task-concurrency-limits-increase-storage-costs-in-aws-healthomics-workflow-runs/  /en/omics-on-aws/aws-healthomics-ksh/  301
