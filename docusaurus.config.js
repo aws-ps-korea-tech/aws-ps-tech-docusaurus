@@ -14,12 +14,12 @@ const config = {
   baseUrl: process.env.DEPLOY_BASE_URL || '/',
 
   organizationName: 'aws-ps-korea-tech',
-  projectName: 'aws-ps-tech-docusaurus',
+  projectName: 'technical-documents',
 
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
   markdown: {
     hooks: {
-      onBrokenMarkdownLinks: 'warn',
+      onBrokenMarkdownLinks: 'throw',
     },
   },
 
@@ -40,7 +40,7 @@ const config = {
           routeBasePath: '/',
           numberPrefixParser: false,
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/aws-ps-korea-tech/aws-ps-tech-docusaurus/edit/main/',
+          editUrl: 'https://github.com/aws-ps-korea-tech/technical-documents/edit/main/',
           // These sources require publication review. Excluding them keeps them
           // off the generated website; because the repository is public, truly
           // private material must also be removed from the repository itself.
@@ -133,7 +133,7 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://github.com/aws-ps-korea-tech/aws-ps-tech-docusaurus',
+            href: 'https://github.com/aws-ps-korea-tech/technical-documents',
             label: 'GitHub',
             position: 'right',
           },
@@ -167,12 +167,13 @@ const config = {
               {label: '개인정보 처리방침', href: 'https://aws.amazon.com/ko/privacy/'},
               {
                 label: 'GitHub',
-                href: 'https://github.com/aws-ps-korea-tech/aws-ps-tech-docusaurus',
+                href: 'https://github.com/aws-ps-korea-tech/technical-documents',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} AWS Korea Public Sector SA Team`,
+        copyright:
+          'AWS Korea Public Sector 기술 기여자가 작성·관리하는 비공식 기술 자료입니다. AWS 공식 문서를 대체하지 않습니다.',
       },
       prism: {
         theme: themes.github,
