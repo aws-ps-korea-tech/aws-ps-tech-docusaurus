@@ -6,7 +6,7 @@
   },
   "context": {
     "githubOwner": "aws-ps-korea-tech",
-    "githubRepo": "aws-ps-tech-docusaurus",
+    "githubRepo": "technical-documents",
     "githubBranch": "main",
     "codeConnectionArn": "",
     "siteFreePlan": true,

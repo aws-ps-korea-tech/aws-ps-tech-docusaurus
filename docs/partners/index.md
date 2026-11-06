@@ -1,6 +1,32 @@
 ---
 title: "AWS 파트너 안내"
 description: "AWS 파트너가 공공부문 고객과 함께 활용할 수 있는 분야별 기술 자료"
+slug: /partners
+keywords:
+  - AWS Public Sector
+  - AWS Partner
+tags:
+  - partner
+  - public-sector
+customProps:
+  contentId: partner-guidance
+  locale: ko
+  sourceLocale: ko
+  publicationStatus: published
+  translationStatus: source
+  sectors:
+    - government-public
+    - education-research
+    - healthcare-life-sciences
+  audiences:
+    - partner
+  contentType: getting-started
+  level: beginner
+  awsServices:
+    - AWS
+  maintainers:
+    - hmkim
+  lastReviewed: "2026-11-06"
 ---
 
 # AWS 파트너 안내
@@ -40,7 +66,7 @@ description: "AWS 파트너가 공공부문 고객과 함께 활용할 수 있�
 
 ## 콘텐츠 기여
 
-문서의 오류, 보완 제안과 새 콘텐츠는 [GitHub 저장소](https://github.com/aws-ps-korea-tech/aws-ps-tech-docusaurus)에서 확인하고 제안할 수 있습니다.
+문서의 오류, 보완 제안과 새 콘텐츠는 [GitHub 저장소](https://github.com/aws-ps-korea-tech/technical-documents)에서 확인하고 제안할 수 있습니다.
 
 :::note
 이 사이트의 자료는 AWS 공식 설명서를 대체하지 않습니다. 고객에게 전달할 때 관련 [AWS 공식 문서](https://docs.aws.amazon.com/)도 함께 제공하세요.
