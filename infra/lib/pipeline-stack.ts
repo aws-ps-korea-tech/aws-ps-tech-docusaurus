@@ -18,6 +18,8 @@ export interface PipelineStackProps extends StackProps {
   readonly owner: string;
   readonly repo: string;
   readonly branch: string;
+  /** CloudWatch RUM values baked into the build; the RUM snippet is omitted when unset. */
+  readonly rum?: { appMonitorId: string; identityPoolId: string; region: string };
 }
 
 /**
@@ -48,6 +50,11 @@ export class PipelineStack extends Stack {
         SITE_REGION: { value: Stack.of(props.bucket).region },
         DISTRIBUTION_ID: { value: props.distribution.distributionId },
         FUNCTION_NAME: { value: SITE_FUNCTION_NAME },
+        ...(props.rum ? {
+          RUM_APP_MONITOR_ID: { value: props.rum.appMonitorId },
+          RUM_IDENTITY_POOL_ID: { value: props.rum.identityPoolId },
+          RUM_REGION: { value: props.rum.region },
+        } : {}),
       },
       buildSpec: codebuild.BuildSpec.fromObject({
         version: '0.2',

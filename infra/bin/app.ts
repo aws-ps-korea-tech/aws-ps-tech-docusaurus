@@ -2,6 +2,7 @@
 import { App } from 'aws-cdk-lib';
 import { AwspstechRedirectStack, AwspstechZoneStack } from '../lib/awspstech-stacks';
 import { PipelineStack } from '../lib/pipeline-stack';
+import { RumStack } from '../lib/rum-stack';
 import { SiteStack } from '../lib/site-stack';
 
 const app = new App();
@@ -21,10 +22,19 @@ const site = new SiteStack(app, 'AwsPsTechDocsSite', {
   description: 'aws-ps-tech docs: S3 (OAC) + CloudFront + WAF, CloudFront flat-rate Free plan',
 });
 
+// CloudWatch RUM in Seoul; only the CloudFront-hosted site is monitored.
+const rumRegion = 'ap-northeast-2';
+const rum = new RumStack(app, 'AwsPsTechDocsRum', {
+  env: { account, region: rumRegion }, tags, crossRegionReferences: true,
+  description: 'aws-ps-tech docs: CloudWatch RUM app monitor + Cognito guest access',
+  domains: [site.distribution.distributionDomainName],
+});
+
 const connectionArn: string = ctx('codeConnectionArn');
 if (connectionArn) {
   new PipelineStack(app, 'AwsPsTechDocsPipeline', {
     env: { account, region: connectionArn.split(':')[3] },
+    rum: { appMonitorId: rum.appMonitorId, identityPoolId: rum.identityPoolId, region: rumRegion },
     crossRegionReferences: true,
     tags,
     description: 'aws-ps-tech docs: CodePipeline + CodeBuild deploy on merge to main',
