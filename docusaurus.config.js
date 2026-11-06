@@ -206,8 +206,7 @@ const config = {
             ],
           },
         ],
-        copyright:
-          'AWS Korea Public Sector 기술 기여자가 작성·관리하는 비공식 기술 자료입니다. AWS 공식 문서를 대체하지 않습니다.',
+        copyright: `Copyright © ${new Date().getFullYear()} AWS Korea Public Sector SA Team. 비공식 기술 자료이며 AWS 공식 문서를 대체하지 않습니다.`,
       },
       prism: {
         theme: themes.github,
