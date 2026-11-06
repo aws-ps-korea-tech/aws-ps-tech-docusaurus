@@ -1,0 +1,53 @@
+name: PR build
+
+# Builds the site (and checks the CDK infra) for every pull request into main.
+# The "build" job is a required status check in the main branch protection.
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-build-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            infra/package-lock.json
+
+      - name: Install site dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Build site
+        run: npm run build
+
+      # Same post-processing and guard the CodeBuild deploy runs before publishing.
+      - name: Strip NUL bytes and check build output
+        run: |
+          node infra/scripts/strip-nul.js build
+          node infra/scripts/check-build.js build
+
+      - name: Install infra dependencies
+        working-directory: infra
+        run: npm ci --no-audit --no-fund
+
+      - name: Type-check infra
+        working-directory: infra
+        run: npm run build
+
+      - name: Test CloudFront redirect function
+        working-directory: infra
+        run: npm test
