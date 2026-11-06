@@ -34,6 +34,7 @@ const selfPath = path.join(projectRoot, 'scripts', 'check-public-content.mjs');
 const patterns = [
   {
     rule: 'AWS_ACCESS_KEY',
+    alwaysStrict: true,
     regex: /\b(?:AKIA|ASIA)[A-Z0-9]{16}\b/g,
     message: 'AWS 액세스 키로 보이는 값이 있습니다. 즉시 제거하고 유출 여부를 확인하세요.',
   },
@@ -159,7 +160,8 @@ for (const absolutePath of collectTextFiles()) {
         line: findLine(text, match.index),
         changedFiles,
         baseline,
-        strict,
+        // A leaked access key is blocking even in untouched legacy files.
+        strict: pattern.alwaysStrict ? true : strict,
       });
     }
   }
