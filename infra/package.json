@@ -1,5 +1,5 @@
 {
-  "name": "aws-ps-tech-docusaurus-infra",
+  "name": "technical-documents-infra",
   "version": "0.1.0",
   "private": true,
   "description": "CDK app: CloudFront + S3 hosting, CodePipeline deploy, awspstech.kr redirect",
